@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake Game — NM Gaming</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg nm-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="home.html">NM <span>GAMING</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nmNav"
+        aria-controls="nmNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nmNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="game1.html">Snake</a></li>
+          <li class="nav-item"><a class="nav-link" href="game2.html">Sliding Puzzle</a></li>
+          <li class="nav-item"><a class="nav-link" href="game3.html">Tic Tac Toe</a></li>
+          <li class="nav-item"><a class="nav-link" href="game4.html">Memory Match</a></li>
+          <li class="nav-item"><a class="nav-link" href="game5.html">Rock Paper Scissors</a></li>
+          <li class="nav-item"><a class="nav-link" href="game6.html">Whack-a-Mole</a></li>
+          <li class="nav-item"><a class="nav-link" href="game7.html">Guess the Number</a></li>
+          <li class="nav-item"><a class="nav-link" href="game8.html">Simon Says</a></li>
+          <li class="nav-item"><a class="nav-link" href="game9.html">2048</a></li>
+          <li class="nav-item"><a class="nav-link" href="game10.html">Pong</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="game-hero">
+    <div class="container">
+      <div class="breadcrumb-gold"><a href="home.html">Home</a> / Snake</div>
+      <h1 class="gold-text">🐍 Snake Game</h1>
+      <p style="color:var(--text-dim);">Eat the gold orbs, grow your tail, don't hit the walls or yourself.</p>
+    </div>
+  </header>
+
+  <section class="py-5">
+    <div class="container">
+      <div class="game-panel mx-auto" style="max-width:560px;">
+        <div class="game-hud">
+          <div class="hud-chip"><small>Score</small><span id="score">0</span></div>
+          <div class="hud-chip"><small>Best</small><span id="best">0</span></div>
+          <div class="hud-chip"><small>Speed</small><span id="speedLvl">1</span></div>
+        </div>
+
+        <div class="game-stage">
+          <canvas id="snakeCanvas" width="400" height="400"></canvas>
+        </div>
+
+        <div class="game-controls">
+          <button id="startBtn" class="btn-gold">Start Game</button>
+          <button id="pauseBtn" class="btn-gold-outline">Pause</button>
+        </div>
+
+        <p class="how-to">Use the Arrow Keys or WASD to steer. On mobile, swipe on the board. Speed increases as your
+          score grows.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="nm-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-6 col-md-3">
+          <h5>NM Gaming</h5>
+          <p style="color:var(--text-dim); font-size:.88rem;">A black &amp; gold arcade of ten browser-native classics.
+          </p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Arcade Row A</h5>
+          <a href="game1.html">Snake</a>
+          <a href="game2.html">Sliding Puzzle</a>
+          <a href="game3.html">Tic Tac Toe</a>
+          <a href="game4.html">Memory Match</a>
+          <a href="game5.html">Rock Paper Scissors</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Arcade Row B</h5>
+          <a href="game6.html">Whack-a-Mole</a>
+          <a href="game7.html">Guess the Number</a>
+          <a href="game8.html">Simon Says</a>
+          <a href="game9.html">2048</a>
+          <a href="game10.html">Pong</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Home</h5>
+          <a href="home.html">Back to Top</a>
+          <a href="home.html#games">Full Lineup</a>
+        </div>
+      </div>
+      <div class="copyline">© 2026 NM GAMING · All games run locally in your browser</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="site.js"></script>
+  <script>
+    (() => {
+      const canvas = document.getElementById('snakeCanvas');
+      const ctx = canvas.getContext('2d');
+      const cell = 20;
+      const cols = canvas.width / cell;
+      const rows = canvas.height / cell;
+
+      const scoreEl = document.getElementById('score');
+      const bestEl = document.getElementById('best');
+      const speedEl = document.getElementById('speedLvl');
+      const startBtn = document.getElementById('startBtn');
+      const pauseBtn = document.getElementById('pauseBtn');
+
+      let snake, dir, nextDir, food, score, best, speed, timer, running, paused;
+
+      best = Number(localStorage.getItem('nm-snake-best') || 0);
+      bestEl.textContent = best;
+
+      function init() {
+        snake = [{ x: 8, y: 10 }, { x: 7, y: 10 }, { x: 6, y: 10 }];
+        dir = { x: 1, y: 0 };
+        nextDir = { x: 1, y: 0 };
+        score = 0;
+        speed = 1;
+        scoreEl.textContent = score;
+        speedEl.textContent = speed;
+        placeFood();
+        draw();
+      }
+
+      function placeFood() {
+        let valid = false;
+        while (!valid) {
+          food = { x: Math.floor(Math.random() * cols), y: Math.floor(Math.random() * rows) };
+          valid = !snake.some(s => s.x === food.x && s.y === food.y);
+        }
+      }
+
+      function draw() {
+        ctx.fillStyle = '#050405';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // grid
+        ctx.strokeStyle = 'rgba(212,175,55,0.06)';
+        for (let i = 0; i <= cols; i++) {
+          ctx.beginPath(); ctx.moveTo(i * cell, 0); ctx.lineTo(i * cell, canvas.height); ctx.stroke();
+        }
+        for (let j = 0; j <= rows; j++) {
+          ctx.beginPath(); ctx.moveTo(0, j * cell); ctx.lineTo(canvas.width, j * cell); ctx.stroke();
+        }
+
+        // food
+        ctx.fillStyle = '#f6dd8a';
+        ctx.shadowColor = '#d4af37';
+        ctx.shadowBlur = 12;
+        ctx.beginPath();
+        ctx.arc(food.x * cell + cell / 2, food.y * cell + cell / 2, cell / 2.6, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+
+        // snake
+        snake.forEach((s, i) => {
+          ctx.fillStyle = i === 0 ? '#f6dd8a' : '#d4af37';
+          ctx.fillRect(s.x * cell + 1, s.y * cell + 1, cell - 2, cell - 2);
+        });
+      }
+
+      function tick() {
+        if (paused) return;
+        dir = nextDir;
+        const head = { x: snake[0].x + dir.x, y: snake[0].y + dir.y };
+
+        if (head.x < 0 || head.y < 0 || head.x >= cols || head.y >= rows || snake.some(s => s.x === head.x && s.y === head.y)) {
+          gameOver();
+          return;
+        }
+
+        snake.unshift(head);
+
+        if (head.x === food.x && head.y === food.y) {
+          score += 10;
+          scoreEl.textContent = score;
+          if (score % 50 === 0) {
+            speed = Math.min(speed + 1, 8);
+            speedEl.textContent = speed;
+            restartTimer();
+          }
+          placeFood();
+        } else {
+          snake.pop();
+        }
+        draw();
+      }
+
+      function restartTimer() {
+        clearInterval(timer);
+        const base = 140;
+        const rate = Math.max(base - speed * 12, 55);
+        timer = setInterval(tick, rate);
+      }
+
+      function gameOver() {
+        running = false;
+        clearInterval(timer);
+        if (score > best) {
+          best = score;
+          localStorage.setItem('nm-snake-best', best);
+          bestEl.textContent = best;
+        }
+        ctx.fillStyle = 'rgba(0,0,0,.7)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = '#f6dd8a';
+        ctx.font = '700 26px Cinzel, serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('GAME OVER', canvas.width / 2, canvas.height / 2 - 10);
+        ctx.font = '600 15px Rajdhani, sans-serif';
+        ctx.fillText('Press Start to play again', canvas.width / 2, canvas.height / 2 + 20);
+        startBtn.textContent = 'Start Game';
+      }
+
+      function startGame() {
+        init();
+        running = true;
+        paused = false;
+        pauseBtn.textContent = 'Pause';
+        restartTimer();
+        startBtn.textContent = 'Restart';
+      }
+
+      startBtn.addEventListener('click', startGame);
+      pauseBtn.addEventListener('click', () => {
+        if (!running) return;
+        paused = !paused;
+        pauseBtn.textContent = paused ? 'Resume' : 'Pause';
+      });
+
+      document.addEventListener('keydown', (e) => {
+        const k = e.key.toLowerCase();
+        if (['arrowup', 'w'].includes(k) && dir.y === 0) nextDir = { x: 0, y: -1 };
+        else if (['arrowdown', 's'].includes(k) && dir.y === 0) nextDir = { x: 0, y: 1 };
+        else if (['arrowleft', 'a'].includes(k) && dir.x === 0) nextDir = { x: -1, y: 0 };
+        else if (['arrowright', 'd'].includes(k) && dir.x === 0) nextDir = { x: 1, y: 0 };
+      });
+
+      // swipe support
+      let touchStartX = 0, touchStartY = 0;
+      canvas.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].clientX;
+        touchStartY = e.changedTouches[0].clientY;
+      });
+      canvas.addEventListener('touchend', (e) => {
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        const dy = e.changedTouches[0].clientY - touchStartY;
+        if (Math.abs(dx) > Math.abs(dy)) {
+          if (dx > 20 && dir.x === 0) nextDir = { x: 1, y: 0 };
+          else if (dx < -20 && dir.x === 0) nextDir = { x: -1, y: 0 };
+        } else {
+          if (dy > 20 && dir.y === 0) nextDir = { x: 0, y: 1 };
+          else if (dy < -20 && dir.y === 0) nextDir = { x: 0, y: -1 };
+        }
+      });
+
+      init();
+    })();
+  </script>
+</body>
+
+</html>

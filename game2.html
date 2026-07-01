@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sliding Puzzle — NM Gaming</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg nm-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="home.html">NM <span>GAMING</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nmNav" aria-controls="nmNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nmNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="game1.html">Snake</a></li>
+        <li class="nav-item"><a class="nav-link" href="game2.html">Sliding Puzzle</a></li>
+        <li class="nav-item"><a class="nav-link" href="game3.html">Tic Tac Toe</a></li>
+        <li class="nav-item"><a class="nav-link" href="game4.html">Memory Match</a></li>
+        <li class="nav-item"><a class="nav-link" href="game5.html">Rock Paper Scissors</a></li>
+        <li class="nav-item"><a class="nav-link" href="game6.html">Whack-a-Mole</a></li>
+        <li class="nav-item"><a class="nav-link" href="game7.html">Guess the Number</a></li>
+        <li class="nav-item"><a class="nav-link" href="game8.html">Simon Says</a></li>
+        <li class="nav-item"><a class="nav-link" href="game9.html">2048</a></li>
+        <li class="nav-item"><a class="nav-link" href="game10.html">Pong</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="game-hero">
+  <div class="container">
+    <div class="breadcrumb-gold"><a href="home.html">Home</a> / Sliding Puzzle</div>
+    <h1 class="gold-text">🧩 Sliding Puzzle</h1>
+    <p style="color:var(--text-dim);">Slide tiles into the empty slot to arrange numbers 1 through 8 in order.</p>
+  </div>
+</header>
+
+<section class="py-5">
+  <div class="container">
+    <div class="game-panel mx-auto" style="max-width:560px;">
+      <div class="game-hud">
+        <div class="hud-chip"><small>Moves</small><span id="moves">0</span></div>
+        <div class="hud-chip"><small>Best</small><span id="best">–</span></div>
+        <div class="hud-chip"><small>Status</small><span id="status">Shuffling…</span></div>
+      </div>
+      <div class="game-stage">
+        <div id="puzzleGrid" class="grid-3" style="width:min(360px,80vw);"></div>
+      </div>
+      <div class="game-controls">
+        <button id="shuffleBtn" class="btn-gold">Shuffle</button>
+      </div>
+      <p class="how-to">Click any tile adjacent to the empty slot to slide it. Arrange 1–8 in reading order to win.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="nm-footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-6 col-md-3">
+        <h5>NM Gaming</h5>
+        <p style="color:var(--text-dim); font-size:.88rem;">A black &amp; gold arcade of ten browser-native classics.</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <h5>Arcade Row A</h5>
+        <a href="game1.html">Snake</a>
+        <a href="game2.html">Sliding Puzzle</a>
+        <a href="game3.html">Tic Tac Toe</a>
+        <a href="game4.html">Memory Match</a>
+        <a href="game5.html">Rock Paper Scissors</a>
+      </div>
+      <div class="col-6 col-md-3">
+        <h5>Arcade Row B</h5>
+        <a href="game6.html">Whack-a-Mole</a>
+        <a href="game7.html">Guess the Number</a>
+        <a href="game8.html">Simon Says</a>
+        <a href="game9.html">2048</a>
+        <a href="game10.html">Pong</a>
+      </div>
+      <div class="col-6 col-md-3">
+        <h5>Home</h5>
+        <a href="home.html">Back to Top</a>
+        <a href="home.html#games">Full Lineup</a>
+      </div>
+    </div>
+    <div class="copyline">© 2026 NM GAMING · All games run locally in your browser</div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="site.js"></script>
+<script>
+
+(() => {
+  const grid = document.getElementById('puzzleGrid');
+  const movesEl = document.getElementById('moves');
+  const bestEl = document.getElementById('best');
+  const statusEl = document.getElementById('status');
+  const shuffleBtn = document.getElementById('shuffleBtn');
+  const SIZE = 3;
+  let tiles = [];
+  let moves = 0;
+  let best = localStorage.getItem('nm-puzzle-best');
+  if (best) bestEl.textContent = best;
+
+  function solved(arr){
+    for (let i=0;i<arr.length-1;i++){ if (arr[i] !== i+1) return false; }
+    return arr[arr.length-1] === 0;
+  }
+
+  function isSolvable(arr){
+    let inversions = 0;
+    const flat = arr.filter(n => n !== 0);
+    for (let i=0;i<flat.length;i++){
+      for (let j=i+1;j<flat.length;j++){
+        if (flat[i] > flat[j]) inversions++;
+      }
+    }
+    return inversions % 2 === 0;
+  }
+
+  function shuffle(){
+    do {
+      tiles = [1,2,3,4,5,6,7,8,0];
+      for (let i=tiles.length-1;i>0;i--){
+        const j = Math.floor(Math.random()*(i+1));
+        [tiles[i],tiles[j]] = [tiles[j],tiles[i]];
+      }
+    } while (!isSolvable(tiles) || solved(tiles));
+    moves = 0;
+    movesEl.textContent = moves;
+    statusEl.textContent = 'In Progress';
+    render();
+  }
+
+  function render(){
+    grid.innerHTML = '';
+    tiles.forEach((val, idx) => {
+      const cell = document.createElement('div');
+      cell.className = 'grid-cell' + (val === 0 ? ' taken' : '');
+      cell.style.opacity = val === 0 ? '0' : '1';
+      cell.textContent = val === 0 ? '' : val;
+      cell.dataset.idx = idx;
+      if (val !== 0) cell.addEventListener('click', () => tryMove(idx));
+      grid.appendChild(cell);
+    });
+  }
+
+  function tryMove(idx){
+    const emptyIdx = tiles.indexOf(0);
+    const r1 = Math.floor(idx/SIZE), c1 = idx%SIZE;
+    const r2 = Math.floor(emptyIdx/SIZE), c2 = emptyIdx%SIZE;
+    const adjacent = (Math.abs(r1-r2) + Math.abs(c1-c2)) === 1;
+    if (!adjacent) return;
+    [tiles[idx], tiles[emptyIdx]] = [tiles[emptyIdx], tiles[idx]];
+    moves++;
+    movesEl.textContent = moves;
+    render();
+    if (solved(tiles)){
+      statusEl.textContent = 'Solved! 🎉';
+      if (!best || moves < Number(best)){
+        best = moves;
+        localStorage.setItem('nm-puzzle-best', best);
+        bestEl.textContent = best;
+      }
+    }
+  }
+
+  shuffleBtn.addEventListener('click', shuffle);
+  shuffle();
+})();
+
+</script>
+</body>
+</html>

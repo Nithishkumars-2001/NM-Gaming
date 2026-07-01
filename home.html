@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NM Gaming — Play 10 Classic Browser Games</title>
+  <meta name="description"
+    content="NM Gaming: a black & gold arcade of 10 classic browser games — Snake, Puzzle, Tic Tac Toe, Memory, 2048, Pong and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg nm-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="home.html">NM <span>GAMING</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nmNav"
+        aria-controls="nmNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nmNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="game1.html">Snake</a></li>
+          <li class="nav-item"><a class="nav-link" href="game2.html">Sliding Puzzle</a></li>
+          <li class="nav-item"><a class="nav-link" href="game3.html">Tic Tac Toe</a></li>
+          <li class="nav-item"><a class="nav-link" href="game4.html">Memory Match</a></li>
+          <li class="nav-item"><a class="nav-link" href="game5.html">Rock Paper Scissors</a></li>
+          <li class="nav-item"><a class="nav-link" href="game6.html">Whack-a-Mole</a></li>
+          <li class="nav-item"><a class="nav-link" href="game7.html">Guess the Number</a></li>
+          <li class="nav-item"><a class="nav-link" href="game8.html">Simon Says</a></li>
+          <li class="nav-item"><a class="nav-link" href="game9.html">2048</a></li>
+          <li class="nav-item"><a class="nav-link" href="game10.html">Pong</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="eyebrow mb-3">Ten Games · One Arcade</div>
+          <h1 class="gold-text mb-3">NM GAMING</h1>
+          <p class="lead mb-4">A black-and-gold arcade of ten pocket-sized classics — reflex tests, puzzles, and
+            head-to-head duels — rebuilt for the browser. No installs, no accounts, just play.</p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#games" class="btn-gold">Browse Games</a>
+            <a href="game1.html" class="btn-gold-outline">Play Snake Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="row stat-strip">
+        <div class="col-4 col-md-3">
+          <div class="num">10</div>
+          <div class="lbl">Games</div>
+        </div>
+        <div class="col-4 col-md-3">
+          <div class="num">100%</div>
+          <div class="lbl">Free</div>
+        </div>
+        <div class="col-4 col-md-3">
+          <div class="num">0</div>
+          <div class="lbl">Installs</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- GAMES SECTION -->
+  <section id="games" class="py-5">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <div class="eyebrow mb-2">The Lineup</div>
+        <h2 class="section-title gold-text">Choose Your Game</h2>
+        <p class="mx-auto" style="max-width:600px; color:var(--text-dim);">Ten self-contained arcade classics, each on
+          its own page, each playable in seconds.</p>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-4">
+          <div class="game-card reveal">
+            <div class="idx">01 / SNAKE</div>
+            <div class="icon">🐍</div>
+            <h3>Snake Game</h3>
+            <p>Guide the snake across the grid, eat the gold orbs, and avoid biting your own tail.</p>
+            <a class="play-link" href="game1.html">Play Now →</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="game-card reveal">
+            <div class="idx">02 / PUZZLE</div>
+            <div class="icon">🧩</div>
+            <h3>Sliding Puzzle</h3>
+            <p>Shuffle the 3×3 tile grid back into perfect numeric order using the fewest moves.</p>
+            <a class="play-link" href="game2.html">Play Now →</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="game-card reveal">
+            <div class="idx">03 / XO</div>
+            <div class="icon">✕⭕</div>
+            <h3>Tic Tac Toe</h3>
+            <p>Classic two-player X's and O's on one screen. First to three in a row takes the round.</p>
+            <a class="play-link" href="game3.html">Play Now →</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="game-card reveal">
+            <div class="idx">04 / MEMORY</div>
+            <div class="icon">🃏</div>
+            <h3>Memory Match</h3>
+            <p>Flip the gold-backed cards two at a time and clear the board in the fewest tries.</p>
+            <a class="play-link" href="game4.html">Play Now →</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="game-card reveal">
+            <div class="idx">05 / RPS</div>
+            <div class="icon">✊✋✌️</div>
+            <h3>Rock Paper Scissors</h3>
+            <p>Best-of series against the house. Pick your move and watch the score climb.</p>
+            <a class="play-link" href="game5.html">Play Now →</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="game-card reveal">
+            <div class="idx">06 / REFLEX</div>
+            <div class="icon">🔨</div>
+            <h3>Whack-a-Mole</h3>
+            <p>Moles pop up at random — tap them before they vanish and race the clock for a high score.</p>
+            <a class="play-link" href="game6.html">Play Now →</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="game-card reveal">
+            <div class="idx">07 / LOGIC</div>
+            <div class="icon">🎯</div>
+            <h3>Guess the Number</h3>
+            <p>A secret number hides between 1 and 100. Narrow it down with hotter-colder hints.</p>
+            <a class="play-link" href="game7.html">Play Now →</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="game-card reveal">
+            <div class="idx">08 / MEMORY+</div>
+            <div class="icon">🔵</div>
+            <h3>Simon Says</h3>
+            <p>Watch the gold sequence light up, then repeat it back — one wrong tap ends the run.</p>
+            <a class="play-link" href="game8.html">Play Now →</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="game-card reveal">
+            <div class="idx">09 / MERGE</div>
+            <div class="icon">🔢</div>
+            <h3>2048</h3>
+            <p>Slide matching tiles together to build toward the elusive 2048 tile.</p>
+            <a class="play-link" href="game9.html">Play Now →</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="game-card reveal">
+            <div class="idx">10 / ARCADE</div>
+            <div class="icon">🏓</div>
+            <h3>Pong</h3>
+            <p>The original arcade duel. Keep the ball alive against the CPU paddle for as long as you can.</p>
+            <a class="play-link" href="game10.html">Play Now →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="nm-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-6 col-md-3">
+          <h5>NM Gaming</h5>
+          <p style="color:var(--text-dim); font-size:.88rem;">A black &amp; gold arcade of ten browser-native classics.
+          </p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Arcade Row A</h5>
+          <a href="game1.html">Snake</a>
+          <a href="game2.html">Sliding Puzzle</a>
+          <a href="game3.html">Tic Tac Toe</a>
+          <a href="game4.html">Memory Match</a>
+          <a href="game5.html">Rock Paper Scissors</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Arcade Row B</h5>
+          <a href="game6.html">Whack-a-Mole</a>
+          <a href="game7.html">Guess the Number</a>
+          <a href="game8.html">Simon Says</a>
+          <a href="game9.html">2048</a>
+          <a href="game10.html">Pong</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Home</h5>
+          <a href="home.html">Back to Top</a>
+          <a href="#games">Full Lineup</a>
+        </div>
+      </div>
+      <div class="copyline">© 2026 NM GAMING · All games run locally in your browser</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="site.js"></script>
+</body>
+
+</html>
