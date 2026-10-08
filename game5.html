@@ -1,152 +1,527 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rock Paper Scissors — NM Gaming</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="style.css" rel="stylesheet">
-<meta name="google-adsense-account" content="ca-pub-1684242835147633">
-<script src="https://quge5.com/88/tag.min.js" data-zone="255795" async data-cfasync="false"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors — NM Gaming</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+
+  <meta name="google-adsense-account" content="ca-pub-1684242835147633">
+
 </head>
+
 <body>
 
-<nav class="navbar navbar-expand-lg nm-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="home.html">NM <span>GAMING</span></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nmNav" aria-controls="nmNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="nmNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="game1.html">Snake</a></li>
-        <li class="nav-item"><a class="nav-link" href="game2.html">Sliding Puzzle</a></li>
-        <li class="nav-item"><a class="nav-link" href="game3.html">Tic Tac Toe</a></li>
-        <li class="nav-item"><a class="nav-link" href="game4.html">Memory Match</a></li>
-        <li class="nav-item"><a class="nav-link" href="game5.html">Rock Paper Scissors</a></li>
-        <li class="nav-item"><a class="nav-link" href="game6.html">Whack-a-Mole</a></li>
-        <li class="nav-item"><a class="nav-link" href="game7.html">Guess the Number</a></li>
-        <li class="nav-item"><a class="nav-link" href="game8.html">Simon Says</a></li>
-        <li class="nav-item"><a class="nav-link" href="game9.html">2048</a></li>
-        <li class="nav-item"><a class="nav-link" href="game10.html">Pong</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<header class="game-hero">
-  <div class="container">
-    <div class="breadcrumb-gold"><a href="home.html">Home</a> / Rock Paper Scissors</div>
-    <h1 class="gold-text">✊✋✌️ Rock Paper Scissors</h1>
-    <p style="color:var(--text-dim);">Best-of series against the house computer. Pick a move each round.</p>
-  </div>
-</header>
-
-<section class="py-5">
-  <div class="container">
-    <div class="game-panel mx-auto" style="max-width:560px;">
-      <div class="game-hud">
-        <div class="hud-chip"><small>You</small><span id="youScore">0</span></div>
-        <div class="hud-chip"><small>CPU</small><span id="cpuScore">0</span></div>
-        <div class="hud-chip"><small>Round</small><span id="round">1</span></div>
+  <nav class="navbar navbar-expand-lg nm-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="home.html">NM <span>GAMING</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nmNav"
+        aria-controls="nmNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nmNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="game1.html">Snake</a></li>
+          <li class="nav-item"><a class="nav-link" href="game2.html">Sliding Puzzle</a></li>
+          <li class="nav-item"><a class="nav-link" href="game3.html">Tic Tac Toe</a></li>
+          <li class="nav-item"><a class="nav-link" href="game4.html">Memory Match</a></li>
+          <li class="nav-item"><a class="nav-link" href="game5.html">Rock Paper Scissors</a></li>
+          <li class="nav-item"><a class="nav-link" href="game6.html">Whack-a-Mole</a></li>
+          <li class="nav-item"><a class="nav-link" href="game7.html">Guess the Number</a></li>
+          <li class="nav-item"><a class="nav-link" href="game8.html">Simon Says</a></li>
+          <li class="nav-item"><a class="nav-link" href="game9.html">2048</a></li>
+          <li class="nav-item"><a class="nav-link" href="game10.html">Pong</a></li>
+          <li class="nav-item"><a class="nav-link" href="game11.html">Breakout</a></li>
+          <li class="nav-item"><a class="nav-link" href="game12.html">Hangman</a></li>
+          <li class="nav-item"><a class="nav-link" href="game13.html">Reaction Test</a></li>
+          <li class="nav-item"><a class="nav-link" href="game14.html">Minesweeper</a></li>
+          <li class="nav-item"><a class="nav-link" href="game15.html">Flappy Orb</a></li>
+        </ul>
       </div>
-      <div class="game-stage">
-        <div style="text-align:center;">
-          <div id="resultText" style="font-family:'Cinzel',serif; font-size:1.3rem; color:var(--gold-bright); min-height:2.4rem;">Make your move</div>
-          <div style="display:flex; gap:2rem; justify-content:center; font-size:3rem; margin:1rem 0;">
-            <span id="youPick">❔</span>
-            <span style="color:var(--gold-dim); align-self:center; font-size:1.2rem;">VS</span>
-            <span id="cpuPick">❔</span>
+    </div>
+  </nav>
+
+  <header class="game-hero">
+    <div class="container">
+      <div class="breadcrumb-gold"><a href="home.html">Home</a> / Rock Paper Scissors</div>
+      <h1 class="gold-text">✊✋✌️ Rock Paper Scissors</h1>
+      <p style="color:var(--text-dim);">Best-of series against the house computer. Pick a move each round.</p>
+    </div>
+  </header>
+
+  <section class="py-5">
+    <div class="container">
+      <div class="game-panel mx-auto" style="max-width:560px;">
+        <div class="game-hud">
+          <div class="hud-chip"><small>You</small><span id="youScore">0</span></div>
+          <div class="hud-chip"><small>CPU</small><span id="cpuScore">0</span></div>
+          <div class="hud-chip"><small>Round</small><span id="round">1</span></div>
+        </div>
+        <div class="game-stage">
+          <div style="text-align:center;">
+            <div id="resultText"
+              style="font-family:'Cinzel',serif; font-size:1.3rem; color:var(--gold-bright); min-height:2.4rem;">Make
+              your move</div>
+            <div style="display:flex; gap:2rem; justify-content:center; font-size:3rem; margin:1rem 0;">
+              <span id="youPick">❔</span>
+              <span style="color:var(--gold-dim); align-self:center; font-size:1.2rem;">VS</span>
+              <span id="cpuPick">❔</span>
+            </div>
+          </div>
+        </div>
+        <div class="game-controls">
+          <button class="btn-gold-outline rps-btn" data-choice="rock">✊ Rock</button>
+          <button class="btn-gold-outline rps-btn" data-choice="paper">✋ Paper</button>
+          <button class="btn-gold-outline rps-btn" data-choice="scissors">✌️ Scissors</button>
+        </div>
+        <p class="how-to">Choose Rock, Paper, or Scissors. Rock beats Scissors, Scissors beats Paper, Paper beats Rock.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW TO PLAY GUIDE (7 sections) ===== -->
+  <section class="pb-5" id="how-to-play">
+    <div class="container" style="max-width:860px;">
+      <h2 class="gold-text mb-2">How to Play Rock Paper Scissors</h2>
+      <p style="color:var(--text-dim);">Rock Paper Scissors is the quick hand game, played against the computer. You
+        choose a hand, the computer chooses too, and the winner of the round scores a point. This guide covers the rules
+        and the scoreboard.</p>
+
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">1. The goal</h4>
+        <p class="how-to" style="text-align:left;">Win more rounds than the computer. Every round is one pick for you
+          and one for the computer, and the scoreboard shows who is ahead.</p>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">2. Getting started</h4>
+        <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+          <li>There is no start button. The game is ready as soon as the page loads.</li>
+          <li>Click or tap <strong>Rock</strong>, <strong>Paper</strong> or <strong>Scissors</strong>.</li>
+          <li>The computer picks instantly, and both hands appear on the board.</li>
+          <li>A message tells you who won the round, and the scores update.</li>
+          <li>Pick again for the next round. You can play as many rounds as you like.</li>
+        </ol>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">3. Controls</h4>
+        <div class="row g-3 how-to" style="text-align:left;">
+          <div class="col-md-4"><strong>✊ Rock</strong><br>Beats Scissors. Loses to Paper.</div>
+          <div class="col-md-4"><strong>✋ Paper</strong><br>Beats Rock. Loses to Scissors.</div>
+          <div class="col-md-4"><strong>✌️ Scissors</strong><br>Beats Paper. Loses to Rock.</div>
+        </div>
+        <p class="how-to mt-3" style="text-align:left;">Everything is played with the three buttons below the board.
+          There are no keyboard controls.</p>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">4. How each round ends</h4>
+        <ul class="how-to" style="text-align:left;padding-left:1.2rem;">
+          <li><strong>You win.</strong> Your hand beats the computer's. The message says <strong>You Win This
+              Round</strong>.</li>
+          <li><strong>The computer wins.</strong> Its hand beats yours. The message says <strong>CPU Wins This
+              Round</strong>.</li>
+          <li><strong>Draw.</strong> Both picked the same hand. The message says <strong>It's a Draw</strong> and nobody
+            scores.</li>
+        </ul>
+        <p class="how-to" style="text-align:left;">There is no fixed end to the game. You decide when to stop, for
+          example first to reach 5 wins.</p>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">5. Scoring and the round counter</h4>
+        <div style="overflow-x:auto;">
+          <table class="how-to" style="width:100%;text-align:center;border-collapse:collapse;">
+            <thead>
+              <tr style="color:var(--gold-bright);">
+                <th>Result</th>
+                <th>You</th>
+                <th>CPU</th>
+                <th>Round</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>You win</td>
+                <td>+1</td>
+                <td>–</td>
+                <td>+1</td>
+              </tr>
+              <tr>
+                <td>CPU wins</td>
+                <td>–</td>
+                <td>+1</td>
+                <td>+1</td>
+              </tr>
+              <tr>
+                <td>Draw</td>
+                <td>–</td>
+                <td>–</td>
+                <td>+1</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="how-to mt-3" style="text-align:left;">The Round chip goes up after every pick, including draws, so it
+          shows how many rounds you have played, not how many points were scored. Scores are not saved, so refresh the
+          page to start again from 0.</p>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">6. Playing smart</h4>
+        <ul class="how-to" style="text-align:left;padding-left:1.2rem;">
+          <li><strong>The computer picks at random.</strong> Each hand has the same chance, so there is no hidden
+            pattern to beat.</li>
+          <li><strong>Don't trust streaks.</strong> Three Rocks in a row does not make Paper more likely next time.</li>
+          <li><strong>Set a target.</strong> Agree on a first-to-5 or first-to-10 and turn it into a mini match.</li>
+          <li><strong>Challenge a friend.</strong> Play on your own and keep your own score, or take turns to see who
+            gets further ahead.</li>
+          <li><strong>Mix it up.</strong> If you play a human, avoid repeating the same pick, because they will notice.
+          </li>
+          <li><strong>Enjoy the luck.</strong> This game is about quick fun, not strategy.</li>
+        </ul>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">7. Common questions</h4>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Can I beat the computer with a pattern?</summary>No.
+          It chooses randomly each round, so no pattern works in the long run.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">How do I reset the score?</summary>Refresh the page.
+          Scores and the round counter go back to 0.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Why did the Round number go up on a draw?</summary>
+          The Round chip counts every round played, whether or not someone scored.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Is my score saved?</summary>No. Nothing is stored
+          between visits.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Is there a winner at the end?</summary>The game
+          never ends on its own. Whoever has the higher score when you stop is the winner.
+        </details>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ===== NEXT GAMES JOURNEY (7 sections) ===== -->
+  <section class="pb-5" id="next-games">
+    <div class="container" style="max-width:860px;">
+      <h2 class="gold-text mb-2">Your Arcade Journey: What to Play After Rock Paper Scissors</h2>
+      <p style="color:var(--text-dim);">Finished a few rounds of Rock Paper Scissors? The NM Gaming arcade has more to
+        try. Below are the
+        next seven games in the lineup, each with a quick guide on how to play so you can jump straight in.</p>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game6.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🔨</span>
+              <img src="images/game6.jpg" alt="Whack-a-Mole game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 1 OF 7</small>
+            <h4 class="gold-text">🔨 Whack-a-Mole</h4>
+            <p class="how-to" style="text-align:left;">A 3 × 3 grid of holes and 30 seconds on the clock. Tap the mole
+              each time it pops up.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press Start. A mole appears in one hole at a time.</li>
+              <li>Tap the hole with the mole to score 10 points. Tapping an empty hole costs nothing.</li>
+              <li>The mole moves faster as your score climbs.</li>
+              <li>When the 30 seconds are up, your score is compared with your Best.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Watch the whole grid, not one hole, so
+              you can jump to the next mole as soon as it appears.</p>
+            <a href="game6.html" class="btn-gold text-decoration-none d-inline-block">Play Whack-a-Mole →</a>
           </div>
         </div>
       </div>
-      <div class="game-controls">
-        <button class="btn-gold-outline rps-btn" data-choice="rock">✊ Rock</button>
-        <button class="btn-gold-outline rps-btn" data-choice="paper">✋ Paper</button>
-        <button class="btn-gold-outline rps-btn" data-choice="scissors">✌️ Scissors</button>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 order-md-2">
+            <!-- Add your image: put the file at images/game7.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🎯</span>
+              <img src="images/game7.jpg" alt="Guess the Number game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 2 OF 7</small>
+            <h4 class="gold-text">🎯 Guess the Number</h4>
+            <p class="how-to" style="text-align:left;">A secret number from 1 to 100 is hidden. Use the Higher or Lower
+              hints to find it in the fewest guesses.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Type a number from 1 to 100 and press Guess, or press Enter.</li>
+              <li>You get a hint: Higher or Lower.</li>
+              <li>Use the hint to narrow down the range and guess again.</li>
+              <li>Find the number to win. Fewer attempts means a better Best score.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Always guess the middle of what is
+              left. Starting at 50 finds any number in 7 guesses or fewer.</p>
+            <a href="game7.html" class="btn-gold text-decoration-none d-inline-block">Play Guess the Number →</a>
+          </div>
+        </div>
       </div>
-      <p class="how-to">Choose Rock, Paper, or Scissors. Rock beats Scissors, Scissors beats Paper, Paper beats Rock.</p>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game8.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🔵</span>
+              <img src="images/game8.jpg" alt="Simon Says game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 3 OF 7</small>
+            <h4 class="gold-text">🔵 Simon Says</h4>
+            <p class="how-to" style="text-align:left;">Four gold pads flash in a growing pattern. Watch, then repeat it
+              from memory.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press Start and watch the pads flash. The Status chip says Watch.</li>
+              <li>When it says Your Turn, tap the pads in the same order.</li>
+              <li>Every correct round adds one more step to the pattern.</li>
+              <li>One wrong tap ends the game. Best keeps the highest round you reached.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> All four pads look the same, so
+              remember positions (top-left, top-right, bottom-left, bottom-right) instead of colours.</p>
+            <a href="game8.html" class="btn-gold text-decoration-none d-inline-block">Play Simon Says →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 order-md-2">
+            <!-- Add your image: put the file at images/game9.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🔢</span>
+              <img src="images/game9.jpg" alt="2048 game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 4 OF 7</small>
+            <h4 class="gold-text">🔢 2048</h4>
+            <p class="how-to" style="text-align:left;">Slide numbered tiles around a 4 × 4 board. Matching tiles merge
+              into one bigger tile.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Use the Arrow Keys, or swipe on a phone, to slide every tile in one direction.</li>
+              <li>Two tiles with the same number merge into one, and your score goes up by the new number.</li>
+              <li>A new 2 or 4 appears after every move that changes the board.</li>
+              <li>Keep merging to build the 2048 tile.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Keep your biggest tile in one corner
+              and avoid pressing the opposite direction.</p>
+            <a href="game9.html" class="btn-gold text-decoration-none d-inline-block">Play 2048 →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game10.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🏓</span>
+              <img src="images/game10.jpg" alt="Pong game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 5 OF 7</small>
+            <h4 class="gold-text">🏓 Pong</h4>
+            <p class="how-to" style="text-align:left;">The classic paddle duel against the CPU. Keep the ball in play
+              and make the CPU miss.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press Start. The ball launches in a random direction.</li>
+              <li>Move your mouse or finger up and down over the board to control your paddle on the left.</li>
+              <li>If the ball gets past the CPU paddle, you score. If it gets past yours, the CPU scores.</li>
+              <li>The ball gets 5% faster horizontally every time it hits a paddle.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> The CPU paddle never speeds up but the
+              ball does, so long rallies work in your favour.</p>
+            <a href="game10.html" class="btn-gold text-decoration-none d-inline-block">Play Pong →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 order-md-2">
+            <!-- Add your image: put the file at images/game11.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🧱</span>
+              <img src="images/game11.jpg" alt="Breakout game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 6 OF 7</small>
+            <h4 class="gold-text">🧱 Breakout</h4>
+            <p class="how-to" style="text-align:left;">Bounce a golden orb off your paddle to smash all 40 bricks. You
+              have 3 lives.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press Start Game and move the paddle with the mouse, your finger, the Arrow Keys or A and D.</li>
+              <li>Every brick the orb hits breaks and scores 10 points.</li>
+              <li>If the orb falls past your paddle, you lose a life.</li>
+              <li>Clear every brick to win.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Hit the orb with the edge of the paddle
+              to change its angle and reach the corners.</p>
+            <a href="game11.html" class="btn-gold text-decoration-none d-inline-block">Play Breakout →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game12.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🔤</span>
+              <img src="images/game12.jpg" alt="Hangman game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 7 OF 7</small>
+            <h4 class="gold-text">🔤 Hangman</h4>
+            <p class="how-to" style="text-align:left;">Guess the hidden gaming word one letter at a time. You can afford
+              6 wrong guesses.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press Start Game to get a word. Each blank is one letter.</li>
+              <li>Click a letter on screen or type it on your keyboard.</li>
+              <li>A correct letter fills in every matching blank. A wrong one costs a life.</li>
+              <li>Reveal the whole word before your 6 lives run out. Your total Wins is saved.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Start with common letters like E and A,
+              then use the pattern of blanks to work out the rest.</p>
+            <a href="game12.html" class="btn-gold text-decoration-none d-inline-block">Play Hangman →</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="how-to text-center">That's the next stretch of the arcade. Snake, Sliding Puzzle, Tic Tac Toe, Memory
+        Match, Reaction Test, Minesweeper and Flappy Orb are waiting in the menu above.</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer class="nm-footer">
-  <div class="container">
-    <div class="row g-4">
-      <div class="col-6 col-md-3">
-        <h5>NM Gaming</h5>
-        <p style="color:var(--text-dim); font-size:.88rem;">A black &amp; gold arcade of ten browser-native classics.</p>
+  <footer class="nm-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-6 col-md-3">
+          <h5>NM Gaming</h5>
+          <p style="color:var(--text-dim); font-size:.88rem;">A black &amp; gold arcade of fifteen browser-native
+            classics.
+          </p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Arcade Row A</h5>
+          <a href="game1.html">Snake</a>
+          <a href="game2.html">Sliding Puzzle</a>
+          <a href="game3.html">Tic Tac Toe</a>
+          <a href="game4.html">Memory Match</a>
+          <a href="game5.html">Rock Paper Scissors</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Arcade Row B</h5>
+          <a href="game6.html">Whack-a-Mole</a>
+          <a href="game7.html">Guess the Number</a>
+          <a href="game8.html">Simon Says</a>
+          <a href="game9.html">2048</a>
+          <a href="game10.html">Pong</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Arcade Row C</h5>
+          <a href="game11.html">Breakout</a>
+          <a href="game12.html">Hangman</a>
+          <a href="game13.html">Reaction Test</a>
+          <a href="game14.html">Minesweeper</a>
+          <a href="game15.html">Flappy Orb</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Home</h5>
+          <a href="home.html">Back to Top</a>
+          <a href="home.html#games">Full Lineup</a>
+        </div>
       </div>
-      <div class="col-6 col-md-3">
-        <h5>Arcade Row A</h5>
-        <a href="game1.html">Snake</a>
-        <a href="game2.html">Sliding Puzzle</a>
-        <a href="game3.html">Tic Tac Toe</a>
-        <a href="game4.html">Memory Match</a>
-        <a href="game5.html">Rock Paper Scissors</a>
-      </div>
-      <div class="col-6 col-md-3">
-        <h5>Arcade Row B</h5>
-        <a href="game6.html">Whack-a-Mole</a>
-        <a href="game7.html">Guess the Number</a>
-        <a href="game8.html">Simon Says</a>
-        <a href="game9.html">2048</a>
-        <a href="game10.html">Pong</a>
-      </div>
-      <div class="col-6 col-md-3">
-        <h5>Home</h5>
-        <a href="home.html">Back to Top</a>
-        <a href="home.html#games">Full Lineup</a>
-      </div>
+      <div class="copyline">© 2026 NM GAMING · All games run locally in your browser</div>
     </div>
-    <div class="copyline">© 2026 NM GAMING · All games run locally in your browser</div>
-  </div>
-</footer>
+  </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="site.js"></script>
-<script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="site.js"></script>
 
-(() => {
-  const youScoreEl = document.getElementById('youScore');
-  const cpuScoreEl = document.getElementById('cpuScore');
-  const roundEl = document.getElementById('round');
-  const resultText = document.getElementById('resultText');
-  const youPick = document.getElementById('youPick');
-  const cpuPick = document.getElementById('cpuPick');
-  const buttons = document.querySelectorAll('.rps-btn');
+  <script>
 
-  const ICON = { rock:'\u270a', paper:'\u270b', scissors:'\u270c\ufe0f' };
-  const BEATS = { rock:'scissors', paper:'rock', scissors:'paper' };
-  let youScore = 0, cpuScore = 0, round = 1;
+    (() => {
+      const youScoreEl = document.getElementById('youScore');
+      const cpuScoreEl = document.getElementById('cpuScore');
+      const roundEl = document.getElementById('round');
+      const resultText = document.getElementById('resultText');
+      const youPick = document.getElementById('youPick');
+      const cpuPick = document.getElementById('cpuPick');
+      const buttons = document.querySelectorAll('.rps-btn');
 
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const choice = btn.dataset.choice;
-      const options = Object.keys(ICON);
-      const cpuChoice = options[Math.floor(Math.random()*options.length)];
-      youPick.textContent = ICON[choice];
-      cpuPick.textContent = ICON[cpuChoice];
+      const ICON = { rock: '\u270a', paper: '\u270b', scissors: '\u270c\ufe0f' };
+      const BEATS = { rock: 'scissors', paper: 'rock', scissors: 'paper' };
+      let youScore = 0, cpuScore = 0, round = 1;
 
-      if (choice === cpuChoice){
-        resultText.textContent = "It's a Draw";
-      } else if (BEATS[choice] === cpuChoice){
-        youScore++;
-        youScoreEl.textContent = youScore;
-        resultText.textContent = 'You Win This Round';
-      } else {
-        cpuScore++;
-        cpuScoreEl.textContent = cpuScore;
-        resultText.textContent = 'CPU Wins This Round';
-      }
-      round++;
-      roundEl.textContent = round;
-    });
-  });
-})();
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const choice = btn.dataset.choice;
+          const options = Object.keys(ICON);
+          const cpuChoice = options[Math.floor(Math.random() * options.length)];
+          youPick.textContent = ICON[choice];
+          cpuPick.textContent = ICON[cpuChoice];
 
-</script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1684242835147633"
-     crossorigin="anonymous"></script>
+          if (choice === cpuChoice) {
+            resultText.textContent = "It's a Draw";
+          } else if (BEATS[choice] === cpuChoice) {
+            youScore++;
+            youScoreEl.textContent = youScore;
+            resultText.textContent = 'You Win This Round';
+          } else {
+            cpuScore++;
+            cpuScoreEl.textContent = cpuScore;
+            resultText.textContent = 'CPU Wins This Round';
+          }
+          round++;
+          roundEl.textContent = round;
+        });
+      });
+    })();
+
+  </script>
+
 </body>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1684242835147633"
+  crossorigin="anonymous"></script>
+
 </html>
