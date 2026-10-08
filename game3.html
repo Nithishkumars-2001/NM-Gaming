@@ -1,172 +1,538 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tic Tac Toe — NM Gaming</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="style.css" rel="stylesheet">
-<meta name="google-adsense-account" content="ca-pub-1684242835147633">
-  <script src="https://quge5.com/88/tag.min.js" data-zone="255795" async data-cfasync="false"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic Tac Toe — NM Gaming</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+
+    <meta name="google-adsense-account" content="ca-pub-1684242835147633">
+
 </head>
+
 <body>
 
-<nav class="navbar navbar-expand-lg nm-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="home.html">NM <span>GAMING</span></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nmNav" aria-controls="nmNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="nmNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="game1.html">Snake</a></li>
-        <li class="nav-item"><a class="nav-link" href="game2.html">Sliding Puzzle</a></li>
-        <li class="nav-item"><a class="nav-link" href="game3.html">Tic Tac Toe</a></li>
-        <li class="nav-item"><a class="nav-link" href="game4.html">Memory Match</a></li>
-        <li class="nav-item"><a class="nav-link" href="game5.html">Rock Paper Scissors</a></li>
-        <li class="nav-item"><a class="nav-link" href="game6.html">Whack-a-Mole</a></li>
-        <li class="nav-item"><a class="nav-link" href="game7.html">Guess the Number</a></li>
-        <li class="nav-item"><a class="nav-link" href="game8.html">Simon Says</a></li>
-        <li class="nav-item"><a class="nav-link" href="game9.html">2048</a></li>
-        <li class="nav-item"><a class="nav-link" href="game10.html">Pong</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<header class="game-hero">
-  <div class="container">
-    <div class="breadcrumb-gold"><a href="home.html">Home</a> / Tic Tac Toe</div>
-    <h1 class="gold-text">✕⭕ Tic Tac Toe</h1>
-    <p style="color:var(--text-dim);">Two-player X's and O's, passed on one screen. First to line up three wins the round.</p>
-  </div>
-</header>
-
-<section class="py-5">
-  <div class="container">
-    <div class="game-panel mx-auto" style="max-width:560px;">
-      <div class="game-hud">
-        <div class="hud-chip"><small>Turn</small><span id="turn">X</span></div>
-        <div class="hud-chip"><small>X Wins</small><span id="xWins">0</span></div>
-        <div class="hud-chip"><small>O Wins</small><span id="oWins">0</span></div>
-      </div>
-      <div class="game-stage">
-        <div id="ticGrid" class="grid-3"></div>
-      </div>
-      <div class="game-controls">
-        <button id="resetBtn" class="btn-gold">New Round</button>
-      </div>
-      <p class="how-to">Take turns tapping an empty square. Line up three of your marks — across, down, or diagonally — to win.</p>
-    </div>
-  </div>
-</section>
-
-<footer class="nm-footer">
-  <div class="container">
-    <div class="row g-4">
-      <div class="col-6 col-md-3">
-        <h5>NM Gaming</h5>
-        <p style="color:var(--text-dim); font-size:.88rem;">A black &amp; gold arcade of ten browser-native classics.</p>
-      </div>
-      <div class="col-6 col-md-3">
-        <h5>Arcade Row A</h5>
-        <a href="game1.html">Snake</a>
-        <a href="game2.html">Sliding Puzzle</a>
-        <a href="game3.html">Tic Tac Toe</a>
-        <a href="game4.html">Memory Match</a>
-        <a href="game5.html">Rock Paper Scissors</a>
-      </div>
-      <div class="col-6 col-md-3">
-        <h5>Arcade Row B</h5>
-        <a href="game6.html">Whack-a-Mole</a>
-        <a href="game7.html">Guess the Number</a>
-        <a href="game8.html">Simon Says</a>
-        <a href="game9.html">2048</a>
-        <a href="game10.html">Pong</a>
-      </div>
-      <div class="col-6 col-md-3">
-        <h5>Home</h5>
-        <a href="home.html">Back to Top</a>
-        <a href="home.html#games">Full Lineup</a>
+  <nav class="navbar navbar-expand-lg nm-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="home.html">NM <span>GAMING</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nmNav"
+        aria-controls="nmNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nmNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="game1.html">Snake</a></li>
+          <li class="nav-item"><a class="nav-link" href="game2.html">Sliding Puzzle</a></li>
+          <li class="nav-item"><a class="nav-link" href="game3.html">Tic Tac Toe</a></li>
+          <li class="nav-item"><a class="nav-link" href="game4.html">Memory Match</a></li>
+          <li class="nav-item"><a class="nav-link" href="game5.html">Rock Paper Scissors</a></li>
+          <li class="nav-item"><a class="nav-link" href="game6.html">Whack-a-Mole</a></li>
+          <li class="nav-item"><a class="nav-link" href="game7.html">Guess the Number</a></li>
+          <li class="nav-item"><a class="nav-link" href="game8.html">Simon Says</a></li>
+          <li class="nav-item"><a class="nav-link" href="game9.html">2048</a></li>
+          <li class="nav-item"><a class="nav-link" href="game10.html">Pong</a></li>
+          <li class="nav-item"><a class="nav-link" href="game11.html">Breakout</a></li>
+          <li class="nav-item"><a class="nav-link" href="game12.html">Hangman</a></li>
+          <li class="nav-item"><a class="nav-link" href="game13.html">Reaction Test</a></li>
+          <li class="nav-item"><a class="nav-link" href="game14.html">Minesweeper</a></li>
+          <li class="nav-item"><a class="nav-link" href="game15.html">Flappy Orb</a></li>
+        </ul>
       </div>
     </div>
-    <div class="copyline">© 2026 NM GAMING · All games run locally in your browser</div>
-  </div>
-</footer>
+  </nav>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="site.js"></script>
-<script>
+  <header class="game-hero">
+    <div class="container">
+      <div class="breadcrumb-gold"><a href="home.html">Home</a> / Tic Tac Toe</div>
+      <h1 class="gold-text">✕⭕ Tic Tac Toe</h1>
+      <p style="color:var(--text-dim);">Two-player X's and O's, passed on one screen. First to line up three wins the
+        round.</p>
+    </div>
+  </header>
 
-(() => {
-  const grid = document.getElementById('ticGrid');
-  const turnEl = document.getElementById('turn');
-  const xWinsEl = document.getElementById('xWins');
-  const oWinsEl = document.getElementById('oWins');
-  const resetBtn = document.getElementById('resetBtn');
+  <section class="py-5">
+    <div class="container">
+      <div class="game-panel mx-auto" style="max-width:560px;">
+        <div class="game-hud">
+          <div class="hud-chip"><small>Turn</small><span id="turn">X</span></div>
+          <div class="hud-chip"><small>X Wins</small><span id="xWins">0</span></div>
+          <div class="hud-chip"><small>O Wins</small><span id="oWins">0</span></div>
+        </div>
+        <div class="game-stage">
+          <div id="ticGrid" class="grid-3"></div>
+        </div>
+        <div class="game-controls">
+          <button id="resetBtn" class="btn-gold">New Round</button>
+        </div>
+        <p class="how-to">Take turns tapping an empty square. Line up three of your marks — across, down, or diagonally
+          — to win.</p>
+      </div>
+    </div>
+  </section>
 
-  let board, current, active;
-  let xWins = 0, oWins = 0;
+  <!-- ===== HOW TO PLAY GUIDE (7 sections) ===== -->
+  <section class="pb-5" id="how-to-play">
+    <div class="container" style="max-width:860px;">
+      <h2 class="gold-text mb-2">How to Play Tic Tac Toe</h2>
+      <p style="color:var(--text-dim);">Tic Tac Toe is a two-player game played on one screen. Players take turns
+        placing X and O on a 3 × 3 grid. This guide covers the rules, the scoreboard and how to win.</p>
 
-  const LINES = [
-    [0,1,2],[3,4,5],[6,7,8],
-    [0,3,6],[1,4,7],[2,5,8],
-    [0,4,8],[2,4,6]
-  ];
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">1. The goal</h4>
+        <p class="how-to" style="text-align:left;">Be the first player to get three of your marks in a straight line. If
+          nobody manages it and the grid fills up, the round is a draw.</p>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">2. Getting started</h4>
+        <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+          <li>Two players sit at the same screen or phone. There is no computer opponent.</li>
+          <li><strong>X always goes first.</strong> The Turn chip at the top shows whose turn it is.</li>
+          <li>Tap an empty square to place your mark.</li>
+          <li>The turn passes automatically to the other player.</li>
+          <li>Keep going until someone wins or the grid is full.</li>
+        </ol>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">3. Controls</h4>
+        <div class="row g-3 how-to" style="text-align:left;">
+          <div class="col-md-4"><strong>Mouse or touch</strong><br>Click or tap an empty square to place your mark.
+            Squares that are already taken ignore taps.</div>
+          <div class="col-md-4"><strong>Turn chip</strong><br>Shows X or O while the round is on, so you always know who
+            plays next.</div>
+          <div class="col-md-4"><strong>New Round</strong><br>Clears the grid and starts a fresh round. Win counts are
+            kept.</div>
+        </div>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">4. How a round ends</h4>
+        <ul class="how-to" style="text-align:left;padding-left:1.2rem;">
+          <li><strong>A win.</strong> Three matching marks in a row, a column or a diagonal. There are eight possible
+            lines in total.</li>
+          <li><strong>A draw.</strong> All nine squares are filled and nobody has a line. The Turn chip shows
+            <strong>Draw</strong>.</li>
+          <li><strong>After the round.</strong> The grid locks. Press <strong>New Round</strong> to play again.</li>
+        </ul>
+        <p class="how-to" style="text-align:left;">When X or O wins, the Turn chip shows who won, for example <strong>X
+            Wins!</strong>.</p>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">5. The scoreboard</h4>
+        <p class="how-to" style="text-align:left;">The game keeps count of wins for each player while the page stays
+          open.</p>
+        <div style="overflow-x:auto;">
+          <table class="how-to" style="width:100%;text-align:center;border-collapse:collapse;">
+            <thead>
+              <tr style="color:var(--gold-bright);">
+                <th>Result</th>
+                <th>Turn chip shows</th>
+                <th>Scoreboard</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>X gets three in a row</td>
+                <td>X Wins!</td>
+                <td>X Wins goes up by 1</td>
+              </tr>
+              <tr>
+                <td>O gets three in a row</td>
+                <td>O Wins!</td>
+                <td>O Wins goes up by 1</td>
+              </tr>
+              <tr>
+                <td>Grid full, no line</td>
+                <td>Draw</td>
+                <td>No change</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="how-to mt-3" style="text-align:left;">The scoreboard is not saved. If you refresh or close the page,
+          both counts go back to 0.</p>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">6. Playing like a pro</h4>
+        <ul class="how-to" style="text-align:left;padding-left:1.2rem;">
+          <li><strong>Take the centre.</strong> The middle square is part of four different lines.</li>
+          <li><strong>Corners are next best.</strong> They give you more ways to make a line than edge squares.</li>
+          <li><strong>Always block.</strong> If the other player has two in a row, fill the third square right away.
+          </li>
+          <li><strong>Make a fork.</strong> Create two threats at once. The other player can only block one.</li>
+          <li><strong>Watch the diagonals.</strong> They are easy to miss when you are focused on rows.</li>
+          <li><strong>Expect draws.</strong> When both players play well, almost every round ends in a draw.</li>
+        </ul>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">7. Common questions</h4>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Who goes first in the next round?</summary>X always
+          starts, even if O won the last round.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Can I play against the computer?</summary>No. This
+          version is for two players sharing one screen.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Are the win counts saved?</summary>No. They only
+          last until you refresh or leave the page.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Can I undo a move?</summary>No. Once a mark is
+          placed it stays until the round ends.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Why can't I tap a square?</summary>Either the square
+          is already taken or the round has ended. Press New Round to start again.
+        </details>
+      </div>
+    </div>
+  </section>
 
-  function init(){
-    board = Array(9).fill('');
-    current = 'X';
-    active = true;
-    turnEl.textContent = current;
-    render();
-  }
 
-  function render(){
-    grid.innerHTML = '';
-    board.forEach((val, idx) => {
-      const cell = document.createElement('div');
-      cell.className = 'grid-cell' + (val ? ' taken' : '');
-      cell.textContent = val;
-      cell.addEventListener('click', () => play(idx));
-      grid.appendChild(cell);
-    });
-  }
 
-  function checkWinner(){
-    for (const [a,b,c] of LINES){
-      if (board[a] && board[a] === board[b] && board[b] === board[c]) return board[a];
-    }
-    if (board.every(c => c !== '')) return 'draw';
-    return null;
-  }
+  <!-- ===== NEXT GAMES JOURNEY (7 sections) ===== -->
+  <section class="pb-5" id="next-games">
+    <div class="container" style="max-width:860px;">
+      <h2 class="gold-text mb-2">Your Arcade Journey: What to Play After Tic Tac Toe</h2>
+      <p style="color:var(--text-dim);">Finished a few rounds of Tic Tac Toe? The NM Gaming arcade has more to try.
+        Below are the
+        next seven games in the lineup, each with a quick guide on how to play so you can jump straight in.</p>
 
-  function play(idx){
-    if (!active || board[idx]) return;
-    board[idx] = current;
-    const result = checkWinner();
-    render();
-    if (result){
-      active = false;
-      if (result === 'draw'){
-        turnEl.textContent = 'Draw';
-      } else {
-        turnEl.textContent = result + ' Wins!';
-        if (result === 'X'){ xWins++; xWinsEl.textContent = xWins; }
-        else { oWins++; oWinsEl.textContent = oWins; }
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game4.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🃏</span>
+              <img src="images/game4.jpg" alt="Memory Match game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 1 OF 7</small>
+            <h4 class="gold-text">🃏 Memory Match</h4>
+            <p class="how-to" style="text-align:left;">A 4 × 4 board hides 8 pairs of symbols. Flip two cards at a time
+              and find every pair.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Tap a card to flip it and see the symbol.</li>
+              <li>Tap a second card. If the two match, they stay face up.</li>
+              <li>If they don't match, they flip back after a moment, so remember where they were.</li>
+              <li>Clear all 8 pairs in as few moves as you can. Every two flips count as one move.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Scan the board in a fixed order so you
+              can recall positions by row and column.</p>
+            <a href="game4.html" class="btn-gold text-decoration-none d-inline-block">Play Memory Match →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 order-md-2">
+            <!-- Add your image: put the file at images/game5.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">✊</span>
+              <img src="images/game5.jpg" alt="Rock Paper Scissors game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 2 OF 7</small>
+            <h4 class="gold-text">✊ Rock Paper Scissors</h4>
+            <p class="how-to" style="text-align:left;">Pick your hand against the computer and see who wins the round.
+              The score keeps counting as long as you play.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Choose Rock, Paper or Scissors.</li>
+              <li>Rock beats Scissors, Scissors beats Paper, Paper beats Rock.</li>
+              <li>If both pick the same, the round is a draw and nobody scores.</li>
+              <li>Scores and the round counter keep running. Refresh the page to reset them.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> The computer picks at random, so no
+              pattern can beat it. Set a target, like first to 5, to make it a mini match.</p>
+            <a href="game5.html" class="btn-gold text-decoration-none d-inline-block">Play Rock Paper Scissors →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game6.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🔨</span>
+              <img src="images/game6.jpg" alt="Whack-a-Mole game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 3 OF 7</small>
+            <h4 class="gold-text">🔨 Whack-a-Mole</h4>
+            <p class="how-to" style="text-align:left;">A 3 × 3 grid of holes and 30 seconds on the clock. Tap the mole
+              each time it pops up.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press Start. A mole appears in one hole at a time.</li>
+              <li>Tap the hole with the mole to score 10 points. Tapping an empty hole costs nothing.</li>
+              <li>The mole moves faster as your score climbs.</li>
+              <li>When the 30 seconds are up, your score is compared with your Best.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Watch the whole grid, not one hole, so
+              you can jump to the next mole as soon as it appears.</p>
+            <a href="game6.html" class="btn-gold text-decoration-none d-inline-block">Play Whack-a-Mole →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 order-md-2">
+            <!-- Add your image: put the file at images/game7.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🎯</span>
+              <img src="images/game7.jpg" alt="Guess the Number game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 4 OF 7</small>
+            <h4 class="gold-text">🎯 Guess the Number</h4>
+            <p class="how-to" style="text-align:left;">A secret number from 1 to 100 is hidden. Use the Higher or Lower
+              hints to find it in the fewest guesses.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Type a number from 1 to 100 and press Guess, or press Enter.</li>
+              <li>You get a hint: Higher or Lower.</li>
+              <li>Use the hint to narrow down the range and guess again.</li>
+              <li>Find the number to win. Fewer attempts means a better Best score.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Always guess the middle of what is
+              left. Starting at 50 finds any number in 7 guesses or fewer.</p>
+            <a href="game7.html" class="btn-gold text-decoration-none d-inline-block">Play Guess the Number →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game8.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🔵</span>
+              <img src="images/game8.jpg" alt="Simon Says game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 5 OF 7</small>
+            <h4 class="gold-text">🔵 Simon Says</h4>
+            <p class="how-to" style="text-align:left;">Four gold pads flash in a growing pattern. Watch, then repeat it
+              from memory.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press Start and watch the pads flash. The Status chip says Watch.</li>
+              <li>When it says Your Turn, tap the pads in the same order.</li>
+              <li>Every correct round adds one more step to the pattern.</li>
+              <li>One wrong tap ends the game. Best keeps the highest round you reached.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> All four pads look the same, so
+              remember positions (top-left, top-right, bottom-left, bottom-right) instead of colours.</p>
+            <a href="game8.html" class="btn-gold text-decoration-none d-inline-block">Play Simon Says →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 order-md-2">
+            <!-- Add your image: put the file at images/game9.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🔢</span>
+              <img src="images/game9.jpg" alt="2048 game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 6 OF 7</small>
+            <h4 class="gold-text">🔢 2048</h4>
+            <p class="how-to" style="text-align:left;">Slide numbered tiles around a 4 × 4 board. Matching tiles merge
+              into one bigger tile.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Use the Arrow Keys, or swipe on a phone, to slide every tile in one direction.</li>
+              <li>Two tiles with the same number merge into one, and your score goes up by the new number.</li>
+              <li>A new 2 or 4 appears after every move that changes the board.</li>
+              <li>Keep merging to build the 2048 tile.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Keep your biggest tile in one corner
+              and avoid pressing the opposite direction.</p>
+            <a href="game9.html" class="btn-gold text-decoration-none d-inline-block">Play 2048 →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game10.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🏓</span>
+              <img src="images/game10.jpg" alt="Pong game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 7 OF 7</small>
+            <h4 class="gold-text">🏓 Pong</h4>
+            <p class="how-to" style="text-align:left;">The classic paddle duel against the CPU. Keep the ball in play
+              and make the CPU miss.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press Start. The ball launches in a random direction.</li>
+              <li>Move your mouse or finger up and down over the board to control your paddle on the left.</li>
+              <li>If the ball gets past the CPU paddle, you score. If it gets past yours, the CPU scores.</li>
+              <li>The ball gets 5% faster horizontally every time it hits a paddle.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> The CPU paddle never speeds up but the
+              ball does, so long rallies work in your favour.</p>
+            <a href="game10.html" class="btn-gold text-decoration-none d-inline-block">Play Pong →</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="how-to text-center">That's the next stretch of the arcade. Snake, Sliding Puzzle, Breakout, Hangman,
+        Reaction Test, Minesweeper and Flappy Orb are waiting in the menu above.</p>
+    </div>
+  </section>
+
+  <footer class="nm-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-6 col-md-3">
+          <h5>NM Gaming</h5>
+          <p style="color:var(--text-dim); font-size:.88rem;">A black &amp; gold arcade of fifteen browser-native
+            classics.</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Arcade Row A</h5>
+          <a href="game1.html">Snake</a>
+          <a href="game2.html">Sliding Puzzle</a>
+          <a href="game3.html">Tic Tac Toe</a>
+          <a href="game4.html">Memory Match</a>
+          <a href="game5.html">Rock Paper Scissors</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Arcade Row B</h5>
+          <a href="game6.html">Whack-a-Mole</a>
+          <a href="game7.html">Guess the Number</a>
+          <a href="game8.html">Simon Says</a>
+          <a href="game9.html">2048</a>
+          <a href="game10.html">Pong</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Arcade Row C</h5>
+          <a href="game11.html">Breakout</a>
+          <a href="game12.html">Hangman</a>
+          <a href="game13.html">Reaction Test</a>
+          <a href="game14.html">Minesweeper</a>
+          <a href="game15.html">Flappy Orb</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Home</h5>
+          <a href="home.html">Back to Top</a>
+          <a href="home.html#games">Full Lineup</a>
+        </div>
+      </div>
+      <div class="copyline">© 2026 NM GAMING · All games run locally in your browser</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="site.js"></script>
+  <script>
+
+    (() => {
+      const grid = document.getElementById('ticGrid');
+      const turnEl = document.getElementById('turn');
+      const xWinsEl = document.getElementById('xWins');
+      const oWinsEl = document.getElementById('oWins');
+      const resetBtn = document.getElementById('resetBtn');
+
+      let board, current, active;
+      let xWins = 0, oWins = 0;
+
+      const LINES = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8],
+        [0, 3, 6], [1, 4, 7], [2, 5, 8],
+        [0, 4, 8], [2, 4, 6]
+      ];
+
+      function init() {
+        board = Array(9).fill('');
+        current = 'X';
+        active = true;
+        turnEl.textContent = current;
+        render();
       }
-      return;
-    }
-    current = current === 'X' ? 'O' : 'X';
-    turnEl.textContent = current;
-  }
 
-  resetBtn.addEventListener('click', init);
-  init();
-})();
+      function render() {
+        grid.innerHTML = '';
+        board.forEach((val, idx) => {
+          const cell = document.createElement('div');
+          cell.className = 'grid-cell' + (val ? ' taken' : '');
+          cell.textContent = val;
+          cell.addEventListener('click', () => play(idx));
+          grid.appendChild(cell);
+        });
+      }
 
-</script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1684242835147633"
-     crossorigin="anonymous"></script>
+      function checkWinner() {
+        for (const [a, b, c] of LINES) {
+          if (board[a] && board[a] === board[b] && board[b] === board[c]) return board[a];
+        }
+        if (board.every(c => c !== '')) return 'draw';
+        return null;
+      }
+
+      function play(idx) {
+        if (!active || board[idx]) return;
+        board[idx] = current;
+        const result = checkWinner();
+        render();
+        if (result) {
+          active = false;
+          if (result === 'draw') {
+            turnEl.textContent = 'Draw';
+          } else {
+            turnEl.textContent = result + ' Wins!';
+            if (result === 'X') { xWins++; xWinsEl.textContent = xWins; }
+            else { oWins++; oWinsEl.textContent = oWins; }
+          }
+          return;
+        }
+        current = current === 'X' ? 'O' : 'X';
+        turnEl.textContent = current;
+      }
+
+      resetBtn.addEventListener('click', init);
+      init();
+    })();
+
+  </script>
 </body>
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1684242835147633"
+  crossorigin="anonymous"></script>
+
 </html>
