@@ -1,184 +1,544 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sliding Puzzle — NM Gaming</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="style.css" rel="stylesheet">
-<meta name="google-adsense-account" content="ca-pub-1684242835147633">
-<script src="https://quge5.com/88/tag.min.js" data-zone="255795" async data-cfasync="false"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sliding Puzzle — NM Gaming</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+
+  <meta name="google-adsense-account" content="ca-pub-1684242835147633">
+
 </head>
+
 <body>
 
-<nav class="navbar navbar-expand-lg nm-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="home.html">NM <span>GAMING</span></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nmNav" aria-controls="nmNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="nmNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="game1.html">Snake</a></li>
-        <li class="nav-item"><a class="nav-link" href="game2.html">Sliding Puzzle</a></li>
-        <li class="nav-item"><a class="nav-link" href="game3.html">Tic Tac Toe</a></li>
-        <li class="nav-item"><a class="nav-link" href="game4.html">Memory Match</a></li>
-        <li class="nav-item"><a class="nav-link" href="game5.html">Rock Paper Scissors</a></li>
-        <li class="nav-item"><a class="nav-link" href="game6.html">Whack-a-Mole</a></li>
-        <li class="nav-item"><a class="nav-link" href="game7.html">Guess the Number</a></li>
-        <li class="nav-item"><a class="nav-link" href="game8.html">Simon Says</a></li>
-        <li class="nav-item"><a class="nav-link" href="game9.html">2048</a></li>
-        <li class="nav-item"><a class="nav-link" href="game10.html">Pong</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<header class="game-hero">
-  <div class="container">
-    <div class="breadcrumb-gold"><a href="home.html">Home</a> / Sliding Puzzle</div>
-    <h1 class="gold-text">🧩 Sliding Puzzle</h1>
-    <p style="color:var(--text-dim);">Slide tiles into the empty slot to arrange numbers 1 through 8 in order.</p>
-  </div>
-</header>
-
-<section class="py-5">
-  <div class="container">
-    <div class="game-panel mx-auto" style="max-width:560px;">
-      <div class="game-hud">
-        <div class="hud-chip"><small>Moves</small><span id="moves">0</span></div>
-        <div class="hud-chip"><small>Best</small><span id="best">–</span></div>
-        <div class="hud-chip"><small>Status</small><span id="status">Shuffling…</span></div>
-      </div>
-      <div class="game-stage">
-        <div id="puzzleGrid" class="grid-3" style="width:min(360px,80vw);"></div>
-      </div>
-      <div class="game-controls">
-        <button id="shuffleBtn" class="btn-gold">Shuffle</button>
-      </div>
-      <p class="how-to">Click any tile adjacent to the empty slot to slide it. Arrange 1–8 in reading order to win.</p>
-    </div>
-  </div>
-</section>
-
-<footer class="nm-footer">
-  <div class="container">
-    <div class="row g-4">
-      <div class="col-6 col-md-3">
-        <h5>NM Gaming</h5>
-        <p style="color:var(--text-dim); font-size:.88rem;">A black &amp; gold arcade of ten browser-native classics.</p>
-      </div>
-      <div class="col-6 col-md-3">
-        <h5>Arcade Row A</h5>
-        <a href="game1.html">Snake</a>
-        <a href="game2.html">Sliding Puzzle</a>
-        <a href="game3.html">Tic Tac Toe</a>
-        <a href="game4.html">Memory Match</a>
-        <a href="game5.html">Rock Paper Scissors</a>
-      </div>
-      <div class="col-6 col-md-3">
-        <h5>Arcade Row B</h5>
-        <a href="game6.html">Whack-a-Mole</a>
-        <a href="game7.html">Guess the Number</a>
-        <a href="game8.html">Simon Says</a>
-        <a href="game9.html">2048</a>
-        <a href="game10.html">Pong</a>
-      </div>
-      <div class="col-6 col-md-3">
-        <h5>Home</h5>
-        <a href="home.html">Back to Top</a>
-        <a href="home.html#games">Full Lineup</a>
+  <nav class="navbar navbar-expand-lg nm-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="home.html">NM <span>GAMING</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nmNav"
+        aria-controls="nmNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nmNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="game1.html">Snake</a></li>
+          <li class="nav-item"><a class="nav-link" href="game2.html">Sliding Puzzle</a></li>
+          <li class="nav-item"><a class="nav-link" href="game3.html">Tic Tac Toe</a></li>
+          <li class="nav-item"><a class="nav-link" href="game4.html">Memory Match</a></li>
+          <li class="nav-item"><a class="nav-link" href="game5.html">Rock Paper Scissors</a></li>
+          <li class="nav-item"><a class="nav-link" href="game6.html">Whack-a-Mole</a></li>
+          <li class="nav-item"><a class="nav-link" href="game7.html">Guess the Number</a></li>
+          <li class="nav-item"><a class="nav-link" href="game8.html">Simon Says</a></li>
+          <li class="nav-item"><a class="nav-link" href="game9.html">2048</a></li>
+          <li class="nav-item"><a class="nav-link" href="game10.html">Pong</a></li>
+          <li class="nav-item"><a class="nav-link" href="game11.html">Breakout</a></li>
+          <li class="nav-item"><a class="nav-link" href="game12.html">Hangman</a></li>
+          <li class="nav-item"><a class="nav-link" href="game13.html">Reaction Test</a></li>
+          <li class="nav-item"><a class="nav-link" href="game14.html">Minesweeper</a></li>
+          <li class="nav-item"><a class="nav-link" href="game15.html">Flappy Orb</a></li>
+        </ul>
       </div>
     </div>
-    <div class="copyline">© 2026 NM GAMING · All games run locally in your browser</div>
-  </div>
-</footer>
+  </nav>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="site.js"></script>
-<script>
+  <header class="game-hero">
+    <div class="container">
+      <div class="breadcrumb-gold"><a href="home.html">Home</a> / Sliding Puzzle</div>
+      <h1 class="gold-text">🧩 Sliding Puzzle</h1>
+      <p style="color:var(--text-dim);">Slide tiles into the empty slot to arrange numbers 1 through 8 in order.</p>
+    </div>
+  </header>
 
-(() => {
-  const grid = document.getElementById('puzzleGrid');
-  const movesEl = document.getElementById('moves');
-  const bestEl = document.getElementById('best');
-  const statusEl = document.getElementById('status');
-  const shuffleBtn = document.getElementById('shuffleBtn');
-  const SIZE = 3;
-  let tiles = [];
-  let moves = 0;
-  let best = localStorage.getItem('nm-puzzle-best');
-  if (best) bestEl.textContent = best;
+  <section class="py-5">
+    <div class="container">
+      <div class="game-panel mx-auto" style="max-width:560px;">
+        <div class="game-hud">
+          <div class="hud-chip"><small>Moves</small><span id="moves">0</span></div>
+          <div class="hud-chip"><small>Best</small><span id="best">–</span></div>
+          <div class="hud-chip"><small>Status</small><span id="status">Shuffling…</span></div>
+        </div>
+        <div class="game-stage">
+          <div id="puzzleGrid" class="grid-3" style="width:min(360px,80vw);"></div>
+        </div>
+        <div class="game-controls">
+          <button id="shuffleBtn" class="btn-gold">Shuffle</button>
+        </div>
+        <p class="how-to">Click any tile adjacent to the empty slot to slide it. Arrange 1–8 in reading order to win.
+        </p>
+      </div>
+    </div>
+  </section>
 
-  function solved(arr){
-    for (let i=0;i<arr.length-1;i++){ if (arr[i] !== i+1) return false; }
-    return arr[arr.length-1] === 0;
-  }
+  <!-- ===== HOW TO PLAY GUIDE (7 sections) ===== -->
+  <section class="pb-5" id="how-to-play">
+    <div class="container" style="max-width:860px;">
+      <h2 class="gold-text mb-2">How to Play Sliding Puzzle</h2>
+      <p style="color:var(--text-dim);">Sliding Puzzle is a classic tile game on a 3 × 3 board. You slide numbered tiles
+        around the one empty slot until they are back in order. This guide covers everything you need to know.</p>
 
-  function isSolvable(arr){
-    let inversions = 0;
-    const flat = arr.filter(n => n !== 0);
-    for (let i=0;i<flat.length;i++){
-      for (let j=i+1;j<flat.length;j++){
-        if (flat[i] > flat[j]) inversions++;
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">1. The goal</h4>
+        <p class="how-to" style="text-align:left;">Put the tiles 1 to 8 in reading order: 1, 2, 3 on the top row, 4, 5,
+          6 in the middle and 7, 8 on the bottom, with the empty slot in the bottom-right corner. Try to do it in as few
+          moves as possible.</p>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">2. Getting started</h4>
+        <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+          <li>When the page loads, the board is already shuffled and the status chip shows <strong>In Progress</strong>.
+          </li>
+          <li>Look for the empty slot. Only tiles that touch it can move.</li>
+          <li>Click or tap a tile next to the gap. It slides into the empty slot, and the gap moves to where the tile
+            was.</li>
+          <li>Keep sliding tiles, one at a time, until all eight are in order.</li>
+          <li>Press <strong>Shuffle</strong> when you want a new puzzle.</li>
+        </ol>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">3. Controls</h4>
+        <div class="row g-3 how-to" style="text-align:left;">
+          <div class="col-md-4"><strong>Mouse or touch</strong><br>Click or tap the tile you want to slide. There are no
+            keyboard controls.</div>
+          <div class="col-md-4"><strong>Next to the gap only</strong><br>A tile moves only if it shares a side with the
+            empty slot. Tiles that touch only at a corner do not count.</div>
+          <div class="col-md-4"><strong>Shuffle</strong><br>Scrambles the board and sets Moves back to 0. Use it to
+            start over at any time.</div>
+        </div>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">4. How the game ends</h4>
+        <p class="how-to" style="text-align:left;">The puzzle is solved when tiles 1 to 8 are in order and the empty
+          slot is last. The status chip changes to <strong>Solved! 🎉</strong>. There is no timer and no way to lose, so
+          you can take as long as you like.</p>
+        <p class="how-to" style="text-align:left;">Every shuffled board can be solved. The game only creates boards that
+          have a solution, so if you feel stuck, the puzzle is still solvable.</p>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">5. Moves, best score and the status chip</h4>
+        <p class="how-to" style="text-align:left;">Each tile you slide counts as one move. Your Best score is the lowest
+          number of moves you have used to solve a puzzle, and it is saved in this browser.</p>
+        <div style="overflow-x:auto;">
+          <table class="how-to" style="width:100%;text-align:center;border-collapse:collapse;">
+            <thead>
+              <tr style="color:var(--gold-bright);">
+                <th>Chip</th>
+                <th>What it shows</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Moves</td>
+                <td>How many tiles you have slid on the current puzzle</td>
+              </tr>
+              <tr>
+                <td>Best</td>
+                <td>Your lowest move count for a solved puzzle (– if you have not solved one yet)</td>
+              </tr>
+              <tr>
+                <td>Status</td>
+                <td>In Progress while you play, Solved! 🎉 when the tiles are in order</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">6. Solving like a pro</h4>
+        <ul class="how-to" style="text-align:left;padding-left:1.2rem;">
+          <li><strong>Work row by row.</strong> Solve the top row (1, 2, 3) first, then do not touch it again.</li>
+          <li><strong>Then the middle row.</strong> Once the top row is done, you are left with a smaller 2 × 3 puzzle.
+          </li>
+          <li><strong>Think about the gap.</strong> You are not really moving tiles, you are moving the empty slot
+            around them.</li>
+          <li><strong>Avoid random sliding.</strong> Moving tiles back and forth only adds to your move count.</li>
+          <li><strong>Plan before you click.</strong> There is no timer, so look two or three moves ahead.</li>
+          <li><strong>Don't break finished tiles.</strong> If you must move one, plan how to put it back.</li>
+        </ul>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">7. Common questions</h4>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Why won't a tile move?</summary>Only tiles that
+          share a side with the empty slot can slide. Click a tile that is directly above, below, left or right of the
+          gap.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Where is my best score saved?</summary>In your
+          browser's local storage. It stays after you close the page, but it is lost if you clear site data or use
+          another browser or device.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Does Shuffle cost me anything?</summary>It resets
+          Moves to 0 and gives you a new puzzle. Your Best score stays, but an unfinished puzzle does not count.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Is there an undo button?</summary>No. To go back,
+          slide the tile in the opposite direction.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Can I get a puzzle that is impossible?</summary>No.
+          The game checks every shuffle and only gives you boards that can be solved.
+        </details>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ===== NEXT GAMES JOURNEY (7 sections) ===== -->
+  <section class="pb-5" id="next-games">
+    <div class="container" style="max-width:860px;">
+      <h2 class="gold-text mb-2">Your Arcade Journey: What to Play After Sliding Puzzle</h2>
+      <p style="color:var(--text-dim);">Finished a few rounds of Sliding Puzzle? The NM Gaming arcade has more to try.
+        Below are the
+        next seven games in the lineup, each with a quick guide on how to play so you can jump straight in.</p>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game3.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">❌</span>
+              <img src="images/game3.jpg" alt="Tic Tac Toe game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 1 OF 7</small>
+            <h4 class="gold-text">❌ Tic Tac Toe</h4>
+            <p class="how-to" style="text-align:left;">Two players share one screen. Line up three of your marks before
+              the other player does.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>X always goes first. Tap an empty square to place your mark.</li>
+              <li>The turn passes automatically between X and O.</li>
+              <li>Three in a row (across, down or diagonal) wins the round.</li>
+              <li>The scoreboard counts X wins and O wins. Press New Round for a fresh board.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Take the centre or a corner first, and
+              always check what the other player can complete next turn.</p>
+            <a href="game3.html" class="btn-gold text-decoration-none d-inline-block">Play Tic Tac Toe →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 order-md-2">
+            <!-- Add your image: put the file at images/game4.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🃏</span>
+              <img src="images/game4.jpg" alt="Memory Match game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 2 OF 7</small>
+            <h4 class="gold-text">🃏 Memory Match</h4>
+            <p class="how-to" style="text-align:left;">A 4 × 4 board hides 8 pairs of symbols. Flip two cards at a time
+              and find every pair.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Tap a card to flip it and see the symbol.</li>
+              <li>Tap a second card. If the two match, they stay face up.</li>
+              <li>If they don't match, they flip back after a moment, so remember where they were.</li>
+              <li>Clear all 8 pairs in as few moves as you can. Every two flips count as one move.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Scan the board in a fixed order so you
+              can recall positions by row and column.</p>
+            <a href="game4.html" class="btn-gold text-decoration-none d-inline-block">Play Memory Match →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game5.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">✊</span>
+              <img src="images/game5.jpg" alt="Rock Paper Scissors game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 3 OF 7</small>
+            <h4 class="gold-text">✊ Rock Paper Scissors</h4>
+            <p class="how-to" style="text-align:left;">Pick your hand against the computer and see who wins the round.
+              The score keeps counting as long as you play.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Choose Rock, Paper or Scissors.</li>
+              <li>Rock beats Scissors, Scissors beats Paper, Paper beats Rock.</li>
+              <li>If both pick the same, the round is a draw and nobody scores.</li>
+              <li>Scores and the round counter keep running. Refresh the page to reset them.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> The computer picks at random, so no
+              pattern can beat it. Set a target, like first to 5, to make it a mini match.</p>
+            <a href="game5.html" class="btn-gold text-decoration-none d-inline-block">Play Rock Paper Scissors →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 order-md-2">
+            <!-- Add your image: put the file at images/game6.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🔨</span>
+              <img src="images/game6.jpg" alt="Whack-a-Mole game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 4 OF 7</small>
+            <h4 class="gold-text">🔨 Whack-a-Mole</h4>
+            <p class="how-to" style="text-align:left;">A 3 × 3 grid of holes and 30 seconds on the clock. Tap the mole
+              each time it pops up.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press Start. A mole appears in one hole at a time.</li>
+              <li>Tap the hole with the mole to score 10 points. Tapping an empty hole costs nothing.</li>
+              <li>The mole moves faster as your score climbs.</li>
+              <li>When the 30 seconds are up, your score is compared with your Best.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Watch the whole grid, not one hole, so
+              you can jump to the next mole as soon as it appears.</p>
+            <a href="game6.html" class="btn-gold text-decoration-none d-inline-block">Play Whack-a-Mole →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game7.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🎯</span>
+              <img src="images/game7.jpg" alt="Guess the Number game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 5 OF 7</small>
+            <h4 class="gold-text">🎯 Guess the Number</h4>
+            <p class="how-to" style="text-align:left;">A secret number from 1 to 100 is hidden. Use the Higher or Lower
+              hints to find it in the fewest guesses.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Type a number from 1 to 100 and press Guess, or press Enter.</li>
+              <li>You get a hint: Higher or Lower.</li>
+              <li>Use the hint to narrow down the range and guess again.</li>
+              <li>Find the number to win. Fewer attempts means a better Best score.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Always guess the middle of what is
+              left. Starting at 50 finds any number in 7 guesses or fewer.</p>
+            <a href="game7.html" class="btn-gold text-decoration-none d-inline-block">Play Guess the Number →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 order-md-2">
+            <!-- Add your image: put the file at images/game8.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🔵</span>
+              <img src="images/game8.jpg" alt="Simon Says game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 6 OF 7</small>
+            <h4 class="gold-text">🔵 Simon Says</h4>
+            <p class="how-to" style="text-align:left;">Four gold pads flash in a growing pattern. Watch, then repeat it
+              from memory.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press Start and watch the pads flash. The Status chip says Watch.</li>
+              <li>When it says Your Turn, tap the pads in the same order.</li>
+              <li>Every correct round adds one more step to the pattern.</li>
+              <li>One wrong tap ends the game. Best keeps the highest round you reached.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> All four pads look the same, so
+              remember positions (top-left, top-right, bottom-left, bottom-right) instead of colours.</p>
+            <a href="game8.html" class="btn-gold text-decoration-none d-inline-block">Play Simon Says →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game9.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🔢</span>
+              <img src="images/game9.jpg" alt="2048 game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 7 OF 7</small>
+            <h4 class="gold-text">🔢 2048</h4>
+            <p class="how-to" style="text-align:left;">Slide numbered tiles around a 4 × 4 board. Matching tiles merge
+              into one bigger tile.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Use the Arrow Keys, or swipe on a phone, to slide every tile in one direction.</li>
+              <li>Two tiles with the same number merge into one, and your score goes up by the new number.</li>
+              <li>A new 2 or 4 appears after every move that changes the board.</li>
+              <li>Keep merging to build the 2048 tile.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Keep your biggest tile in one corner
+              and avoid pressing the opposite direction.</p>
+            <a href="game9.html" class="btn-gold text-decoration-none d-inline-block">Play 2048 →</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="how-to text-center">That's the next stretch of the arcade. Snake, Pong, Breakout, Hangman, Reaction
+        Test, Minesweeper and Flappy Orb are waiting in the menu above.</p>
+    </div>
+  </section>
+
+  <footer class="nm-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-6 col-md-3">
+          <h5>NM Gaming</h5>
+          <p style="color:var(--text-dim); font-size:.88rem;">A black &amp; gold arcade of fifteen browser-native
+            classics.</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Arcade Row A</h5>
+          <a href="game1.html">Snake</a>
+          <a href="game2.html">Sliding Puzzle</a>
+          <a href="game3.html">Tic Tac Toe</a>
+          <a href="game4.html">Memory Match</a>
+          <a href="game5.html">Rock Paper Scissors</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Arcade Row B</h5>
+          <a href="game6.html">Whack-a-Mole</a>
+          <a href="game7.html">Guess the Number</a>
+          <a href="game8.html">Simon Says</a>
+          <a href="game9.html">2048</a>
+          <a href="game10.html">Pong</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Arcade Row C</h5>
+          <a href="game11.html">Breakout</a>
+          <a href="game12.html">Hangman</a>
+          <a href="game13.html">Reaction Test</a>
+          <a href="game14.html">Minesweeper</a>
+          <a href="game15.html">Flappy Orb</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Home</h5>
+          <a href="home.html">Back to Top</a>
+          <a href="home.html#games">Full Lineup</a>
+        </div>
+      </div>
+      <div class="copyline">© 2026 NM GAMING · All games run locally in your browser</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="site.js"></script>
+  <script>
+
+    (() => {
+      const grid = document.getElementById('puzzleGrid');
+      const movesEl = document.getElementById('moves');
+      const bestEl = document.getElementById('best');
+      const statusEl = document.getElementById('status');
+      const shuffleBtn = document.getElementById('shuffleBtn');
+      const SIZE = 3;
+      let tiles = [];
+      let moves = 0;
+      let best = localStorage.getItem('nm-puzzle-best');
+      if (best) bestEl.textContent = best;
+
+      function solved(arr) {
+        for (let i = 0; i < arr.length - 1; i++) { if (arr[i] !== i + 1) return false; }
+        return arr[arr.length - 1] === 0;
       }
-    }
-    return inversions % 2 === 0;
-  }
 
-  function shuffle(){
-    do {
-      tiles = [1,2,3,4,5,6,7,8,0];
-      for (let i=tiles.length-1;i>0;i--){
-        const j = Math.floor(Math.random()*(i+1));
-        [tiles[i],tiles[j]] = [tiles[j],tiles[i]];
+      function isSolvable(arr) {
+        let inversions = 0;
+        const flat = arr.filter(n => n !== 0);
+        for (let i = 0; i < flat.length; i++) {
+          for (let j = i + 1; j < flat.length; j++) {
+            if (flat[i] > flat[j]) inversions++;
+          }
+        }
+        return inversions % 2 === 0;
       }
-    } while (!isSolvable(tiles) || solved(tiles));
-    moves = 0;
-    movesEl.textContent = moves;
-    statusEl.textContent = 'In Progress';
-    render();
-  }
 
-  function render(){
-    grid.innerHTML = '';
-    tiles.forEach((val, idx) => {
-      const cell = document.createElement('div');
-      cell.className = 'grid-cell' + (val === 0 ? ' taken' : '');
-      cell.style.opacity = val === 0 ? '0' : '1';
-      cell.textContent = val === 0 ? '' : val;
-      cell.dataset.idx = idx;
-      if (val !== 0) cell.addEventListener('click', () => tryMove(idx));
-      grid.appendChild(cell);
-    });
-  }
-
-  function tryMove(idx){
-    const emptyIdx = tiles.indexOf(0);
-    const r1 = Math.floor(idx/SIZE), c1 = idx%SIZE;
-    const r2 = Math.floor(emptyIdx/SIZE), c2 = emptyIdx%SIZE;
-    const adjacent = (Math.abs(r1-r2) + Math.abs(c1-c2)) === 1;
-    if (!adjacent) return;
-    [tiles[idx], tiles[emptyIdx]] = [tiles[emptyIdx], tiles[idx]];
-    moves++;
-    movesEl.textContent = moves;
-    render();
-    if (solved(tiles)){
-      statusEl.textContent = 'Solved! 🎉';
-      if (!best || moves < Number(best)){
-        best = moves;
-        localStorage.setItem('nm-puzzle-best', best);
-        bestEl.textContent = best;
+      function shuffle() {
+        do {
+          tiles = [1, 2, 3, 4, 5, 6, 7, 8, 0];
+          for (let i = tiles.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [tiles[i], tiles[j]] = [tiles[j], tiles[i]];
+          }
+        } while (!isSolvable(tiles) || solved(tiles));
+        moves = 0;
+        movesEl.textContent = moves;
+        statusEl.textContent = 'In Progress';
+        render();
       }
-    }
-  }
 
-  shuffleBtn.addEventListener('click', shuffle);
-  shuffle();
-})();
+      function render() {
+        grid.innerHTML = '';
+        tiles.forEach((val, idx) => {
+          const cell = document.createElement('div');
+          cell.className = 'grid-cell' + (val === 0 ? ' taken' : '');
+          cell.style.opacity = val === 0 ? '0' : '1';
+          cell.textContent = val === 0 ? '' : val;
+          cell.dataset.idx = idx;
+          if (val !== 0) cell.addEventListener('click', () => tryMove(idx));
+          grid.appendChild(cell);
+        });
+      }
 
-</script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1684242835147633"
-     crossorigin="anonymous"></script>
+      function tryMove(idx) {
+        const emptyIdx = tiles.indexOf(0);
+        const r1 = Math.floor(idx / SIZE), c1 = idx % SIZE;
+        const r2 = Math.floor(emptyIdx / SIZE), c2 = emptyIdx % SIZE;
+        const adjacent = (Math.abs(r1 - r2) + Math.abs(c1 - c2)) === 1;
+        if (!adjacent) return;
+        [tiles[idx], tiles[emptyIdx]] = [tiles[emptyIdx], tiles[idx]];
+        moves++;
+        movesEl.textContent = moves;
+        render();
+        if (solved(tiles)) {
+          statusEl.textContent = 'Solved! 🎉';
+          if (!best || moves < Number(best)) {
+            best = moves;
+            localStorage.setItem('nm-puzzle-best', best);
+            bestEl.textContent = best;
+          }
+        }
+      }
+
+      shuffleBtn.addEventListener('click', shuffle);
+      shuffle();
+    })();
+
+  </script>
 </body>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1684242835147633"
+  crossorigin="anonymous"></script>
+
 </html>
