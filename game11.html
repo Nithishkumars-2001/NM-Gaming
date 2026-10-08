@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Breakout — NM Gaming</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+
+    <meta name="google-adsense-account" content="ca-pub-1684242835147633">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg nm-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="home.html">NM <span>GAMING</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nmNav"
+        aria-controls="nmNav" aria-expanded="false" aria-label="Toggle navigation"><span
+          class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="nmNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="game1.html">Snake</a></li>
+          <li class="nav-item"><a class="nav-link" href="game2.html">Sliding Puzzle</a></li>
+          <li class="nav-item"><a class="nav-link" href="game3.html">Tic Tac Toe</a></li>
+          <li class="nav-item"><a class="nav-link" href="game4.html">Memory Match</a></li>
+          <li class="nav-item"><a class="nav-link" href="game5.html">Rock Paper Scissors</a></li>
+          <li class="nav-item"><a class="nav-link" href="game6.html">Whack-a-Mole</a></li>
+          <li class="nav-item"><a class="nav-link" href="game7.html">Guess the Number</a></li>
+          <li class="nav-item"><a class="nav-link" href="game8.html">Simon Says</a></li>
+          <li class="nav-item"><a class="nav-link" href="game9.html">2048</a></li>
+          <li class="nav-item"><a class="nav-link" href="game10.html">Pong</a></li>
+          <li class="nav-item"><a class="nav-link" href="game11.html">Breakout</a></li>
+          <li class="nav-item"><a class="nav-link" href="game12.html">Hangman</a></li>
+          <li class="nav-item"><a class="nav-link" href="game13.html">Reaction Test</a></li>
+          <li class="nav-item"><a class="nav-link" href="game14.html">Minesweeper</a></li>
+          <li class="nav-item"><a class="nav-link" href="game15.html">Flappy Orb</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <header class="game-hero">
+    <div class="container">
+      <div class="breadcrumb-gold"><a href="home.html">Home</a> / Breakout</div>
+      <h1 class="gold-text">🧱 Breakout</h1>
+      <p style="color:var(--text-dim);">Bounce the orb, clear every gold brick, keep it in play.</p>
+    </div>
+  </header>
+  <section class="py-5">
+    <div class="container">
+      <div class="game-panel mx-auto" style="max-width:560px;">
+        <div class="game-hud">
+          <div class="hud-chip"><small>Score</small><span id="score">0</span></div>
+          <div class="hud-chip"><small>Best</small><span id="best">0</span></div>
+          <div class="hud-chip"><small>Lives</small><span id="lives">3</span></div>
+        </div>
+        <div class="game-stage"><canvas id="c" width="400" height="400"
+            style="max-width:100%;touch-action:none"></canvas></div>
+        <div class="game-controls"><button id="startBtn" class="btn-gold">Start Game</button></div>
+        <p class="how-to">Move the mouse, drag on mobile, or use the Arrow Keys / A and D to move the paddle. Hit the
+          ball with the paddle's edge to change its angle.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW TO PLAY GUIDE (7 sections) ===== -->
+  <section class="pb-5" id="how-to-play">
+    <div class="container" style="max-width:860px;">
+      <h2 class="gold-text mb-2">How to Play Breakout</h2>
+      <p style="color:var(--text-dim);">Breakout is a brick-smashing arcade game. You move a paddle to bounce a golden
+        orb into a wall of bricks. This guide covers the controls, scoring and tips for clearing the board.</p>
+
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">1. The goal</h4>
+        <p class="how-to" style="text-align:left;">Break all 40 gold bricks (5 rows of 8) before you lose your three
+          lives. Each brick scores 10 points, so a perfect clear is worth 400.</p>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">2. Getting started</h4>
+        <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+          <li>Press <strong>Start Game</strong>. The orb launches upwards from near the middle of the board.</li>
+          <li>Move your paddle along the bottom of the board to catch the orb.</li>
+          <li>The orb breaks any brick it hits and bounces away. Your score goes up by 10.</li>
+          <li>If the orb falls past your paddle, you lose a life and a new orb is served.</li>
+          <li>Keep going until every brick is gone.</li>
+        </ol>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">3. Controls</h4>
+        <div class="row g-3 how-to" style="text-align:left;">
+          <div class="col-md-4"><strong>Mouse</strong><br>Move the pointer left and right over the board. The paddle
+            follows.</div>
+          <div class="col-md-4"><strong>Touch screen</strong><br>Drag your finger across the board. The page won't
+            scroll while you do.</div>
+          <div class="col-md-4"><strong>Keyboard</strong><br>Arrow Left and Arrow Right, or A and D. Each press moves
+            the paddle one step.</div>
+        </div>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">4. How the game ends</h4>
+        <ul class="how-to" style="text-align:left;padding-left:1.2rem;">
+          <li><strong>You win.</strong> Every brick has been broken. The board shows <strong>YOU WIN</strong>.</li>
+          <li><strong>You lose.</strong> You have used all 3 lives. The board shows <strong>GAME OVER</strong>.</li>
+        </ul>
+        <p class="how-to" style="text-align:left;">In both cases your score is compared with your Best, and the button
+          goes back to <strong>Start Game</strong>. Pressing Restart in the middle of a game does not save your
+          unfinished score.</p>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">5. Scoring and lives</h4>
+        <div style="overflow-x:auto;">
+          <table class="how-to" style="width:100%;text-align:center;border-collapse:collapse;">
+            <thead>
+              <tr style="color:var(--gold-bright);">
+                <th>Chip</th>
+                <th>What it shows</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Score</td>
+                <td>10 points for every brick broken (maximum 400)</td>
+              </tr>
+              <tr>
+                <td>Best</td>
+                <td>Your highest score at the end of a game, saved in this browser</td>
+              </tr>
+              <tr>
+                <td>Lives</td>
+                <td>Starts at 3. Falls by 1 each time the orb drops past the paddle</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="how-to mt-3" style="text-align:left;">The top two rows are a lighter gold than the others, but all
+          bricks are worth the same.</p>
+        <p class="how-to" style="text-align:left;">When you lose a life, the bricks you already broke stay broken and
+          your score is kept. Only the orb is served again.</p>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">6. Playing like a pro</h4>
+        <ul class="how-to" style="text-align:left;padding-left:1.2rem;">
+          <li><strong>Aim with the edges.</strong> Hitting the orb with the left side of the paddle sends it left, and
+            the right side sends it right. The centre sends it more or less straight up.</li>
+          <li><strong>Break a path to the top.</strong> Clearing one side column lets the orb get behind the wall, where
+            it can break many bricks on its own.</li>
+          <li><strong>Keep your eyes on the orb.</strong> Your paddle follows your hand automatically, so watch where
+            the orb is going.</li>
+          <li><strong>Get under it early.</strong> Move the paddle before the orb arrives, not as it arrives.</li>
+          <li><strong>Be ready after a miss.</strong> The new orb starts in the middle of the board, moving sideways and
+            up.</li>
+          <li><strong>Use small keyboard taps.</strong> Tapping Arrow keys gives finer control than holding them.</li>
+        </ul>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">7. Common questions</h4>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Why does the orb go sideways?</summary>Where the orb
+          hits the paddle decides its sideways speed. Hits near the edges give a sharper angle.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Do I start over when I lose a life?</summary>No.
+          Your score and broken bricks stay. Only the orb restarts.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Is there a pause button?</summary>No. Press Restart
+          to start a new game.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Where is my best score saved?</summary>In your
+          browser's local storage. It is lost if you clear site data or switch browser or device.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Can I play on my phone?</summary>Yes. Drag your
+          finger across the board to move the paddle.
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEXT GAMES JOURNEY (7 sections) ===== -->
+  <section class="pb-5" id="next-games">
+    <div class="container" style="max-width:860px;">
+      <h2 class="gold-text mb-2">Your Arcade Journey: What to Play After Breakout</h2>
+      <p style="color:var(--text-dim);">Finished a few rounds of Breakout? The NM Gaming arcade has more to try. Below
+        are the
+        next seven games in the lineup, each with a quick guide on how to play so you can jump straight in. After Flappy
+        Orb, the lineup loops back to Snake.</p>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game12.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🔤</span>
+              <img src="images/game12.jpg" alt="Hangman game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 1 OF 7</small>
+            <h4 class="gold-text">🔤 Hangman</h4>
+            <p class="how-to" style="text-align:left;">Guess the hidden gaming word one letter at a time. You can afford
+              6 wrong guesses.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press Start Game to get a word. Each blank is one letter.</li>
+              <li>Click a letter on screen or type it on your keyboard.</li>
+              <li>A correct letter fills in every matching blank. A wrong one costs a life.</li>
+              <li>Reveal the whole word before your 6 lives run out. Your total Wins is saved.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Start with common letters like E and A,
+              then use the pattern of blanks to work out the rest.</p>
+            <a href="game12.html" class="btn-gold text-decoration-none d-inline-block">Play Hangman →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 order-md-2">
+            <!-- Add your image: put the file at images/game13.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">⚡</span>
+              <img src="images/game13.jpg" alt="Reaction Test game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 2 OF 7</small>
+            <h4 class="gold-text">⚡ Reaction Test</h4>
+            <p class="how-to" style="text-align:left;">Test your reflexes. Tap the box the moment it turns gold.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Click the box or press Space to begin. It says Wait for gold.</li>
+              <li>After a random wait of 1 to 4 seconds, the box turns gold and says CLICK NOW.</li>
+              <li>Tap as fast as you can. Your time in milliseconds is shown.</li>
+              <li>After five rounds you get your average. Tapping too early cancels the attempt.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Rest a finger on the Space bar and
+              react to the colour. Don't try to guess the timing.</p>
+            <a href="game13.html" class="btn-gold text-decoration-none d-inline-block">Play Reaction Test →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game14.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">💣</span>
+              <img src="images/game14.jpg" alt="Minesweeper game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 3 OF 7</small>
+            <h4 class="gold-text">💣 Minesweeper</h4>
+            <p class="how-to" style="text-align:left;">A 9 × 9 board hides 10 mines. Reveal every safe square without
+              hitting one.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press Start Game, then click any square. Your first click is always safe.</li>
+              <li>Numbers show how many mines touch that square.</li>
+              <li>Right-click, or turn on Flag mode on a phone, to mark a mine.</li>
+              <li>Reveal all 71 safe squares to win. Your fastest time is saved as Best.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Start in the open area your first click
+              creates, then use the numbers to find squares that must be mines.</p>
+            <a href="game14.html" class="btn-gold text-decoration-none d-inline-block">Play Minesweeper →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 order-md-2">
+            <!-- Add your image: put the file at images/game15.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🟡</span>
+              <img src="images/game15.jpg" alt="Flappy Orb game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 4 OF 7</small>
+            <h4 class="gold-text">🟡 Flappy Orb</h4>
+            <p class="how-to" style="text-align:left;">Flap a golden orb through the gaps in the pillars. One touch ends
+              the run.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press Start Game, or just tap the board.</li>
+              <li>Press Space or the Up Arrow, click, or tap to flap. Gravity pulls the orb down.</li>
+              <li>Every pillar you pass scores 1 point.</li>
+              <li>Touching a pillar, the floor or the ceiling ends the run.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Use small, steady taps instead of big
+              bursts, and aim for the middle of each gap.</p>
+            <a href="game15.html" class="btn-gold text-decoration-none d-inline-block">Play Flappy Orb →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game1.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🐍</span>
+              <img src="images/game1.jpg" alt="Snake game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 5 OF 7</small>
+            <h4 class="gold-text">🐍 Snake</h4>
+            <p class="how-to" style="text-align:left;">A gold snake on a 20 × 20 board. Eat the glowing orbs to grow
+              without crashing.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press Start Game. The snake moves on its own.</li>
+              <li>Steer with the Arrow Keys or W A S D, or swipe on a phone.</li>
+              <li>Every orb you eat scores 10 points and makes the snake longer. The speed goes up every 50 points.</li>
+              <li>Hitting a wall or your own tail ends the game.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Plan turns a few cells ahead. Tight
+              spirals trap you.</p>
+            <a href="game1.html" class="btn-gold text-decoration-none d-inline-block">Play Snake →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 order-md-2">
+            <!-- Add your image: put the file at images/game2.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🧩</span>
+              <img src="images/game2.jpg" alt="Sliding Puzzle game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 6 OF 7</small>
+            <h4 class="gold-text">🧩 Sliding Puzzle</h4>
+            <p class="how-to" style="text-align:left;">A 3 × 3 board with tiles 1 to 8 and one empty slot. Slide tiles
+              into the gap to put them in order.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>The board starts shuffled. Press Shuffle any time for a fresh scramble.</li>
+              <li>Click a tile that touches the empty slot and it slides into the gap.</li>
+              <li>Arrange tiles 1 to 8 in reading order, left to right and top to bottom.</li>
+              <li>Solve it in fewer moves to set a new best.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Fix the top row first, then the middle
+              row, and leave the last two rows for the end.</p>
+            <a href="game2.html" class="btn-gold text-decoration-none d-inline-block">Play Sliding Puzzle →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game3.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">❌</span>
+              <img src="images/game3.jpg" alt="Tic Tac Toe game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 7 OF 7</small>
+            <h4 class="gold-text">❌ Tic Tac Toe</h4>
+            <p class="how-to" style="text-align:left;">Two players share one screen. Line up three of your marks before
+              the other player does.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>X always goes first. Tap an empty square to place your mark.</li>
+              <li>The turn passes automatically between X and O.</li>
+              <li>Three in a row (across, down or diagonal) wins the round.</li>
+              <li>The scoreboard counts X wins and O wins. Press New Round for a fresh board.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Take the centre or a corner first, and
+              always check what the other player can complete next turn.</p>
+            <a href="game3.html" class="btn-gold text-decoration-none d-inline-block">Play Tic Tac Toe →</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="how-to text-center">That's the next stretch of the arcade. Memory Match, Rock Paper Scissors,
+        Whack-a-Mole, Guess the Number, Simon Says, 2048 and Pong are waiting in the menu above.</p>
+    </div>
+  </section>
+
+  <footer class="nm-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-6 col-md-3">
+          <h5>NM Gaming</h5>
+          <p style="color:var(--text-dim); font-size:.88rem;">A black &amp; gold arcade of fifteen browser-native
+            classics.</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Arcade Row A</h5><a href="game1.html">Snake</a><a href="game2.html">Sliding Puzzle</a><a
+            href="game3.html">Tic Tac Toe</a><a href="game4.html">Memory Match</a><a href="game5.html">Rock Paper
+            Scissors</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Arcade Row B</h5><a href="game6.html">Whack-a-Mole</a><a href="game7.html">Guess the Number</a><a
+            href="game8.html">Simon Says</a><a href="game9.html">2048</a><a href="game10.html">Pong</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Arcade Row C</h5>
+          <a href="game11.html">Breakout</a>
+          <a href="game12.html">Hangman</a>
+          <a href="game13.html">Reaction Test</a>
+          <a href="game14.html">Minesweeper</a>
+          <a href="game15.html">Flappy Orb</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Home</h5><a href="home.html">Back to Top</a><a href="home.html#games">Full Lineup</a>
+        </div>
+      </div>
+      <div class="copyline">© 2026 NM GAMING · All games run locally in your browser</div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="site.js"></script>
+  <script>
+    (() => {
+      const $ = id => document.getElementById(id), c = $('c'), x = c.getContext('2d'), W = 400, H = 400;
+      let px = 160, bx, by, vx, vy, bricks = [], score = 0, lives = 3, run = false, over = '', best = +localStorage.getItem('nm-breakout-best') || 0;
+      $('best').textContent = best;
+      function reset() { px = 160; serve(); score = 0; lives = 3; bricks = []; for (let r = 0; r < 5; r++)for (let i = 0; i < 8; i++)bricks.push({ x: i * 50 + 3, y: r * 22 + 30, a: 1 }); $('score').textContent = 0; $('lives').textContent = 3; over = ''; }
+      function serve() { bx = 200; by = 300; vx = (Math.random() < .5 ? -1 : 1) * 2.5; vy = -3.2; }
+      function end(m) { run = false; over = m; if (score > best) { best = score; localStorage.setItem('nm-breakout-best', best); $('best').textContent = best; } $('startBtn').textContent = 'Start Game'; draw(); }
+      function step() {
+        if (!run) return; bx += vx; by += vy;
+        if (bx < 6 || bx > W - 6) vx = -vx; if (by < 6) vy = -vy;
+        if (vy > 0 && by > H - 26 && by < H - 14 && bx > px && bx < px + 80) { vy = -Math.abs(vy); vx = ((bx - px - 40) / 40) * 4; if (Math.abs(vx) < 1) vx = vx < 0 ? -1 : 1; }
+        for (const b of bricks) if (b.a && bx > b.x && bx < b.x + 44 && by > b.y && by < b.y + 18) { b.a = 0; vy = -vy; score += 10; $('score').textContent = score; break; }
+        if (by > H) { lives--; $('lives').textContent = lives; if (!lives) return end('GAME OVER'); serve(); }
+        if (!bricks.some(b => b.a)) return end('YOU WIN');
+        draw(); requestAnimationFrame(step);
+      }
+      function draw() {
+        x.fillStyle = '#050405'; x.fillRect(0, 0, W, H);
+        bricks.forEach(b => { if (b.a) { x.fillStyle = b.y < 60 ? '#f6dd8a' : '#d4af37'; x.fillRect(b.x, b.y, 44, 18); } });
+        x.fillStyle = '#f6dd8a'; x.fillRect(px, H - 24, 80, 10);
+        x.shadowColor = '#d4af37'; x.shadowBlur = 10; x.beginPath(); x.arc(bx, by, 6, 0, 7); x.fill(); x.shadowBlur = 0;
+        if (over) { x.fillStyle = 'rgba(0,0,0,.7)'; x.fillRect(0, 0, W, H); x.fillStyle = '#f6dd8a'; x.font = '700 26px Cinzel, serif'; x.textAlign = 'center'; x.fillText(over, W / 2, H / 2); }
+      }
+      const mv = cx => { px = Math.max(0, Math.min(W - 80, (cx - c.getBoundingClientRect().left) * (W / c.clientWidth) - 40)); if (!run) draw(); };
+      c.addEventListener('mousemove', e => mv(e.clientX));
+      c.addEventListener('touchmove', e => { e.preventDefault(); mv(e.touches[0].clientX); }, { passive: false });
+      document.addEventListener('keydown', e => { const k = e.key.toLowerCase(); if (['arrowleft', 'a'].includes(k)) px = Math.max(0, px - 24); if (['arrowright', 'd'].includes(k)) px = Math.min(W - 80, px + 24); if (k.startsWith('arrow')) e.preventDefault(); });
+      $('startBtn').onclick = () => { reset(); run = true; $('startBtn').textContent = 'Restart'; requestAnimationFrame(step); };
+      reset(); draw();
+    })();
+  </script>
+</body>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1684242835147633"
+  crossorigin="anonymous"></script>
+
+</html>

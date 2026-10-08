@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hangman — NM Gaming</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+    <meta name="google-adsense-account" content="ca-pub-1684242835147633">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg nm-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="home.html">NM <span>GAMING</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nmNav"
+        aria-controls="nmNav" aria-expanded="false" aria-label="Toggle navigation"><span
+          class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="nmNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="game1.html">Snake</a></li>
+          <li class="nav-item"><a class="nav-link" href="game2.html">Sliding Puzzle</a></li>
+          <li class="nav-item"><a class="nav-link" href="game3.html">Tic Tac Toe</a></li>
+          <li class="nav-item"><a class="nav-link" href="game4.html">Memory Match</a></li>
+          <li class="nav-item"><a class="nav-link" href="game5.html">Rock Paper Scissors</a></li>
+          <li class="nav-item"><a class="nav-link" href="game6.html">Whack-a-Mole</a></li>
+          <li class="nav-item"><a class="nav-link" href="game7.html">Guess the Number</a></li>
+          <li class="nav-item"><a class="nav-link" href="game8.html">Simon Says</a></li>
+          <li class="nav-item"><a class="nav-link" href="game9.html">2048</a></li>
+          <li class="nav-item"><a class="nav-link" href="game10.html">Pong</a></li>
+          <li class="nav-item"><a class="nav-link" href="game11.html">Breakout</a></li>
+          <li class="nav-item"><a class="nav-link" href="game12.html">Hangman</a></li>
+          <li class="nav-item"><a class="nav-link" href="game13.html">Reaction Test</a></li>
+          <li class="nav-item"><a class="nav-link" href="game14.html">Minesweeper</a></li>
+          <li class="nav-item"><a class="nav-link" href="game15.html">Flappy Orb</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <header class="game-hero">
+    <div class="container">
+      <div class="breadcrumb-gold"><a href="home.html">Home</a> / Hangman</div>
+      <h1 class="gold-text">🔤 Hangman</h1>
+      <p style="color:var(--text-dim);">Guess the hidden word before you run out of lives.</p>
+    </div>
+  </header>
+  <section class="py-5">
+    <div class="container">
+      <div class="game-panel mx-auto" style="max-width:560px;">
+        <div class="game-hud">
+          <div class="hud-chip"><small>Wins</small><span id="wins">0</span></div>
+          <div class="hud-chip"><small>Lives</small><span id="lives">6</span></div>
+        </div>
+        <div class="game-stage">
+          <div style="text-align:center;padding:1rem">
+            <div id="word" class="gold-text" style="font-size:2rem;letter-spacing:.15em;margin-bottom:1rem">_ _ _</div>
+            <div id="msg" style="color:var(--text-dim);margin-bottom:1rem"></div>
+            <div id="keys"></div>
+          </div>
+        </div>
+        <div class="game-controls"><button id="startBtn" class="btn-gold">Start Game</button></div>
+        <p class="how-to">Click the letters or type on your keyboard. Six wrong guesses ends the round. All words are
+          gaming terms.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW TO PLAY GUIDE (7 sections) ===== -->
+  <section class="pb-5" id="how-to-play">
+    <div class="container" style="max-width:860px;">
+      <h2 class="gold-text mb-2">How to Play Hangman</h2>
+      <p style="color:var(--text-dim);">Hangman is a word-guessing game. A hidden gaming word is shown as blanks, and
+        you guess letters one at a time. This guide covers the rules and how to win more words.</p>
+
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">1. The goal</h4>
+        <p class="how-to" style="text-align:left;">Reveal the whole hidden word before you make 6 wrong guesses. Each
+          word you finish adds one to your Wins.</p>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">2. Getting started</h4>
+        <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+          <li>Press <strong>Start Game</strong>. A random word is chosen and shown as blanks, one for each letter.</li>
+          <li>Pick a letter by clicking it on screen, or by pressing it on your keyboard.</li>
+          <li>If the letter is in the word, it appears in every place it belongs.</li>
+          <li>If it is not, you lose one life. The Lives chip counts down from 6.</li>
+          <li>Keep guessing until you reveal the word, or run out of lives.</li>
+        </ol>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">3. Controls</h4>
+        <div class="row g-3 how-to" style="text-align:left;">
+          <div class="col-md-4"><strong>On-screen letters</strong><br>Click or tap any letter from A to Z. Used letters
+            turn off so you can't pick them twice.</div>
+          <div class="col-md-4"><strong>Keyboard</strong><br>Press any letter key on your keyboard to guess it.</div>
+          <div class="col-md-4"><strong>Start Game / New Word</strong><br>Picks a new word and resets your lives to 6.
+          </div>
+        </div>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">4. How a round ends</h4>
+        <ul class="how-to" style="text-align:left;padding-left:1.2rem;">
+          <li><strong>You win.</strong> The last blank is filled. The message says <strong>You got it!</strong> and your
+            Wins goes up by 1.</li>
+          <li><strong>You lose.</strong> You make 6 wrong guesses. The message says <strong>Out of lives</strong> and
+            shows the word.</li>
+        </ul>
+        <p class="how-to" style="text-align:left;">After a round ends, the letters lock. Press <strong>New Word</strong>
+          to play again.</p>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">5. Lives, wins and the words</h4>
+        <div style="overflow-x:auto;">
+          <table class="how-to" style="width:100%;text-align:center;border-collapse:collapse;">
+            <thead>
+              <tr style="color:var(--gold-bright);">
+                <th>Chip</th>
+                <th>What it shows</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Wins</td>
+                <td>How many words you have completed in total, saved in this browser</td>
+              </tr>
+              <tr>
+                <td>Lives</td>
+                <td>6 at the start. Each wrong letter takes away 1</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="how-to mt-3" style="text-align:left;">Only wrong guesses cost a life. A correct guess is free. Every
+          word is a gaming term, between 5 and 11 letters long. The same word can come up again, because each word is
+          picked at random.</p>
+        <p class="how-to" style="text-align:left;">Losing a round does not reset your Wins.</p>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">6. Playing like a pro</h4>
+        <ul class="how-to" style="text-align:left;padding-left:1.2rem;">
+          <li><strong>Start with vowels.</strong> E and A appear in many gaming words, so they are a safe first guess.
+          </li>
+          <li><strong>Count the blanks.</strong> The length of the word narrows down what it could be.</li>
+          <li><strong>Think gaming.</strong> The words are about arcades, consoles, levels and scores.</li>
+          <li><strong>Look for endings.</strong> If you reveal an R at the end, try E before it.</li>
+          <li><strong>Use the pattern.</strong> When you have a few letters, picture the whole word before guessing
+            again.</li>
+          <li><strong>Save lives.</strong> Don't guess rare letters like Q or Z until the word forces you to.</li>
+        </ul>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">7. Common questions</h4>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Why can't I click any letters?</summary>Press Start
+          Game first to get a word. Letters also lock after a round ends.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Can I type on my keyboard?</summary>Yes. Press any
+          letter from A to Z to guess it.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Where are my wins saved?</summary>In your browser's
+          local storage. They are lost if you clear site data or switch browser or device.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Will I get the same word twice in a row?</summary>It
+          is possible, because words are picked at random.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Does losing reset my Wins?</summary>No. Wins only
+          ever go up.
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEXT GAMES JOURNEY (7 sections) ===== -->
+  <section class="pb-5" id="next-games">
+    <div class="container" style="max-width:860px;">
+      <h2 class="gold-text mb-2">Your Arcade Journey: What to Play After Hangman</h2>
+      <p style="color:var(--text-dim);">Finished a few rounds of Hangman? The NM Gaming arcade has more to try. Below
+        are the
+        next seven games in the lineup, each with a quick guide on how to play so you can jump straight in. After Flappy
+        Orb, the lineup loops back to Snake.</p>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game13.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">⚡</span>
+              <img src="images/game13.jpg" alt="Reaction Test game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 1 OF 7</small>
+            <h4 class="gold-text">⚡ Reaction Test</h4>
+            <p class="how-to" style="text-align:left;">Test your reflexes. Tap the box the moment it turns gold.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Click the box or press Space to begin. It says Wait for gold.</li>
+              <li>After a random wait of 1 to 4 seconds, the box turns gold and says CLICK NOW.</li>
+              <li>Tap as fast as you can. Your time in milliseconds is shown.</li>
+              <li>After five rounds you get your average. Tapping too early cancels the attempt.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Rest a finger on the Space bar and
+              react to the colour. Don't try to guess the timing.</p>
+            <a href="game13.html" class="btn-gold text-decoration-none d-inline-block">Play Reaction Test →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 order-md-2">
+            <!-- Add your image: put the file at images/game14.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">💣</span>
+              <img src="images/game14.jpg" alt="Minesweeper game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 2 OF 7</small>
+            <h4 class="gold-text">💣 Minesweeper</h4>
+            <p class="how-to" style="text-align:left;">A 9 × 9 board hides 10 mines. Reveal every safe square without
+              hitting one.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press Start Game, then click any square. Your first click is always safe.</li>
+              <li>Numbers show how many mines touch that square.</li>
+              <li>Right-click, or turn on Flag mode on a phone, to mark a mine.</li>
+              <li>Reveal all 71 safe squares to win. Your fastest time is saved as Best.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Start in the open area your first click
+              creates, then use the numbers to find squares that must be mines.</p>
+            <a href="game14.html" class="btn-gold text-decoration-none d-inline-block">Play Minesweeper →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game15.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🟡</span>
+              <img src="images/game15.jpg" alt="Flappy Orb game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 3 OF 7</small>
+            <h4 class="gold-text">🟡 Flappy Orb</h4>
+            <p class="how-to" style="text-align:left;">Flap a golden orb through the gaps in the pillars. One touch ends
+              the run.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press Start Game, or just tap the board.</li>
+              <li>Press Space or the Up Arrow, click, or tap to flap. Gravity pulls the orb down.</li>
+              <li>Every pillar you pass scores 1 point.</li>
+              <li>Touching a pillar, the floor or the ceiling ends the run.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Use small, steady taps instead of big
+              bursts, and aim for the middle of each gap.</p>
+            <a href="game15.html" class="btn-gold text-decoration-none d-inline-block">Play Flappy Orb →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 order-md-2">
+            <!-- Add your image: put the file at images/game1.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🐍</span>
+              <img src="images/game1.jpg" alt="Snake game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 4 OF 7</small>
+            <h4 class="gold-text">🐍 Snake</h4>
+            <p class="how-to" style="text-align:left;">A gold snake on a 20 × 20 board. Eat the glowing orbs to grow
+              without crashing.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press Start Game. The snake moves on its own.</li>
+              <li>Steer with the Arrow Keys or W A S D, or swipe on a phone.</li>
+              <li>Every orb you eat scores 10 points and makes the snake longer. The speed goes up every 50 points.</li>
+              <li>Hitting a wall or your own tail ends the game.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Plan turns a few cells ahead. Tight
+              spirals trap you.</p>
+            <a href="game1.html" class="btn-gold text-decoration-none d-inline-block">Play Snake →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game2.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🧩</span>
+              <img src="images/game2.jpg" alt="Sliding Puzzle game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 5 OF 7</small>
+            <h4 class="gold-text">🧩 Sliding Puzzle</h4>
+            <p class="how-to" style="text-align:left;">A 3 × 3 board with tiles 1 to 8 and one empty slot. Slide tiles
+              into the gap to put them in order.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>The board starts shuffled. Press Shuffle any time for a fresh scramble.</li>
+              <li>Click a tile that touches the empty slot and it slides into the gap.</li>
+              <li>Arrange tiles 1 to 8 in reading order, left to right and top to bottom.</li>
+              <li>Solve it in fewer moves to set a new best.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Fix the top row first, then the middle
+              row, and leave the last two rows for the end.</p>
+            <a href="game2.html" class="btn-gold text-decoration-none d-inline-block">Play Sliding Puzzle →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 order-md-2">
+            <!-- Add your image: put the file at images/game3.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">❌</span>
+              <img src="images/game3.jpg" alt="Tic Tac Toe game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 6 OF 7</small>
+            <h4 class="gold-text">❌ Tic Tac Toe</h4>
+            <p class="how-to" style="text-align:left;">Two players share one screen. Line up three of your marks before
+              the other player does.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>X always goes first. Tap an empty square to place your mark.</li>
+              <li>The turn passes automatically between X and O.</li>
+              <li>Three in a row (across, down or diagonal) wins the round.</li>
+              <li>The scoreboard counts X wins and O wins. Press New Round for a fresh board.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Take the centre or a corner first, and
+              always check what the other player can complete next turn.</p>
+            <a href="game3.html" class="btn-gold text-decoration-none d-inline-block">Play Tic Tac Toe →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game4.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🃏</span>
+              <img src="images/game4.jpg" alt="Memory Match game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 7 OF 7</small>
+            <h4 class="gold-text">🃏 Memory Match</h4>
+            <p class="how-to" style="text-align:left;">A 4 × 4 board hides 8 pairs of symbols. Flip two cards at a time
+              and find every pair.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Tap a card to flip it and see the symbol.</li>
+              <li>Tap a second card. If the two match, they stay face up.</li>
+              <li>If they don't match, they flip back after a moment, so remember where they were.</li>
+              <li>Clear all 8 pairs in as few moves as you can. Every two flips count as one move.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Scan the board in a fixed order so you
+              can recall positions by row and column.</p>
+            <a href="game4.html" class="btn-gold text-decoration-none d-inline-block">Play Memory Match →</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="how-to text-center">That's the next stretch of the arcade. Rock Paper Scissors, Whack-a-Mole, Guess the
+        Number, Simon Says, 2048, Pong and Breakout are waiting in the menu above.</p>
+    </div>
+  </section>
+
+  <footer class="nm-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-6 col-md-3">
+          <h5>NM Gaming</h5>
+          <p style="color:var(--text-dim); font-size:.88rem;">A black &amp; gold arcade of fifteen browser-native
+            classics.</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Arcade Row A</h5><a href="game1.html">Snake</a><a href="game2.html">Sliding Puzzle</a><a
+            href="game3.html">Tic Tac Toe</a><a href="game4.html">Memory Match</a><a href="game5.html">Rock Paper
+            Scissors</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Arcade Row B</h5><a href="game6.html">Whack-a-Mole</a><a href="game7.html">Guess the Number</a><a
+            href="game8.html">Simon Says</a><a href="game9.html">2048</a><a href="game10.html">Pong</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Arcade Row C</h5>
+          <a href="game11.html">Breakout</a>
+          <a href="game12.html">Hangman</a>
+          <a href="game13.html">Reaction Test</a>
+          <a href="game14.html">Minesweeper</a>
+          <a href="game15.html">Flappy Orb</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Home</h5><a href="home.html">Back to Top</a><a href="home.html#games">Full Lineup</a>
+        </div>
+      </div>
+      <div class="copyline">© 2026 NM GAMING · All games run locally in your browser</div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="site.js"></script>
+  <script>
+    (() => {
+      const $ = id => document.getElementById(id);
+      const words = ['GOLDEN', 'ARCADE', 'JOYSTICK', 'PIXEL', 'CONSOLE', 'CHAMPION', 'PUZZLE', 'TROPHY', 'BONUS', 'LEVEL', 'CONTROLLER', 'MULTIPLAYER', 'HIGHSCORE', 'CHECKPOINT', 'SPEEDRUN', 'DUNGEON'];
+      let word, got, wrong, wins = +localStorage.getItem('nm-hangman-wins') || 0, done = true;
+      $('wins').textContent = wins;
+      function render() {
+        $('word').textContent = [...word].map(l => got.has(l) ? l : '_').join(' ');
+        $('lives').textContent = 6 - wrong;
+        document.querySelectorAll('#keys button').forEach(b => b.disabled = done || got.has(b.dataset.k) || b.dataset.x === '1');
+        $('msg').textContent = done ? (wrong >= 6 ? 'Out of lives. The word was ' + word + '.' : 'You got it!') : 'Pick a letter.';
+      }
+      function guess(l) {
+        if (done || got.has(l)) return; got.add(l);
+        if (!word.includes(l)) { wrong++; document.querySelector(`[data-k="${l}"]`).dataset.x = '1'; }
+        if (wrong >= 6) done = true;
+        else if ([...word].every(ch => got.has(ch))) { done = true; wins++; localStorage.setItem('nm-hangman-wins', wins); $('wins').textContent = wins; }
+        render();
+      }
+      function start() {
+        word = words[Math.floor(Math.random() * words.length)]; got = new Set(); wrong = 0; done = false;
+        document.querySelectorAll('#keys button').forEach(b => b.dataset.x = '0'); $('startBtn').textContent = 'New Word'; render();
+      }
+      const keys = $('keys'); for (const l of 'ABCDEFGHIJKLMNOPQRSTUVWXYZ') { const b = document.createElement('button'); b.className = 'btn-gold-outline'; b.style.cssText = 'min-width:38px;padding:.3rem .5rem;margin:3px'; b.textContent = l; b.dataset.k = l; b.dataset.x = '0'; b.onclick = () => guess(l); keys.appendChild(b); }
+      document.addEventListener('keydown', e => { if (/^[a-z]$/i.test(e.key)) guess(e.key.toUpperCase()); });
+      $('startBtn').onclick = start;
+      word = 'GOLDEN'; got = new Set(); wrong = 0; render(); $('msg').textContent = 'Press Start to get a word.';
+    })();
+  </script>
+</body>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1684242835147633"
+  crossorigin="anonymous"></script>
+
+</html>
