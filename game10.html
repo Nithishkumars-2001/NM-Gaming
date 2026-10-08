@@ -1,199 +1,588 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pong — NM Gaming</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="style.css" rel="stylesheet">
-<meta name="google-adsense-account" content="ca-pub-1684242835147633">
-<script src="https://quge5.com/88/tag.min.js" data-zone="255795" async data-cfasync="false"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pong — NM Gaming</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+
+    <meta name="google-adsense-account" content="ca-pub-1684242835147633">
+
 </head>
+
 <body>
 
-<nav class="navbar navbar-expand-lg nm-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="home.html">NM <span>GAMING</span></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nmNav" aria-controls="nmNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="nmNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="game1.html">Snake</a></li>
-        <li class="nav-item"><a class="nav-link" href="game2.html">Sliding Puzzle</a></li>
-        <li class="nav-item"><a class="nav-link" href="game3.html">Tic Tac Toe</a></li>
-        <li class="nav-item"><a class="nav-link" href="game4.html">Memory Match</a></li>
-        <li class="nav-item"><a class="nav-link" href="game5.html">Rock Paper Scissors</a></li>
-        <li class="nav-item"><a class="nav-link" href="game6.html">Whack-a-Mole</a></li>
-        <li class="nav-item"><a class="nav-link" href="game7.html">Guess the Number</a></li>
-        <li class="nav-item"><a class="nav-link" href="game8.html">Simon Says</a></li>
-        <li class="nav-item"><a class="nav-link" href="game9.html">2048</a></li>
-        <li class="nav-item"><a class="nav-link" href="game10.html">Pong</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<header class="game-hero">
-  <div class="container">
-    <div class="breadcrumb-gold"><a href="home.html">Home</a> / Pong</div>
-    <h1 class="gold-text">🏓 Pong</h1>
-    <p style="color:var(--text-dim);">The original arcade duel. Move your paddle to keep the ball in play against the CPU.</p>
-  </div>
-</header>
-
-<section class="py-5">
-  <div class="container">
-    <div class="game-panel mx-auto" style="max-width:560px;">
-      <div class="game-hud">
-        <div class="hud-chip"><small>You</small><span id="youScore">0</span></div>
-        <div class="hud-chip"><small>CPU</small><span id="cpuScore">0</span></div>
-      </div>
-      <div class="game-stage">
-        <canvas id="pongCanvas" width="480" height="320"></canvas>
-      </div>
-      <div class="game-controls">
-        <button id="pongStartBtn" class="btn-gold">Start</button>
-      </div>
-      <p class="how-to">Move your mouse or finger up and down over the board to control your paddle. See how long you can keep winning volleys against the CPU.</p>
-    </div>
-  </div>
-</section>
-
-<footer class="nm-footer">
-  <div class="container">
-    <div class="row g-4">
-      <div class="col-6 col-md-3">
-        <h5>NM Gaming</h5>
-        <p style="color:var(--text-dim); font-size:.88rem;">A black &amp; gold arcade of ten browser-native classics.</p>
-      </div>
-      <div class="col-6 col-md-3">
-        <h5>Arcade Row A</h5>
-        <a href="game1.html">Snake</a>
-        <a href="game2.html">Sliding Puzzle</a>
-        <a href="game3.html">Tic Tac Toe</a>
-        <a href="game4.html">Memory Match</a>
-        <a href="game5.html">Rock Paper Scissors</a>
-      </div>
-      <div class="col-6 col-md-3">
-        <h5>Arcade Row B</h5>
-        <a href="game6.html">Whack-a-Mole</a>
-        <a href="game7.html">Guess the Number</a>
-        <a href="game8.html">Simon Says</a>
-        <a href="game9.html">2048</a>
-        <a href="game10.html">Pong</a>
-      </div>
-      <div class="col-6 col-md-3">
-        <h5>Home</h5>
-        <a href="home.html">Back to Top</a>
-        <a href="home.html#games">Full Lineup</a>
+  <nav class="navbar navbar-expand-lg nm-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="home.html">NM <span>GAMING</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nmNav"
+        aria-controls="nmNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nmNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="game1.html">Snake</a></li>
+          <li class="nav-item"><a class="nav-link" href="game2.html">Sliding Puzzle</a></li>
+          <li class="nav-item"><a class="nav-link" href="game3.html">Tic Tac Toe</a></li>
+          <li class="nav-item"><a class="nav-link" href="game4.html">Memory Match</a></li>
+          <li class="nav-item"><a class="nav-link" href="game5.html">Rock Paper Scissors</a></li>
+          <li class="nav-item"><a class="nav-link" href="game6.html">Whack-a-Mole</a></li>
+          <li class="nav-item"><a class="nav-link" href="game7.html">Guess the Number</a></li>
+          <li class="nav-item"><a class="nav-link" href="game8.html">Simon Says</a></li>
+          <li class="nav-item"><a class="nav-link" href="game9.html">2048</a></li>
+          <li class="nav-item"><a class="nav-link" href="game10.html">Pong</a></li>
+          <li class="nav-item"><a class="nav-link" href="game11.html">Breakout</a></li>
+          <li class="nav-item"><a class="nav-link" href="game12.html">Hangman</a></li>
+          <li class="nav-item"><a class="nav-link" href="game13.html">Reaction Test</a></li>
+          <li class="nav-item"><a class="nav-link" href="game14.html">Minesweeper</a></li>
+          <li class="nav-item"><a class="nav-link" href="game15.html">Flappy Orb</a></li>
+        </ul>
       </div>
     </div>
-    <div class="copyline">© 2026 NM GAMING · All games run locally in your browser</div>
-  </div>
-</footer>
+  </nav>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="site.js"></script>
-<script>
+  <header class="game-hero">
+    <div class="container">
+      <div class="breadcrumb-gold"><a href="home.html">Home</a> / Pong</div>
+      <h1 class="gold-text">🏓 Pong</h1>
+      <p style="color:var(--text-dim);">The original arcade duel. Move your paddle to keep the ball in play against the
+        CPU.</p>
+    </div>
+  </header>
 
-(() => {
-  const canvas = document.getElementById('pongCanvas');
-  const ctx = canvas.getContext('2d');
-  const youScoreEl = document.getElementById('youScore');
-  const cpuScoreEl = document.getElementById('cpuScore');
-  const startBtn = document.getElementById('pongStartBtn');
+  <section class="py-5">
+    <div class="container">
+      <div class="game-panel mx-auto" style="max-width:560px;">
+        <div class="game-hud">
+          <div class="hud-chip"><small>You</small><span id="youScore">0</span></div>
+          <div class="hud-chip"><small>CPU</small><span id="cpuScore">0</span></div>
+        </div>
+        <div class="game-stage">
+          <canvas id="pongCanvas" width="480" height="320"></canvas>
+        </div>
+        <div class="game-controls">
+          <button id="pongStartBtn" class="btn-gold">Start</button>
+        </div>
+        <p class="how-to">Move your mouse or finger up and down over the board to control your paddle. See how long you
+          can keep winning volleys against the CPU.</p>
+      </div>
+    </div>
+  </section>
 
-  const W = canvas.width, H = canvas.height;
-  const paddleW = 10, paddleH = 70;
-  let playerY = H/2 - paddleH/2;
-  let cpuY = H/2 - paddleH/2;
-  let ballX = W/2, ballY = H/2, ballVX = 4, ballVY = 3;
-  let youScore = 0, cpuScore = 0, running = false;
+  <!-- ===== HOW TO PLAY GUIDE (7 sections) ===== -->
+  <section class="pb-5" id="how-to-play">
+    <div class="container" style="max-width:860px;">
+      <h2 class="gold-text mb-2">How to Play Pong</h2>
+      <p style="color:var(--text-dim);">Pong is the original arcade duel. You control the left paddle, the CPU controls
+        the right, and the ball bounces between you. This guide covers the rules and how to win more rallies.</p>
 
-  function draw(){
-    ctx.fillStyle = '#050405';
-    ctx.fillRect(0,0,W,H);
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">1. The goal</h4>
+        <p class="how-to" style="text-align:left;">Score more points than the CPU by letting the ball get past its
+          paddle. There is no winning score, so you decide when you have had enough.</p>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">2. Getting started</h4>
+        <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+          <li>Press <strong>Start</strong>. The ball begins in the centre and launches in a random direction.</li>
+          <li>Move your mouse, or slide your finger, up and down over the board. Your paddle on the left follows.</li>
+          <li>Bounce the ball back each time it comes to your side.</li>
+          <li>If the ball passes the CPU's paddle on the right, <strong>you</strong> score a point.</li>
+          <li>If the ball passes your paddle, the <strong>CPU</strong> scores a point, and the ball restarts from the
+            centre.</li>
+        </ol>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">3. Controls</h4>
+        <div class="row g-3 how-to" style="text-align:left;">
+          <div class="col-md-4"><strong>Mouse</strong><br>Move the pointer up and down over the board. The paddle
+            follows its height.</div>
+          <div class="col-md-4"><strong>Touch screen</strong><br>Drag your finger up and down on the board. The page
+            won't scroll while you do.</div>
+          <div class="col-md-4"><strong>Start</strong><br>Starts the game and sets both scores to 0. It works once per
+            page load.</div>
+        </div>
+        <p class="how-to mt-3" style="text-align:left;">There are no keyboard controls in Pong.</p>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">4. How the game ends</h4>
+        <p class="how-to" style="text-align:left;">Pong keeps running until you leave the page. The ball keeps being
+          served after every point.</p>
+        <p class="how-to" style="text-align:left;">Once the game is running, pressing Start does nothing. To reset the
+          scores and play again from 0, refresh the page.</p>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">5. Scoring and ball speed</h4>
+        <div style="overflow-x:auto;">
+          <table class="how-to" style="width:100%;text-align:center;border-collapse:collapse;">
+            <thead>
+              <tr style="color:var(--gold-bright);">
+                <th>What happens</th>
+                <th>Result</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ball passes the CPU paddle</td>
+                <td>You +1</td>
+              </tr>
+              <tr>
+                <td>Ball passes your paddle</td>
+                <td>CPU +1</td>
+              </tr>
+              <tr>
+                <td>After every point</td>
+                <td>Ball returns to the centre at starting speed</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="how-to mt-3" style="text-align:left;">Every time the ball hits a paddle, yours or the CPU's, it gets
+          5% faster across the board. Here is how the horizontal speed grows during a rally:</p>
+        <div style="overflow-x:auto;">
+          <table class="how-to" style="width:100%;text-align:center;border-collapse:collapse;">
+            <thead>
+              <tr style="color:var(--gold-bright);">
+                <th>Paddle hits in a rally</th>
+                <th>Ball speed (pixels per frame)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>0</td>
+                <td>4.0</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>5.1</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>6.5</td>
+              </tr>
+              <tr>
+                <td>15</td>
+                <td>8.3</td>
+              </tr>
+              <tr>
+                <td>20</td>
+                <td>10.6</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">6. Playing like a pro</h4>
+        <ul class="how-to" style="text-align:left;padding-left:1.2rem;">
+          <li><strong>Move early.</strong> Start moving your paddle as soon as the ball leaves the CPU's side.</li>
+          <li><strong>Stay near the centre.</strong> Between points, return to the middle so you can reach both corners.
+          </li>
+          <li><strong>Long rallies favour you.</strong> The ball speeds up with every hit, but the CPU paddle always
+            moves at the same speed.</li>
+          <li><strong>Watch the ball, not the paddle.</strong> Your paddle follows your hand automatically.</li>
+          <li><strong>Use smooth movements.</strong> Sudden jumps can make you overshoot.</li>
+          <li><strong>Keep your hand steady.</strong> On a phone, rest your wrist so your finger doesn't wander.</li>
+        </ul>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">7. Common questions</h4>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">How do I restart?</summary>Refresh the page. The
+          Start button only works when no game is running.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Is my score saved?</summary>No. Scores last only
+          until you refresh or leave the page.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Can I use the keyboard?</summary>No. Pong is
+          controlled with the mouse or touch only.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Does hitting the ball with the edge of the paddle
+            change its angle?</summary>No. The ball bounces straight back with the same vertical speed, so timing and
+          position matter more than angle.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Why does the CPU keep catching the ball?</summary>
+          Its paddle follows the ball at a steady speed. Win by making the ball fast enough in a long rally that the CPU
+          cannot keep up.
+        </details>
+      </div>
+    </div>
+  </section>
 
-    ctx.strokeStyle = 'rgba(212,175,55,.25)';
-    ctx.setLineDash([6,10]);
-    ctx.beginPath();
-    ctx.moveTo(W/2,0); ctx.lineTo(W/2,H);
-    ctx.stroke();
-    ctx.setLineDash([]);
 
-    ctx.fillStyle = '#f6dd8a';
-    ctx.shadowColor = '#d4af37'; ctx.shadowBlur = 10;
-    ctx.fillRect(14, playerY, paddleW, paddleH);
-    ctx.fillRect(W-24, cpuY, paddleW, paddleH);
+  <!-- ===== NEXT GAMES JOURNEY (7 sections) ===== -->
+  <section class="pb-5" id="next-games">
+    <div class="container" style="max-width:860px;">
+      <h2 class="gold-text mb-2">Your Arcade Journey: What to Play After Pong</h2>
+      <p style="color:var(--text-dim);">Finished a few rounds of Pong? The NM Gaming arcade has more to try. Below are
+        the
+        next seven games in the lineup, each with a quick guide on how to play so you can jump straight in. After Flappy
+        Orb, the lineup loops back to Snake.</p>
 
-    ctx.beginPath();
-    ctx.arc(ballX, ballY, 7, 0, Math.PI*2);
-    ctx.fill();
-    ctx.shadowBlur = 0;
-  }
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game11.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🧱</span>
+              <img src="images/game11.jpg" alt="Breakout game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 1 OF 7</small>
+            <h4 class="gold-text">🧱 Breakout</h4>
+            <p class="how-to" style="text-align:left;">Bounce a golden orb off your paddle to smash all 40 bricks. You
+              have 3 lives.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press Start Game and move the paddle with the mouse, your finger, the Arrow Keys or A and D.</li>
+              <li>Every brick the orb hits breaks and scores 10 points.</li>
+              <li>If the orb falls past your paddle, you lose a life.</li>
+              <li>Clear every brick to win.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Hit the orb with the edge of the paddle
+              to change its angle and reach the corners.</p>
+            <a href="game11.html" class="btn-gold text-decoration-none d-inline-block">Play Breakout →</a>
+          </div>
+        </div>
+      </div>
 
-  function resetBall(){
-    ballX = W/2; ballY = H/2;
-    ballVX = (Math.random() < 0.5 ? -1 : 1) * 4;
-    ballVY = (Math.random()*2 - 1) * 3;
-  }
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 order-md-2">
+            <!-- Add your image: put the file at images/game12.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🔤</span>
+              <img src="images/game12.jpg" alt="Hangman game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 2 OF 7</small>
+            <h4 class="gold-text">🔤 Hangman</h4>
+            <p class="how-to" style="text-align:left;">Guess the hidden gaming word one letter at a time. You can afford
+              6 wrong guesses.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press Start Game to get a word. Each blank is one letter.</li>
+              <li>Click a letter on screen or type it on your keyboard.</li>
+              <li>A correct letter fills in every matching blank. A wrong one costs a life.</li>
+              <li>Reveal the whole word before your 6 lives run out. Your total Wins is saved.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Start with common letters like E and A,
+              then use the pattern of blanks to work out the rest.</p>
+            <a href="game12.html" class="btn-gold text-decoration-none d-inline-block">Play Hangman →</a>
+          </div>
+        </div>
+      </div>
 
-  function update(){
-    ballX += ballVX;
-    ballY += ballVY;
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game13.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">⚡</span>
+              <img src="images/game13.jpg" alt="Reaction Test game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 3 OF 7</small>
+            <h4 class="gold-text">⚡ Reaction Test</h4>
+            <p class="how-to" style="text-align:left;">Test your reflexes. Tap the box the moment it turns gold.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Click the box or press Space to begin. It says Wait for gold.</li>
+              <li>After a random wait of 1 to 4 seconds, the box turns gold and says CLICK NOW.</li>
+              <li>Tap as fast as you can. Your time in milliseconds is shown.</li>
+              <li>After five rounds you get your average. Tapping too early cancels the attempt.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Rest a finger on the Space bar and
+              react to the colour. Don't try to guess the timing.</p>
+            <a href="game13.html" class="btn-gold text-decoration-none d-inline-block">Play Reaction Test →</a>
+          </div>
+        </div>
+      </div>
 
-    if (ballY < 7 || ballY > H-7) ballVY *= -1;
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 order-md-2">
+            <!-- Add your image: put the file at images/game14.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">💣</span>
+              <img src="images/game14.jpg" alt="Minesweeper game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 4 OF 7</small>
+            <h4 class="gold-text">💣 Minesweeper</h4>
+            <p class="how-to" style="text-align:left;">A 9 × 9 board hides 10 mines. Reveal every safe square without
+              hitting one.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press Start Game, then click any square. Your first click is always safe.</li>
+              <li>Numbers show how many mines touch that square.</li>
+              <li>Right-click, or turn on Flag mode on a phone, to mark a mine.</li>
+              <li>Reveal all 71 safe squares to win. Your fastest time is saved as Best.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Start in the open area your first click
+              creates, then use the numbers to find squares that must be mines.</p>
+            <a href="game14.html" class="btn-gold text-decoration-none d-inline-block">Play Minesweeper →</a>
+          </div>
+        </div>
+      </div>
 
-    if (ballX < 24 && ballY > playerY && ballY < playerY + paddleH){
-      ballVX *= -1.05;
-      ballX = 24;
-    }
-    if (ballX > W-24 && ballY > cpuY && ballY < cpuY + paddleH){
-      ballVX *= -1.05;
-      ballX = W-24;
-    }
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game15.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🟡</span>
+              <img src="images/game15.jpg" alt="Flappy Orb game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 5 OF 7</small>
+            <h4 class="gold-text">🟡 Flappy Orb</h4>
+            <p class="how-to" style="text-align:left;">Flap a golden orb through the gaps in the pillars. One touch ends
+              the run.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press Start Game, or just tap the board.</li>
+              <li>Press Space or the Up Arrow, click, or tap to flap. Gravity pulls the orb down.</li>
+              <li>Every pillar you pass scores 1 point.</li>
+              <li>Touching a pillar, the floor or the ceiling ends the run.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Use small, steady taps instead of big
+              bursts, and aim for the middle of each gap.</p>
+            <a href="game15.html" class="btn-gold text-decoration-none d-inline-block">Play Flappy Orb →</a>
+          </div>
+        </div>
+      </div>
 
-    if (ballX < 0){
-      cpuScore++; cpuScoreEl.textContent = cpuScore; resetBall();
-    } else if (ballX > W){
-      youScore++; youScoreEl.textContent = youScore; resetBall();
-    }
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 order-md-2">
+            <!-- Add your image: put the file at images/game1.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🐍</span>
+              <img src="images/game1.jpg" alt="Snake game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 6 OF 7</small>
+            <h4 class="gold-text">🐍 Snake</h4>
+            <p class="how-to" style="text-align:left;">A gold snake on a 20 × 20 board. Eat the glowing orbs to grow
+              without crashing.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press Start Game. The snake moves on its own.</li>
+              <li>Steer with the Arrow Keys or W A S D, or swipe on a phone.</li>
+              <li>Every orb you eat scores 10 points and makes the snake longer. The speed goes up every 50 points.</li>
+              <li>Hitting a wall or your own tail ends the game.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Plan turns a few cells ahead. Tight
+              spirals trap you.</p>
+            <a href="game1.html" class="btn-gold text-decoration-none d-inline-block">Play Snake →</a>
+          </div>
+        </div>
+      </div>
 
-    const cpuCenter = cpuY + paddleH/2;
-    if (cpuCenter < ballY - 10) cpuY += 3.4;
-    else if (cpuCenter > ballY + 10) cpuY -= 3.4;
-    cpuY = Math.max(0, Math.min(H-paddleH, cpuY));
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game2.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🧩</span>
+              <img src="images/game2.jpg" alt="Sliding Puzzle game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 7 OF 7</small>
+            <h4 class="gold-text">🧩 Sliding Puzzle</h4>
+            <p class="how-to" style="text-align:left;">A 3 × 3 board with tiles 1 to 8 and one empty slot. Slide tiles
+              into the gap to put them in order.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>The board starts shuffled. Press Shuffle any time for a fresh scramble.</li>
+              <li>Click a tile that touches the empty slot and it slides into the gap.</li>
+              <li>Arrange tiles 1 to 8 in reading order, left to right and top to bottom.</li>
+              <li>Solve it in fewer moves to set a new best.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Fix the top row first, then the middle
+              row, and leave the last two rows for the end.</p>
+            <a href="game2.html" class="btn-gold text-decoration-none d-inline-block">Play Sliding Puzzle →</a>
+          </div>
+        </div>
+      </div>
 
-    draw();
-    if (running) requestAnimationFrame(update);
-  }
+      <p class="how-to text-center">That's the next stretch of the arcade. Tic Tac Toe, Memory Match, Rock Paper
+        Scissors, Whack-a-Mole, Guess the Number, Simon Says and 2048 are waiting in the menu above.</p>
+    </div>
+  </section>
 
-  function movePlayer(clientY){
-    const rect = canvas.getBoundingClientRect();
-    const scale = H / rect.height;
-    playerY = (clientY - rect.top) * scale - paddleH/2;
-    playerY = Math.max(0, Math.min(H-paddleH, playerY));
-  }
+  <footer class="nm-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-6 col-md-3">
+          <h5>NM Gaming</h5>
+          <p style="color:var(--text-dim); font-size:.88rem;">A black &amp; gold arcade of fifteen browser-native
+            classics.</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Arcade Row A</h5>
+          <a href="game1.html">Snake</a>
+          <a href="game2.html">Sliding Puzzle</a>
+          <a href="game3.html">Tic Tac Toe</a>
+          <a href="game4.html">Memory Match</a>
+          <a href="game5.html">Rock Paper Scissors</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Arcade Row B</h5>
+          <a href="game6.html">Whack-a-Mole</a>
+          <a href="game7.html">Guess the Number</a>
+          <a href="game8.html">Simon Says</a>
+          <a href="game9.html">2048</a>
+          <a href="game10.html">Pong</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Arcade Row C</h5>
+          <a href="game11.html">Breakout</a>
+          <a href="game12.html">Hangman</a>
+          <a href="game13.html">Reaction Test</a>
+          <a href="game14.html">Minesweeper</a>
+          <a href="game15.html">Flappy Orb</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Home</h5>
+          <a href="home.html">Back to Top</a>
+          <a href="home.html#games">Full Lineup</a>
+        </div>
+      </div>
+      <div class="copyline">© 2026 NM GAMING · All games run locally in your browser</div>
+    </div>
+  </footer>
 
-  canvas.addEventListener('mousemove', (e) => movePlayer(e.clientY));
-  canvas.addEventListener('touchmove', (e) => { movePlayer(e.touches[0].clientY); e.preventDefault(); }, {passive:false});
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="site.js"></script>
+  <script>
 
-  startBtn.addEventListener('click', () => {
-    if (running) return;
-    running = true;
-    youScore = 0; cpuScore = 0;
-    youScoreEl.textContent = 0; cpuScoreEl.textContent = 0;
-    resetBall();
-    update();
-  });
+    (() => {
+      const canvas = document.getElementById('pongCanvas');
+      const ctx = canvas.getContext('2d');
+      const youScoreEl = document.getElementById('youScore');
+      const cpuScoreEl = document.getElementById('cpuScore');
+      const startBtn = document.getElementById('pongStartBtn');
 
-  draw();
-})();
+      const W = canvas.width, H = canvas.height;
+      const paddleW = 10, paddleH = 70;
+      let playerY = H / 2 - paddleH / 2;
+      let cpuY = H / 2 - paddleH / 2;
+      let ballX = W / 2, ballY = H / 2, ballVX = 4, ballVY = 3;
+      let youScore = 0, cpuScore = 0, running = false;
 
-</script>
+      function draw() {
+        ctx.fillStyle = '#050405';
+        ctx.fillRect(0, 0, W, H);
 
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1684242835147633"
-     crossorigin="anonymous"></script>
+        ctx.strokeStyle = 'rgba(212,175,55,.25)';
+        ctx.setLineDash([6, 10]);
+        ctx.beginPath();
+        ctx.moveTo(W / 2, 0); ctx.lineTo(W / 2, H);
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        ctx.fillStyle = '#f6dd8a';
+        ctx.shadowColor = '#d4af37'; ctx.shadowBlur = 10;
+        ctx.fillRect(14, playerY, paddleW, paddleH);
+        ctx.fillRect(W - 24, cpuY, paddleW, paddleH);
+
+        ctx.beginPath();
+        ctx.arc(ballX, ballY, 7, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+
+      function resetBall() {
+        ballX = W / 2; ballY = H / 2;
+        ballVX = (Math.random() < 0.5 ? -1 : 1) * 4;
+        ballVY = (Math.random() * 2 - 1) * 3;
+      }
+
+      function update() {
+        ballX += ballVX;
+        ballY += ballVY;
+
+        if (ballY < 7 || ballY > H - 7) ballVY *= -1;
+
+        if (ballX < 24 && ballY > playerY && ballY < playerY + paddleH) {
+          ballVX *= -1.05;
+          ballX = 24;
+        }
+        if (ballX > W - 24 && ballY > cpuY && ballY < cpuY + paddleH) {
+          ballVX *= -1.05;
+          ballX = W - 24;
+        }
+
+        if (ballX < 0) {
+          cpuScore++; cpuScoreEl.textContent = cpuScore; resetBall();
+        } else if (ballX > W) {
+          youScore++; youScoreEl.textContent = youScore; resetBall();
+        }
+
+        const cpuCenter = cpuY + paddleH / 2;
+        if (cpuCenter < ballY - 10) cpuY += 3.4;
+        else if (cpuCenter > ballY + 10) cpuY -= 3.4;
+        cpuY = Math.max(0, Math.min(H - paddleH, cpuY));
+
+        draw();
+        if (running) requestAnimationFrame(update);
+      }
+
+      function movePlayer(clientY) {
+        const rect = canvas.getBoundingClientRect();
+        const scale = H / rect.height;
+        playerY = (clientY - rect.top) * scale - paddleH / 2;
+        playerY = Math.max(0, Math.min(H - paddleH, playerY));
+      }
+
+      canvas.addEventListener('mousemove', (e) => movePlayer(e.clientY));
+      canvas.addEventListener('touchmove', (e) => { movePlayer(e.touches[0].clientY); e.preventDefault(); }, { passive: false });
+
+      startBtn.addEventListener('click', () => {
+        if (running) return;
+        running = true;
+        youScore = 0; cpuScore = 0;
+        youScoreEl.textContent = 0; cpuScoreEl.textContent = 0;
+        resetBall();
+        update();
+      });
+
+      draw();
+    })();
+
+  </script>
 </body>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1684242835147633"
+  crossorigin="anonymous"></script>
+
 </html>
