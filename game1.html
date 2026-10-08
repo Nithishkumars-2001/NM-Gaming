@@ -7,8 +7,9 @@
   <title>Snake Game — NM Gaming</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
+
   <meta name="google-adsense-account" content="ca-pub-1684242835147633">
-  <script src="https://quge5.com/88/tag.min.js" data-zone="255795" async data-cfasync="false"></script>
+
 </head>
 
 <body>
@@ -32,6 +33,11 @@
           <li class="nav-item"><a class="nav-link" href="game8.html">Simon Says</a></li>
           <li class="nav-item"><a class="nav-link" href="game9.html">2048</a></li>
           <li class="nav-item"><a class="nav-link" href="game10.html">Pong</a></li>
+          <li class="nav-item"><a class="nav-link" href="game11.html">Breakout</a></li>
+          <li class="nav-item"><a class="nav-link" href="game12.html">Hangman</a></li>
+          <li class="nav-item"><a class="nav-link" href="game13.html">Reaction Test</a></li>
+          <li class="nav-item"><a class="nav-link" href="game14.html">Minesweeper</a></li>
+          <li class="nav-item"><a class="nav-link" href="game15.html">Flappy Orb</a></li>
         </ul>
       </div>
     </div>
@@ -69,12 +75,460 @@
     </div>
   </section>
 
+  <section class="pb-5">
+    <div class="container" style="max-width:860px;">
+      <h2 class="gold-text mb-2">How to Play Snake</h2>
+      <p style="color:var(--text-dim);">Snake is a classic arcade game. You control a growing gold snake on a 20 × 20
+        board. Eat orbs to score, grow longer and avoid crashing. This guide covers everything you need to know.</p>
+
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">1. The goal</h4>
+        <p class="how-to" style="text-align:left;">Score as many points as you can before the snake crashes. Each gold
+          orb you eat adds 10 points and makes your tail one cell longer. The longer you get, the less space you have,
+          so the game gets harder the better you play.</p>
+      </div>
+
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">2. Getting started</h4>
+        <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+          <li>Press <strong>Start Game</strong>. The snake begins with 3 cells in the middle-left of the board, moving
+            to the right.</li>
+          <li>A glowing gold orb appears at a random empty spot. It never appears on top of your snake.</li>
+          <li>Steer the head toward the orb. When the head touches it, the orb disappears, your score goes up by 10 and
+            a new orb appears.</li>
+          <li>Keep going. The snake moves on its own and never stops, so you only decide when to turn.</li>
+          <li>When the game ends, press <strong>Start Game</strong> again to play a new round.</li>
+        </ol>
+      </div>
+
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">3. Controls</h4>
+        <div class="row g-3 how-to" style="text-align:left;">
+          <div class="col-md-4"><strong>Keyboard</strong><br>Arrow Keys or W (up), A (left), S (down), D (right).</div>
+          <div class="col-md-4"><strong>Touch screen</strong><br>Swipe on the board in the direction you want to go. A
+            short swipe of about 20 pixels is enough.</div>
+          <div class="col-md-4"><strong>Pause</strong><br>Press <strong>Pause</strong> to freeze the game and
+            <strong>Resume</strong> to continue. Your score is kept.
+          </div>
+        </div>
+        <p class="how-to mt-3" style="text-align:left;">You cannot reverse straight back into yourself. If you are
+          moving right, pressing left does nothing. Turn up or down first, then turn again.</p>
+      </div>
+
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">4. How the game ends</h4>
+        <ul class="how-to" style="text-align:left;padding-left:1.2rem;">
+          <li><strong>Hitting a wall.</strong> The edges of the board are solid. The snake does not wrap around to the
+            other side.</li>
+          <li><strong>Hitting your own tail.</strong> Any cell of your body is an obstacle, including the cells right
+            behind the head.</li>
+        </ul>
+        <p class="how-to" style="text-align:left;">When either happens, the board dims and shows GAME OVER. If your
+          score beat your previous record, it is saved as your new Best score in this browser.</p>
+      </div>
+
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">5. Scoring and speed levels</h4>
+        <p class="how-to" style="text-align:left;">Every orb is worth 10 points. Each time your score reaches a multiple
+          of 50, the speed level goes up by one and the snake moves faster. The top level is 8.</p>
+        <div style="overflow-x:auto;">
+          <table class="how-to" style="width:100%;text-align:center;border-collapse:collapse;">
+            <thead>
+              <tr style="color:var(--gold-bright);">
+                <th>Level</th>
+                <th>Reached at</th>
+                <th>Orbs eaten</th>
+                <th>Move every</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>0 pts</td>
+                <td>0</td>
+                <td>128 ms</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>50 pts</td>
+                <td>5</td>
+                <td>116 ms</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>100 pts</td>
+                <td>10</td>
+                <td>104 ms</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>150 pts</td>
+                <td>15</td>
+                <td>92 ms</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>200 pts</td>
+                <td>20</td>
+                <td>80 ms</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>250 pts</td>
+                <td>25</td>
+                <td>68 ms</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>300 pts</td>
+                <td>30</td>
+                <td>56 ms</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>350 pts</td>
+                <td>35</td>
+                <td>55 ms</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="how-to mt-3" style="text-align:left;">The board has 400 cells and you start with 3, so the highest
+          possible score is 3,970 points. Reaching it means filling the entire board.</p>
+      </div>
+
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">6. Playing like a pro</h4>
+        <ul class="how-to" style="text-align:left;padding-left:1.2rem;">
+          <li><strong>Think two moves ahead.</strong> Before you turn, check that the new direction will not trap you a
+            few cells later.</li>
+          <li><strong>Keep your tail away from the orb's side.</strong> Eating an orb tucked next to your own body is
+            the most common way to crash.</li>
+          <li><strong>Use the walls early.</strong> At low speed, travel along the edges and keep the centre open for
+            later.</li>
+          <li><strong>Make wide, slow turns.</strong> Tight spirals leave pockets you cannot escape from.</li>
+          <li><strong>Use the queued-turn trick.</strong> You can press two directions quickly, but only the last one
+            before the next step counts. Don't mash keys when you are near your tail.</li>
+          <li><strong>Stay calm at higher levels.</strong> At level 5 and above, plan the route to the orb before you
+            commit, and avoid last-second changes.</li>
+          <li><strong>Pause to rest.</strong> Pausing is free, so use it to plan a tricky section.</li>
+        </ul>
+      </div>
+
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">7. Common questions</h4>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Why didn't my snake turn?</summary>You can't turn
+          180 degrees. Pressing the opposite direction is ignored to protect you from reversing into your own neck.
+          Also, a turn only takes effect on the next step, so very fast taps may be skipped.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Where is my best score saved?</summary>In your
+          browser's local storage. It stays after you close the page, but it is lost if you clear site data or switch to
+          another browser or device.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Can I play on my phone?</summary>Yes. Swipe on the
+          board to steer. Swipe in the direction you want to go, not toward the orb.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Does pausing cost me anything?</summary>No. Pause
+          freezes the snake, and Resume carries on from the same spot with the same score and speed.
+        </details>
+        <details class="how-to" style="text-align:left;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">What if I want to start over mid-game?</summary>
+          Press <strong>Restart</strong>. This resets your score and speed to the beginning. Your Best score only
+          updates when a game ends, so restarting early does not save the unfinished score.
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="pb-5">
+    <div class="container" style="max-width:860px;">
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="game-panel h-100">
+            <h4 class="gold-text">Strategy tips</h4>
+            <ul class="how-to" style="text-align:left;padding-left:1.1rem">
+              <li>Plan turns a few cells ahead; tight spirals trap you.</li>
+              <li>Hug the walls early, then work inward as your tail grows.</li>
+              <li>Speed rises every 50 points, so build safe space first.</li>
+              <li>Only one turn happens per step, so don't mash keys. The last key pressed before the next step wins.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="game-panel h-100">
+            <h4 class="gold-text">Controls</h4>
+            <ul class="how-to" style="text-align:left;padding-left:1.1rem">
+              <li>Desktop: Arrow Keys or W A S D</li>
+              <li>Mobile: swipe on the board</li>
+              <li>Pause and Resume with the button below the board</li>
+              <li>Your best score is saved in this browser</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <h4 class="gold-text mt-5 mb-3">New in the arcade</h4>
+      <div class="row g-3">
+        <div class="col-md-4"><a href="game14.html" class="game-panel d-block text-decoration-none h-100">
+            <h5 class="gold-text">💣 Minesweeper</h5>
+            <p class="how-to mb-0">Clear the 9x9 board without hitting a mine.</p>
+          </a></div>
+        <div class="col-md-4"><a href="game15.html" class="game-panel d-block text-decoration-none h-100">
+            <h5 class="gold-text">🟡 Flappy Orb</h5>
+            <p class="how-to mb-0">Flap through the gaps in the golden pillars.</p>
+          </a></div>
+        <div class="col-md-4"><a href="game11.html" class="game-panel d-block text-decoration-none h-100">
+            <h5 class="gold-text">🧱 Breakout</h5>
+            <p class="how-to mb-0">Clear the gold bricks with a bouncing orb.</p>
+          </a></div>
+        <div class="col-md-4"><a href="game12.html" class="game-panel d-block text-decoration-none h-100">
+            <h5 class="gold-text">🔤 Hangman</h5>
+            <p class="how-to mb-0">Guess gaming words before you run out of lives.</p>
+          </a></div>
+        <div class="col-md-4"><a href="game13.html" class="game-panel d-block text-decoration-none h-100">
+            <h5 class="gold-text">⚡ Reaction Test</h5>
+            <p class="how-to mb-0">Measure your reflexes over five rounds.</p>
+          </a></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== NEXT GAMES JOURNEY (7 sections) ===== -->
+  <section class="pb-5" id="next-games">
+    <div class="container" style="max-width:860px;">
+      <h2 class="gold-text mb-2">Your Arcade Journey: What to Play After Snake</h2>
+      <p style="color:var(--text-dim);">Finished a few rounds of Snake? The NM Gaming arcade has more to try. Below are
+        the
+        next seven games in the lineup, each with a quick guide on how to play so you can jump straight in.</p>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game2.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🧩</span>
+              <img src="images/game2.jpg" alt="Sliding Puzzle game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 1 OF 7</small>
+            <h4 class="gold-text">🧩 Sliding Puzzle</h4>
+            <p class="how-to" style="text-align:left;">A scrambled grid with one empty slot. Slide tiles into the gap
+              until everything is back in order.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press the shuffle / start button to scramble the tiles.</li>
+              <li>Click or tap a tile that touches the empty slot and it slides in.</li>
+              <li>Keep sliding until the numbers (or picture pieces) are back in the correct order.</li>
+              <li>Finish in fewer moves and less time to beat your own record.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Fix the top row first, then the left
+              column, and work inward. Don't undo finished rows.</p>
+            <a href="game2.html" class="btn-gold text-decoration-none d-inline-block">Play Sliding Puzzle →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 order-md-2">
+            <!-- Add your image: put the file at images/game3.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">❌</span>
+              <img src="images/game3.jpg" alt="Tic Tac Toe game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 2 OF 7</small>
+            <h4 class="gold-text">❌ Tic Tac Toe</h4>
+            <p class="how-to" style="text-align:left;">The classic 3 × 3 duel. Make three marks in a row before your
+              opponent does.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Pick a square to place your mark (X or O).</li>
+              <li>Players take turns, one mark per turn.</li>
+              <li>Three in a row (across, down or diagonal) wins the round.</li>
+              <li>If all nine squares fill up with no line, the round is a draw.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Take the centre or a corner first.
+              Always check what your opponent can complete on the next turn.</p>
+            <a href="game3.html" class="btn-gold text-decoration-none d-inline-block">Play Tic Tac Toe →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game4.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🃏</span>
+              <img src="images/game4.jpg" alt="Memory Match game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 3 OF 7</small>
+            <h4 class="gold-text">🃏 Memory Match</h4>
+            <p class="how-to" style="text-align:left;">Flip cards two at a time and find all the matching pairs from
+              memory.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Click a card to flip it and see the symbol.</li>
+              <li>Flip a second card. If the two match, they stay face up.</li>
+              <li>If they don't match, they flip back, so remember where they were.</li>
+              <li>Match every pair using as few flips as possible.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Work through one corner of the board at
+              a time and say the positions in your head.</p>
+            <a href="game4.html" class="btn-gold text-decoration-none d-inline-block">Play Memory Match →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 order-md-2">
+            <!-- Add your image: put the file at images/game5.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">✊</span>
+              <img src="images/game5.jpg" alt="Rock Paper Scissors game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 4 OF 7</small>
+            <h4 class="gold-text">✊ Rock Paper Scissors</h4>
+            <p class="how-to" style="text-align:left;">A quick best-of-rounds duel against the computer. Pick your hand
+              and see who wins.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Choose Rock, Paper or Scissors.</li>
+              <li>Rock beats Scissors, Scissors beats Paper, Paper beats Rock.</li>
+              <li>If both pick the same, the round is a tie.</li>
+              <li>Keep winning rounds to build your score.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Don't repeat the same pick every time.
+              Mix it up so the pattern can't be read.</p>
+            <a href="game5.html" class="btn-gold text-decoration-none d-inline-block">Play Rock Paper Scissors →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game6.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🔨</span>
+              <img src="images/game6.jpg" alt="Whack-a-Mole game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 5 OF 7</small>
+            <h4 class="gold-text">🔨 Whack-a-Mole</h4>
+            <p class="how-to" style="text-align:left;">Moles pop out of holes for a split second. Hit them before they
+              disappear.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press start and watch the holes on the board.</li>
+              <li>Click or tap a mole as soon as it pops up.</li>
+              <li>Each hit adds to your score, and missed moles earn nothing.</li>
+              <li>When the timer ends, your final score is shown.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Keep your eyes on the whole board, not
+              one hole, so you spot the next mole early.</p>
+            <a href="game6.html" class="btn-gold text-decoration-none d-inline-block">Play Whack-a-Mole →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 order-md-2">
+            <!-- Add your image: put the file at images/game7.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🔢</span>
+              <img src="images/game7.jpg" alt="Guess the Number game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 6 OF 7</small>
+            <h4 class="gold-text">🔢 Guess the Number</h4>
+            <p class="how-to" style="text-align:left;">The game hides a secret number. Use the hints to find it in as
+              few guesses as you can.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Type a number in the box and submit your guess.</li>
+              <li>You get a hint: too high or too low.</li>
+              <li>Use the hint to narrow the range and guess again.</li>
+              <li>Find the secret number to win. Fewer attempts means a better result.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Always guess the middle of the
+              remaining range. This halves the options every time.</p>
+            <a href="game7.html" class="btn-gold text-decoration-none d-inline-block">Play Guess the Number →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game8.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🎵</span>
+              <img src="images/game8.jpg" alt="Simon Says game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 7 OF 7</small>
+            <h4 class="gold-text">🎵 Simon Says</h4>
+            <p class="how-to" style="text-align:left;">Watch the pattern of glowing pads, then repeat it exactly. It
+              grows longer every round.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press start and watch the pads light up in order.</li>
+              <li>Repeat the same order by clicking or tapping the pads.</li>
+              <li>Get it right and the sequence gets one step longer.</li>
+              <li>One wrong tap ends the game, so concentrate.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Say the sequence in your head as
+              colours or a rhythm. Chunking it into small groups helps.</p>
+            <a href="game8.html" class="btn-gold text-decoration-none d-inline-block">Play Simon Says →</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="how-to text-center">That's the first stretch of the arcade. Games 9 to 15 (2048, Pong, Breakout,
+        Hangman,
+        Reaction Test, Minesweeper and Flappy Orb) are waiting in the menu above.</p>
+    </div>
+  </section>
+
   <footer class="nm-footer">
     <div class="container">
       <div class="row g-4">
         <div class="col-6 col-md-3">
           <h5>NM Gaming</h5>
-          <p style="color:var(--text-dim); font-size:.88rem;">A black &amp; gold arcade of ten browser-native classics.
+          <p style="color:var(--text-dim); font-size:.88rem;">A black &amp; gold arcade of fifteen browser-native
+            classics.
           </p>
         </div>
         <div class="col-6 col-md-3">
@@ -94,6 +548,14 @@
           <a href="game10.html">Pong</a>
         </div>
         <div class="col-6 col-md-3">
+          <h5>Arcade Row C</h5>
+          <a href="game11.html">Breakout</a>
+          <a href="game12.html">Hangman</a>
+          <a href="game13.html">Reaction Test</a>
+          <a href="game14.html">Minesweeper</a>
+          <a href="game15.html">Flappy Orb</a>
+        </div>
+        <div class="col-6 col-md-3">
           <h5>Home</h5>
           <a href="home.html">Back to Top</a>
           <a href="home.html#games">Full Lineup</a>
@@ -105,6 +567,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="site.js"></script>
+
   <script>
     (() => {
       const canvas = document.getElementById('snakeCanvas');
@@ -271,9 +734,9 @@
       init();
     })();
   </script>
-
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1684242835147633"
-     crossorigin="anonymous"></script>
 </body>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1684242835147633"
+  crossorigin="anonymous"></script>
 
 </html>
