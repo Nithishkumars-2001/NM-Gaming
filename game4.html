@@ -1,187 +1,600 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Memory Match — NM Gaming</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="style.css" rel="stylesheet">
-<meta name="google-adsense-account" content="ca-pub-1684242835147633">
-<script src="https://quge5.com/88/tag.min.js" data-zone="255795" async data-cfasync="false"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Match — NM Gaming</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+
+  <meta name="google-adsense-account" content="ca-pub-1684242835147633">
+
 </head>
+
 <body>
 
-<nav class="navbar navbar-expand-lg nm-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="home.html">NM <span>GAMING</span></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nmNav" aria-controls="nmNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="nmNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="game1.html">Snake</a></li>
-        <li class="nav-item"><a class="nav-link" href="game2.html">Sliding Puzzle</a></li>
-        <li class="nav-item"><a class="nav-link" href="game3.html">Tic Tac Toe</a></li>
-        <li class="nav-item"><a class="nav-link" href="game4.html">Memory Match</a></li>
-        <li class="nav-item"><a class="nav-link" href="game5.html">Rock Paper Scissors</a></li>
-        <li class="nav-item"><a class="nav-link" href="game6.html">Whack-a-Mole</a></li>
-        <li class="nav-item"><a class="nav-link" href="game7.html">Guess the Number</a></li>
-        <li class="nav-item"><a class="nav-link" href="game8.html">Simon Says</a></li>
-        <li class="nav-item"><a class="nav-link" href="game9.html">2048</a></li>
-        <li class="nav-item"><a class="nav-link" href="game10.html">Pong</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<header class="game-hero">
-  <div class="container">
-    <div class="breadcrumb-gold"><a href="home.html">Home</a> / Memory Match</div>
-    <h1 class="gold-text">🃏 Memory Match</h1>
-    <p style="color:var(--text-dim);">Flip two cards at a time and find every matching pair on the board.</p>
-  </div>
-</header>
-
-<section class="py-5">
-  <div class="container">
-    <div class="game-panel mx-auto" style="max-width:560px;">
-      <div class="game-hud">
-        <div class="hud-chip"><small>Moves</small><span id="moves">0</span></div>
-        <div class="hud-chip"><small>Matched</small><span id="matched">0/8</span></div>
-        <div class="hud-chip"><small>Best</small><span id="best">-</span></div>
-      </div>
-      <div class="game-stage">
-        <div id="memGrid" style="display:grid; grid-template-columns:repeat(4,1fr); gap:8px; width:min(360px,84vw);"></div>
-      </div>
-      <div class="game-controls">
-        <button id="newGameBtn" class="btn-gold">New Game</button>
-      </div>
-      <p class="how-to">Tap a card to flip it, then tap a second. Matching icons stay revealed - clear all 8 pairs in the fewest moves.</p>
-    </div>
-  </div>
-</section>
-
-<footer class="nm-footer">
-  <div class="container">
-    <div class="row g-4">
-      <div class="col-6 col-md-3">
-        <h5>NM Gaming</h5>
-        <p style="color:var(--text-dim); font-size:.88rem;">A black &amp; gold arcade of ten browser-native classics.</p>
-      </div>
-      <div class="col-6 col-md-3">
-        <h5>Arcade Row A</h5>
-        <a href="game1.html">Snake</a>
-        <a href="game2.html">Sliding Puzzle</a>
-        <a href="game3.html">Tic Tac Toe</a>
-        <a href="game4.html">Memory Match</a>
-        <a href="game5.html">Rock Paper Scissors</a>
-      </div>
-      <div class="col-6 col-md-3">
-        <h5>Arcade Row B</h5>
-        <a href="game6.html">Whack-a-Mole</a>
-        <a href="game7.html">Guess the Number</a>
-        <a href="game8.html">Simon Says</a>
-        <a href="game9.html">2048</a>
-        <a href="game10.html">Pong</a>
-      </div>
-      <div class="col-6 col-md-3">
-        <h5>Home</h5>
-        <a href="home.html">Back to Top</a>
-        <a href="home.html#games">Full Lineup</a>
+  <nav class="navbar navbar-expand-lg nm-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="home.html">NM <span>GAMING</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nmNav"
+        aria-controls="nmNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nmNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="game1.html">Snake</a></li>
+          <li class="nav-item"><a class="nav-link" href="game2.html">Sliding Puzzle</a></li>
+          <li class="nav-item"><a class="nav-link" href="game3.html">Tic Tac Toe</a></li>
+          <li class="nav-item"><a class="nav-link" href="game4.html">Memory Match</a></li>
+          <li class="nav-item"><a class="nav-link" href="game5.html">Rock Paper Scissors</a></li>
+          <li class="nav-item"><a class="nav-link" href="game6.html">Whack-a-Mole</a></li>
+          <li class="nav-item"><a class="nav-link" href="game7.html">Guess the Number</a></li>
+          <li class="nav-item"><a class="nav-link" href="game8.html">Simon Says</a></li>
+          <li class="nav-item"><a class="nav-link" href="game9.html">2048</a></li>
+          <li class="nav-item"><a class="nav-link" href="game10.html">Pong</a></li>
+          <li class="nav-item"><a class="nav-link" href="game11.html">Breakout</a></li>
+          <li class="nav-item"><a class="nav-link" href="game12.html">Hangman</a></li>
+          <li class="nav-item"><a class="nav-link" href="game13.html">Reaction Test</a></li>
+          <li class="nav-item"><a class="nav-link" href="game14.html">Minesweeper</a></li>
+          <li class="nav-item"><a class="nav-link" href="game15.html">Flappy Orb</a></li>
+        </ul>
       </div>
     </div>
-    <div class="copyline">© 2026 NM GAMING · All games run locally in your browser</div>
-  </div>
-</footer>
+  </nav>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="site.js"></script>
-<script>
+  <header class="game-hero">
+    <div class="container">
+      <div class="breadcrumb-gold"><a href="home.html">Home</a> / Memory Match</div>
+      <h1 class="gold-text">🃏 Memory Match</h1>
+      <p style="color:var(--text-dim);">Flip two cards at a time and find every matching pair on the board.</p>
+    </div>
+  </header>
 
-(() => {
-  const grid = document.getElementById('memGrid');
-  const movesEl = document.getElementById('moves');
-  const matchedEl = document.getElementById('matched');
-  const bestEl = document.getElementById('best');
-  const newGameBtn = document.getElementById('newGameBtn');
-  const ICONS = ['\u2660','\u2663','\u2666','\u2665','\u2605','\u263e','\u2600','\u2691'];
-  let cards, flipped, matched, moves, lock;
-  let best = localStorage.getItem('nm-memory-best');
-  if (best) bestEl.textContent = best;
+  <section class="py-5">
+    <div class="container">
+      <div class="game-panel mx-auto" style="max-width:560px;">
+        <div class="game-hud">
+          <div class="hud-chip"><small>Moves</small><span id="moves">0</span></div>
+          <div class="hud-chip"><small>Matched</small><span id="matched">0/8</span></div>
+          <div class="hud-chip"><small>Best</small><span id="best">-</span></div>
+        </div>
+        <div class="game-stage">
+          <div id="memGrid" style="display:grid; grid-template-columns:repeat(4,1fr); gap:8px; width:min(360px,84vw);">
+          </div>
+        </div>
+        <div class="game-controls">
+          <button id="newGameBtn" class="btn-gold">New Game</button>
+        </div>
+        <p class="how-to">Tap a card to flip it, then tap a second. Matching icons stay revealed - clear all 8 pairs in
+          the fewest moves.</p>
+      </div>
+    </div>
+  </section>
 
-  function init(){
-    const pairSet = [...ICONS, ...ICONS];
-    for (let i=pairSet.length-1;i>0;i--){
-      const j = Math.floor(Math.random()*(i+1));
-      [pairSet[i],pairSet[j]] = [pairSet[j],pairSet[i]];
-    }
-    cards = pairSet.map((icon, id) => ({ id, icon, isFlipped:false, isMatched:false }));
-    flipped = []; matched = 0; moves = 0; lock = false;
-    movesEl.textContent = moves;
-    matchedEl.textContent = '0/8';
-    render();
-  }
+  <!-- ===== HOW TO PLAY GUIDE (7 sections) ===== -->
+  <section class="pb-5" id="how-to-play">
+    <div class="container" style="max-width:860px;">
+      <h2 class="gold-text mb-2">How to Play Memory Match</h2>
+      <p style="color:var(--text-dim);">Memory Match is a card game that tests your memory. Sixteen cards hide eight
+        pairs of symbols, and you flip two at a time to find the matches. This guide covers everything you need to know.
+      </p>
 
-  function render(){
-    grid.innerHTML = '';
-    cards.forEach(card => {
-      const cell = document.createElement('div');
-      cell.className = 'grid-cell';
-      cell.style.fontSize = '1.6rem';
-      cell.style.aspectRatio = '1/1';
-      cell.textContent = (card.isFlipped || card.isMatched) ? card.icon : '';
-      if (card.isMatched) { cell.style.opacity = '.45'; cell.classList.add('taken'); }
-      if (!card.isFlipped && !card.isMatched){
-        cell.style.background = 'rgba(212,175,55,0.05)';
-      }
-      cell.addEventListener('click', () => flip(card.id));
-      grid.appendChild(cell);
-    });
-  }
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">1. The goal</h4>
+        <p class="how-to" style="text-align:left;">Find all 8 matching pairs using as few moves as possible. A move is
+          one pair of flips, so fewer wasted flips means a better score.</p>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">2. Getting started</h4>
+        <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+          <li>The 16 cards start face down in a 4 × 4 grid.</li>
+          <li>Tap a card to flip it and reveal its symbol.</li>
+          <li>Tap a second card. If the symbols match, both cards stay face up and look dimmed.</li>
+          <li>If they do not match, both cards flip back after a short moment. Remember what you saw.</li>
+          <li>Keep going until the Matched chip shows <strong>8/8</strong>.</li>
+        </ol>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">3. Controls</h4>
+        <div class="row g-3 how-to" style="text-align:left;">
+          <div class="col-md-4"><strong>Mouse or touch</strong><br>Click or tap a card to flip it. There are no keyboard
+            controls.</div>
+          <div class="col-md-4"><strong>Wait for the flip-back</strong><br>After a mismatch, taps are ignored for a
+            moment while the cards turn over again.</div>
+          <div class="col-md-4"><strong>New Game</strong><br>Reshuffles all 16 cards and resets Moves and Matched.</div>
+        </div>
+        <p class="how-to mt-3" style="text-align:left;">Cards that are already face up or matched ignore taps, so you
+          cannot flip the same card twice.</p>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">4. How the game ends</h4>
+        <p class="how-to" style="text-align:left;">The game is finished when all eight pairs are matched. There is no
+          timer and you cannot lose, so you can take your time to think. When you clear the board, your move count is
+          compared with your Best score.</p>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">5. Moves, matches and best score</h4>
+        <div style="overflow-x:auto;">
+          <table class="how-to" style="width:100%;text-align:center;border-collapse:collapse;">
+            <thead>
+              <tr style="color:var(--gold-bright);">
+                <th>Chip</th>
+                <th>What it shows</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Moves</td>
+                <td>Number of pairs of flips you have made. Two flips = 1 move</td>
+              </tr>
+              <tr>
+                <td>Matched</td>
+                <td>How many pairs you have found, out of 8</td>
+              </tr>
+              <tr>
+                <td>Best</td>
+                <td>Your lowest move count for a cleared board, saved in this browser</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="how-to mt-3" style="text-align:left;">The best possible game takes 8 moves, which needs a lot of luck.
+          Most players finish between 12 and 20.</p>
+        <p class="how-to" style="text-align:left;">Best only updates when you clear all 8 pairs. Pressing New Game early
+          does not save an unfinished game.</p>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">6. Playing like a pro</h4>
+        <ul class="how-to" style="text-align:left;padding-left:1.2rem;">
+          <li><strong>Scan in a fixed order.</strong> Start in the top-left and flip cards in the same order each time.
+          </li>
+          <li><strong>Remember by position.</strong> Think "row 2, column 3" instead of trying to picture the whole
+            board.</li>
+          <li><strong>Use your first flip to explore.</strong> If you do not know any pair yet, flip a card you have not
+            seen.</li>
+          <li><strong>Use your second flip to check.</strong> When you know where a symbol is hiding, flip its partner
+            straight away.</li>
+          <li><strong>Group the symbols.</strong> The cards use spades, clubs, diamonds, hearts, a star, a moon, a sun
+            and a flag, so make a small story out of them.</li>
+          <li><strong>Don't rush.</strong> A quick wrong flip costs a whole move.</li>
+        </ul>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">7. Common questions</h4>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Why can't I flip a third card?</summary>Only two
+          cards can be face up at once. When they do not match, wait a moment for them to flip back.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Where is my best score saved?</summary>In your
+          browser's local storage. It is lost if you clear site data or switch browser or device.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Are the symbols the same every game?</summary>The
+          same eight symbols are used every time, but their positions are reshuffled each game.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Does a match count as a move?</summary>Yes. Every
+          pair of flips counts as one move, whether it matches or not.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">What if I want to start over?</summary>Press
+          <strong>New Game</strong>. Your Best score stays, but the unfinished game is not saved.
+        </details>
+      </div>
+    </div>
+  </section>
 
-  function flip(id){
-    if (lock) return;
-    const card = cards[id];
-    if (card.isFlipped || card.isMatched) return;
-    card.isFlipped = true;
-    flipped.push(card);
-    render();
-    if (flipped.length === 2){
-      moves++;
-      movesEl.textContent = moves;
-      lock = true;
-      const [a,b] = flipped;
-      if (a.icon === b.icon){
-        a.isMatched = true; b.isMatched = true;
-        matched++;
-        matchedEl.textContent = matched + '/8';
-        flipped = [];
-        lock = false;
+
+  <section class="pb-5">
+    <div class="container" style="max-width:860px;">
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="game-panel h-100">
+            <h4 class="gold-text">Memory tips</h4>
+            <ul class="how-to" style="text-align:left;padding-left:1.1rem">
+              <li>Start in a corner and flip cards in a fixed order, so you can recall positions.</li>
+              <li>Your first flip of a turn is a free look. Use it to learn new cards.</li>
+              <li>Wait for the mismatch to flip back before tapping again.</li>
+              <li>A perfect game takes 8 moves; most players land between 12 and 20.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="game-panel h-100">
+            <h4 class="gold-text">How scoring works</h4>
+            <ul class="how-to" style="text-align:left;padding-left:1.1rem">
+              <li>Every pair of flips counts as one move.</li>
+              <li>The lower your move count, the better.</li>
+              <li>Your best result is saved in this browser.</li>
+              <li>Press New Game to reshuffle all 16 cards.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <h4 class="gold-text mt-5 mb-3">New in the arcade</h4>
+      <div class="row g-3">
+        <div class="col-md-4"><a href="game11.html" class="game-panel d-block text-decoration-none h-100">
+            <h5 class="gold-text">🧱 Breakout</h5>
+            <p class="how-to mb-0">Clear the gold bricks with a bouncing orb.</p>
+          </a></div>
+        <div class="col-md-4"><a href="game12.html" class="game-panel d-block text-decoration-none h-100">
+            <h5 class="gold-text">🔤 Hangman</h5>
+            <p class="how-to mb-0">Guess gaming words before you run out of lives.</p>
+          </a></div>
+        <div class="col-md-4"><a href="game13.html" class="game-panel d-block text-decoration-none h-100">
+            <h5 class="gold-text">⚡ Reaction Test</h5>
+            <p class="how-to mb-0">Measure your reflexes over five rounds.</p>
+          </a></div>
+        <div class="col-md-4"><a href="game14.html" class="game-panel d-block text-decoration-none h-100">
+            <h5 class="gold-text">💣 Minesweeper</h5>
+            <p class="how-to mb-0">Clear the 9x9 board without hitting a mine.</p>
+          </a></div>
+        <div class="col-md-4"><a href="game15.html" class="game-panel d-block text-decoration-none h-100">
+            <h5 class="gold-text">🟡 Flappy Orb</h5>
+            <p class="how-to mb-0">Flap through the gaps in the golden pillars.</p>
+          </a></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== NEXT GAMES JOURNEY (7 sections) ===== -->
+  <section class="pb-5" id="next-games">
+    <div class="container" style="max-width:860px;">
+      <h2 class="gold-text mb-2">Your Arcade Journey: What to Play After Memory Match</h2>
+      <p style="color:var(--text-dim);">Finished a few rounds of Memory Match? The NM Gaming arcade has more to try.
+        Below are the
+        next seven games in the lineup, each with a quick guide on how to play so you can jump straight in.</p>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game5.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">✊</span>
+              <img src="images/game5.jpg" alt="Rock Paper Scissors game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 1 OF 7</small>
+            <h4 class="gold-text">✊ Rock Paper Scissors</h4>
+            <p class="how-to" style="text-align:left;">Pick your hand against the computer and see who wins the round.
+              The score keeps counting as long as you play.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Choose Rock, Paper or Scissors.</li>
+              <li>Rock beats Scissors, Scissors beats Paper, Paper beats Rock.</li>
+              <li>If both pick the same, the round is a draw and nobody scores.</li>
+              <li>Scores and the round counter keep running. Refresh the page to reset them.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> The computer picks at random, so no
+              pattern can beat it. Set a target, like first to 5, to make it a mini match.</p>
+            <a href="game5.html" class="btn-gold text-decoration-none d-inline-block">Play Rock Paper Scissors →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 order-md-2">
+            <!-- Add your image: put the file at images/game6.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🔨</span>
+              <img src="images/game6.jpg" alt="Whack-a-Mole game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 2 OF 7</small>
+            <h4 class="gold-text">🔨 Whack-a-Mole</h4>
+            <p class="how-to" style="text-align:left;">Moles pop out of holes for a split second. Hit them before they
+              disappear.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press start and watch the holes on the board.</li>
+              <li>Click or tap a mole as soon as it pops up.</li>
+              <li>Each hit adds to your score, and missed moles earn nothing.</li>
+              <li>When the round ends, your final score is shown.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Keep your eyes on the whole board, not
+              one hole, so you spot the next mole early.</p>
+            <a href="game6.html" class="btn-gold text-decoration-none d-inline-block">Play Whack-a-Mole →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game7.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🔢</span>
+              <img src="images/game7.jpg" alt="Guess the Number game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 3 OF 7</small>
+            <h4 class="gold-text">🔢 Guess the Number</h4>
+            <p class="how-to" style="text-align:left;">The game hides a secret number. Use the hints to find it in as
+              few guesses as you can.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Type a number in the box and submit your guess.</li>
+              <li>You get a hint: too high or too low.</li>
+              <li>Use the hint to narrow the range and guess again.</li>
+              <li>Find the secret number to win. Fewer attempts means a better result.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Always guess the middle of the
+              remaining range. This halves the options every time.</p>
+            <a href="game7.html" class="btn-gold text-decoration-none d-inline-block">Play Guess the Number →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 order-md-2">
+            <!-- Add your image: put the file at images/game8.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🎵</span>
+              <img src="images/game8.jpg" alt="Simon Says game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 4 OF 7</small>
+            <h4 class="gold-text">🎵 Simon Says</h4>
+            <p class="how-to" style="text-align:left;">Watch the pattern of glowing pads, then repeat it exactly. It
+              grows longer every round.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press start and watch the pads light up in order.</li>
+              <li>Repeat the same order by clicking or tapping the pads.</li>
+              <li>Get it right and the sequence gets one step longer.</li>
+              <li>One wrong tap ends the game, so concentrate.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Say the sequence in your head as
+              colours or a rhythm. Grouping it into small chunks helps.</p>
+            <a href="game8.html" class="btn-gold text-decoration-none d-inline-block">Play Simon Says →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game9.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🧮</span>
+              <img src="images/game9.jpg" alt="2048 game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 5 OF 7</small>
+            <h4 class="gold-text">🧮 2048</h4>
+            <p class="how-to" style="text-align:left;">Slide numbered tiles around a 4 × 4 board. Matching tiles merge
+              into one bigger number.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Slide all the tiles in one direction with the arrow keys, or swipe on a phone.</li>
+              <li>When two tiles with the same number touch, they merge into their sum.</li>
+              <li>A new tile appears after every move, so the board fills up over time.</li>
+              <li>Keep merging to build the 2048 tile before the board runs out of moves.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Keep your biggest tile in one corner
+              and build the other numbers next to it.</p>
+            <a href="game9.html" class="btn-gold text-decoration-none d-inline-block">Play 2048 →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 order-md-2">
+            <!-- Add your image: put the file at images/game10.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🏓</span>
+              <img src="images/game10.jpg" alt="Pong game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 6 OF 7</small>
+            <h4 class="gold-text">🏓 Pong</h4>
+            <p class="how-to" style="text-align:left;">The original paddle duel. Bounce the ball back and make your
+              opponent miss.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Move your paddle up and down using the controls shown on the page.</li>
+              <li>Bounce the ball back each time it comes to your side.</li>
+              <li>If the ball gets past a paddle, the other side scores a point.</li>
+              <li>Keep the rally going and outscore your opponent.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Move the paddle early, before the ball
+              arrives. Hitting it with the edge changes the angle.</p>
+            <a href="game10.html" class="btn-gold text-decoration-none d-inline-block">Play Pong →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game11.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🧱</span>
+              <img src="images/game11.jpg" alt="Breakout game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 7 OF 7</small>
+            <h4 class="gold-text">🧱 Breakout</h4>
+            <p class="how-to" style="text-align:left;">Clear the gold bricks with a bouncing orb. Keep it in play with
+              your paddle.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Move the paddle left and right to stay under the orb.</li>
+              <li>The orb breaks a brick each time it hits one.</li>
+              <li>If the orb falls past your paddle, you lose it.</li>
+              <li>Clear every brick to win the board.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Aim for the sides of the wall first. An
+              orb that gets behind the bricks clears many on its own.</p>
+            <a href="game11.html" class="btn-gold text-decoration-none d-inline-block">Play Breakout →</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="how-to text-center">That's the next stretch of the arcade. Hangman, Reaction Test, Minesweeper and
+        Flappy Orb are waiting in the menu above.</p>
+    </div>
+  </section>
+
+  <footer class="nm-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-6 col-md-3">
+          <h5>NM Gaming</h5>
+          <p style="color:var(--text-dim); font-size:.88rem;">A black &amp; gold arcade of fifteen browser-native
+            classics.</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Arcade Row A</h5>
+          <a href="game1.html">Snake</a>
+          <a href="game2.html">Sliding Puzzle</a>
+          <a href="game3.html">Tic Tac Toe</a>
+          <a href="game4.html">Memory Match</a>
+          <a href="game5.html">Rock Paper Scissors</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Arcade Row B</h5>
+          <a href="game6.html">Whack-a-Mole</a>
+          <a href="game7.html">Guess the Number</a>
+          <a href="game8.html">Simon Says</a>
+          <a href="game9.html">2048</a>
+          <a href="game10.html">Pong</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Arcade Row C</h5>
+          <a href="game11.html">Breakout</a>
+          <a href="game12.html">Hangman</a>
+          <a href="game13.html">Reaction Test</a>
+          <a href="game14.html">Minesweeper</a>
+          <a href="game15.html">Flappy Orb</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Home</h5>
+          <a href="home.html">Back to Top</a>
+          <a href="home.html#games">Full Lineup</a>
+        </div>
+      </div>
+      <div class="copyline">© 2026 NM GAMING · All games run locally in your browser</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="site.js"></script>
+  <script>
+
+    (() => {
+      const grid = document.getElementById('memGrid');
+      const movesEl = document.getElementById('moves');
+      const matchedEl = document.getElementById('matched');
+      const bestEl = document.getElementById('best');
+      const newGameBtn = document.getElementById('newGameBtn');
+      const ICONS = ['\u2660', '\u2663', '\u2666', '\u2665', '\u2605', '\u263e', '\u2600', '\u2691'];
+      let cards, flipped, matched, moves, lock;
+      let best = localStorage.getItem('nm-memory-best');
+      if (best) bestEl.textContent = best;
+
+      function init() {
+        const pairSet = [...ICONS, ...ICONS];
+        for (let i = pairSet.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pairSet[i], pairSet[j]] = [pairSet[j], pairSet[i]];
+        }
+        cards = pairSet.map((icon, id) => ({ id, icon, isFlipped: false, isMatched: false }));
+        flipped = []; matched = 0; moves = 0; lock = false;
+        movesEl.textContent = moves;
+        matchedEl.textContent = '0/8';
         render();
-        if (matched === 8){
-          if (!best || moves < Number(best)){
-            best = moves;
-            localStorage.setItem('nm-memory-best', best);
-            bestEl.textContent = best;
+      }
+
+      function render() {
+        grid.innerHTML = '';
+        cards.forEach(card => {
+          const cell = document.createElement('div');
+          cell.className = 'grid-cell';
+          cell.style.fontSize = '1.6rem';
+          cell.style.aspectRatio = '1/1';
+          cell.textContent = (card.isFlipped || card.isMatched) ? card.icon : '';
+          if (card.isMatched) { cell.style.opacity = '.45'; cell.classList.add('taken'); }
+          if (!card.isFlipped && !card.isMatched) {
+            cell.style.background = 'rgba(212,175,55,0.05)';
+          }
+          cell.addEventListener('click', () => flip(card.id));
+          grid.appendChild(cell);
+        });
+      }
+
+      function flip(id) {
+        if (lock) return;
+        const card = cards[id];
+        if (card.isFlipped || card.isMatched) return;
+        card.isFlipped = true;
+        flipped.push(card);
+        render();
+        if (flipped.length === 2) {
+          moves++;
+          movesEl.textContent = moves;
+          lock = true;
+          const [a, b] = flipped;
+          if (a.icon === b.icon) {
+            a.isMatched = true; b.isMatched = true;
+            matched++;
+            matchedEl.textContent = matched + '/8';
+            flipped = [];
+            lock = false;
+            render();
+            if (matched === 8) {
+              if (!best || moves < Number(best)) {
+                best = moves;
+                localStorage.setItem('nm-memory-best', best);
+                bestEl.textContent = best;
+              }
+            }
+          } else {
+            setTimeout(() => {
+              a.isFlipped = false; b.isFlipped = false;
+              flipped = [];
+              lock = false;
+              render();
+            }, 700);
           }
         }
-      } else {
-        setTimeout(() => {
-          a.isFlipped = false; b.isFlipped = false;
-          flipped = [];
-          lock = false;
-          render();
-        }, 700);
       }
-    }
-  }
 
-  newGameBtn.addEventListener('click', init);
-  init();
-})();
+      newGameBtn.addEventListener('click', init);
+      init();
+    })();
 
-</script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1684242835147633"
-     crossorigin="anonymous"></script>
+  </script>
 </body>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1684242835147633"
+  crossorigin="anonymous"></script>
+
 </html>
