@@ -1,227 +1,597 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2048 — NM Gaming</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="style.css" rel="stylesheet">
-<meta name="google-adsense-account" content="ca-pub-1684242835147633">
-<script src="https://quge5.com/88/tag.min.js" data-zone="255795" async data-cfasync="false"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2048 — NM Gaming</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+
+  <meta name="google-adsense-account" content="ca-pub-1684242835147633">
+
 </head>
+
 <body>
 
-<nav class="navbar navbar-expand-lg nm-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="home.html">NM <span>GAMING</span></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nmNav" aria-controls="nmNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="nmNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="game1.html">Snake</a></li>
-        <li class="nav-item"><a class="nav-link" href="game2.html">Sliding Puzzle</a></li>
-        <li class="nav-item"><a class="nav-link" href="game3.html">Tic Tac Toe</a></li>
-        <li class="nav-item"><a class="nav-link" href="game4.html">Memory Match</a></li>
-        <li class="nav-item"><a class="nav-link" href="game5.html">Rock Paper Scissors</a></li>
-        <li class="nav-item"><a class="nav-link" href="game6.html">Whack-a-Mole</a></li>
-        <li class="nav-item"><a class="nav-link" href="game7.html">Guess the Number</a></li>
-        <li class="nav-item"><a class="nav-link" href="game8.html">Simon Says</a></li>
-        <li class="nav-item"><a class="nav-link" href="game9.html">2048</a></li>
-        <li class="nav-item"><a class="nav-link" href="game10.html">Pong</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<header class="game-hero">
-  <div class="container">
-    <div class="breadcrumb-gold"><a href="home.html">Home</a> / 2048</div>
-    <h1 class="gold-text">🔢 2048</h1>
-    <p style="color:var(--text-dim);">Slide matching gold tiles together to build your way up toward the 2048 tile.</p>
-  </div>
-</header>
-
-<section class="py-5">
-  <div class="container">
-    <div class="game-panel mx-auto" style="max-width:560px;">
-      <div class="game-hud">
-        <div class="hud-chip"><small>Score</small><span id="score">0</span></div>
-        <div class="hud-chip"><small>Best</small><span id="best">0</span></div>
-      </div>
-      <div class="game-stage">
-        <div id="g2048" style="position:relative; display:grid; grid-template-columns:repeat(4,1fr); gap:8px; width:min(360px,84vw); background:#0c0a0d; padding:8px; border:1px solid var(--gold-line);"></div>
-      </div>
-      <div class="game-controls">
-        <button id="newBtn2048" class="btn-gold">New Game</button>
-      </div>
-      <p class="how-to">Use the Arrow Keys (or swipe on mobile) to slide all tiles in one direction. Matching tiles merge into their sum.</p>
-    </div>
-  </div>
-</section>
-
-<footer class="nm-footer">
-  <div class="container">
-    <div class="row g-4">
-      <div class="col-6 col-md-3">
-        <h5>NM Gaming</h5>
-        <p style="color:var(--text-dim); font-size:.88rem;">A black &amp; gold arcade of ten browser-native classics.</p>
-      </div>
-      <div class="col-6 col-md-3">
-        <h5>Arcade Row A</h5>
-        <a href="game1.html">Snake</a>
-        <a href="game2.html">Sliding Puzzle</a>
-        <a href="game3.html">Tic Tac Toe</a>
-        <a href="game4.html">Memory Match</a>
-        <a href="game5.html">Rock Paper Scissors</a>
-      </div>
-      <div class="col-6 col-md-3">
-        <h5>Arcade Row B</h5>
-        <a href="game6.html">Whack-a-Mole</a>
-        <a href="game7.html">Guess the Number</a>
-        <a href="game8.html">Simon Says</a>
-        <a href="game9.html">2048</a>
-        <a href="game10.html">Pong</a>
-      </div>
-      <div class="col-6 col-md-3">
-        <h5>Home</h5>
-        <a href="home.html">Back to Top</a>
-        <a href="home.html#games">Full Lineup</a>
+  <nav class="navbar navbar-expand-lg nm-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="home.html">NM <span>GAMING</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nmNav"
+        aria-controls="nmNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nmNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="game1.html">Snake</a></li>
+          <li class="nav-item"><a class="nav-link" href="game2.html">Sliding Puzzle</a></li>
+          <li class="nav-item"><a class="nav-link" href="game3.html">Tic Tac Toe</a></li>
+          <li class="nav-item"><a class="nav-link" href="game4.html">Memory Match</a></li>
+          <li class="nav-item"><a class="nav-link" href="game5.html">Rock Paper Scissors</a></li>
+          <li class="nav-item"><a class="nav-link" href="game6.html">Whack-a-Mole</a></li>
+          <li class="nav-item"><a class="nav-link" href="game7.html">Guess the Number</a></li>
+          <li class="nav-item"><a class="nav-link" href="game8.html">Simon Says</a></li>
+          <li class="nav-item"><a class="nav-link" href="game9.html">2048</a></li>
+          <li class="nav-item"><a class="nav-link" href="game10.html">Pong</a></li>
+          <li class="nav-item"><a class="nav-link" href="game11.html">Breakout</a></li>
+          <li class="nav-item"><a class="nav-link" href="game12.html">Hangman</a></li>
+          <li class="nav-item"><a class="nav-link" href="game13.html">Reaction Test</a></li>
+          <li class="nav-item"><a class="nav-link" href="game14.html">Minesweeper</a></li>
+          <li class="nav-item"><a class="nav-link" href="game15.html">Flappy Orb</a></li>
+        </ul>
       </div>
     </div>
-    <div class="copyline">© 2026 NM GAMING · All games run locally in your browser</div>
-  </div>
-</footer>
+  </nav>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="site.js"></script>
-<script>
+  <header class="game-hero">
+    <div class="container">
+      <div class="breadcrumb-gold"><a href="home.html">Home</a> / 2048</div>
+      <h1 class="gold-text">🔢 2048</h1>
+      <p style="color:var(--text-dim);">Slide matching gold tiles together to build your way up toward the 2048 tile.
+      </p>
+    </div>
+  </header>
 
-(() => {
-  const boardEl = document.getElementById('g2048');
-  const scoreEl = document.getElementById('score');
-  const bestEl = document.getElementById('best');
-  const newBtn = document.getElementById('newBtn2048');
-  const SIZE = 4;
-  let board, score, best;
-  best = Number(localStorage.getItem('nm-2048-best') || 0);
-  bestEl.textContent = best;
+  <section class="py-5">
+    <div class="container">
+      <div class="game-panel mx-auto" style="max-width:560px;">
+        <div class="game-hud">
+          <div class="hud-chip"><small>Score</small><span id="score">0</span></div>
+          <div class="hud-chip"><small>Best</small><span id="best">0</span></div>
+        </div>
+        <div class="game-stage">
+          <div id="g2048"
+            style="position:relative; display:grid; grid-template-columns:repeat(4,1fr); gap:8px; width:min(360px,84vw); background:#0c0a0d; padding:8px; border:1px solid var(--gold-line);">
+          </div>
+        </div>
+        <div class="game-controls">
+          <button id="newBtn2048" class="btn-gold">New Game</button>
+        </div>
+        <p class="how-to">Use the Arrow Keys (or swipe on mobile) to slide all tiles in one direction. Matching tiles
+          merge into their sum.</p>
+      </div>
+    </div>
+  </section>
 
-  const COLORS = {
-    2:'#3a2f0d', 4:'#4a3c12', 8:'#6b5518', 16:'#8a6d1f', 32:'#a5842a',
-    64:'#c19a33', 128:'#d4af37', 256:'#dcc063', 512:'#e6cd82', 1024:'#f0da9e', 2048:'#f6dd8a'
-  };
+  <!-- ===== HOW TO PLAY GUIDE (7 sections) ===== -->
+  <section class="pb-5" id="how-to-play">
+    <div class="container" style="max-width:860px;">
+      <h2 class="gold-text mb-2">How to Play 2048</h2>
+      <p style="color:var(--text-dim);">2048 is a sliding number puzzle on a 4 × 4 board. You slide tiles around and
+        merge matching numbers into bigger ones. This guide covers everything you need to know.</p>
 
-  function emptyBoard(){ return Array.from({length:SIZE}, () => Array(SIZE).fill(0)); }
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">1. The goal</h4>
+        <p class="how-to" style="text-align:left;">Merge tiles to build the 2048 tile, and score as many points as you
+          can along the way.</p>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">2. Getting started</h4>
+        <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+          <li>The game starts with two tiles on the board, each a 2 or a 4.</li>
+          <li>Press an Arrow Key, or swipe on a phone. Every tile slides as far as it can in that direction.</li>
+          <li>If two tiles with the same number touch while sliding, they merge into one tile with double the value.
+          </li>
+          <li>After every move that changes the board, a new tile appears in a random empty square. It is usually a 2
+            and sometimes a 4.</li>
+          <li>Keep sliding and merging to build bigger numbers.</li>
+        </ol>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">3. Controls</h4>
+        <div class="row g-3 how-to" style="text-align:left;">
+          <div class="col-md-4"><strong>Keyboard</strong><br>Arrow Keys: up, down, left, right. The page won't scroll
+            while you play.</div>
+          <div class="col-md-4"><strong>Touch screen</strong><br>Swipe on the board. A swipe of about 30 pixels or more
+            is counted.</div>
+          <div class="col-md-4"><strong>New Game</strong><br>Clears the board and your score, and deals two new tiles.
+          </div>
+        </div>
+        <p class="how-to mt-3" style="text-align:left;">If a move would not change anything, nothing happens and no new
+          tile is added.</p>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">4. How the game ends</h4>
+        <p class="how-to" style="text-align:left;">The game has no timer. The board is stuck when every square is full
+          and no two neighbouring tiles match. Press <strong>New Game</strong> to start again.</p>
+        <p class="how-to" style="text-align:left;">Note that this version does not show a pop-up when you reach 2048 or
+          when no moves are left. You can keep merging past 2048 to push your score higher.</p>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">5. Scoring</h4>
+        <p class="how-to" style="text-align:left;">When two tiles merge, you score the value of the new tile. Each tile
+          can only merge once per move.</p>
+        <div style="overflow-x:auto;">
+          <table class="how-to" style="width:100%;text-align:center;border-collapse:collapse;">
+            <thead>
+              <tr style="color:var(--gold-bright);">
+                <th>Merge</th>
+                <th>Points scored</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2 + 2 = 4</td>
+                <td>+4</td>
+              </tr>
+              <tr>
+                <td>4 + 4 = 8</td>
+                <td>+8</td>
+              </tr>
+              <tr>
+                <td>8 + 8 = 16</td>
+                <td>+16</td>
+              </tr>
+              <tr>
+                <td>64 + 64 = 128</td>
+                <td>+128</td>
+              </tr>
+              <tr>
+                <td>1024 + 1024 = 2048</td>
+                <td>+2048</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="how-to mt-3" style="text-align:left;">Your Best score is updated while you play and is saved in this
+          browser.</p>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">6. Playing like a pro</h4>
+        <ul class="how-to" style="text-align:left;padding-left:1.2rem;">
+          <li><strong>Pick a corner.</strong> Keep your biggest tile in one corner and never move it out.</li>
+          <li><strong>Use only three directions.</strong> If your corner is bottom-right, use down, right and left. Use
+            up only when you have to.</li>
+          <li><strong>Keep a row full.</strong> A full bottom row of big numbers can't be disturbed.</li>
+          <li><strong>Build in order.</strong> Arrange the numbers in a snake pattern, big to small, along the rows.
+          </li>
+          <li><strong>Merge small tiles early.</strong> Loose 2s and 4s fill the board fast.</li>
+          <li><strong>Think before you swipe.</strong> There is no timer, so look at what each direction would do.</li>
+        </ul>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">7. Common questions</h4>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Why did nothing happen when I pressed a key?
+          </summary>The move would not have changed the board. Try another direction.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Does the game end at 2048?</summary>No. You can keep
+          going and merge even higher tiles.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Where is my best score saved?</summary>In your
+          browser's local storage. It is lost if you clear site data or switch browser or device.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">What if the board is full?</summary>If no
+          neighbouring tiles match, no move is possible. Press New Game.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Why do some new tiles show 4?</summary>About 1 in 10
+          new tiles starts as a 4 instead of a 2.
+        </details>
+      </div>
+    </div>
+  </section>
 
-  function addTile(){
-    const empties = [];
-    for (let r=0;r<SIZE;r++) for (let c=0;c<SIZE;c++) if (board[r][c]===0) empties.push([r,c]);
-    if (!empties.length) return;
-    const [r,c] = empties[Math.floor(Math.random()*empties.length)];
-    board[r][c] = Math.random() < 0.9 ? 2 : 4;
-  }
 
-  function render(){
-    boardEl.innerHTML = '';
-    for (let r=0;r<SIZE;r++){
-      for (let c=0;c<SIZE;c++){
-        const v = board[r][c];
-        const cell = document.createElement('div');
-        cell.style.aspectRatio = '1/1';
-        cell.style.display = 'flex';
-        cell.style.alignItems = 'center';
-        cell.style.justifyContent = 'center';
-        cell.style.fontFamily = "'Cinzel', serif";
-        cell.style.fontWeight = '800';
-        cell.style.fontSize = v >= 1024 ? '1rem' : '1.3rem';
-        cell.style.color = v <= 4 ? '#eadfb9' : '#0a0904';
-        cell.style.background = v ? COLORS[v] || '#f6dd8a' : 'rgba(212,175,55,.05)';
-        cell.style.border = '1px solid rgba(212,175,55,.15)';
-        cell.style.transition = 'background .15s ease';
-        cell.textContent = v || '';
-        boardEl.appendChild(cell);
+  <!-- ===== NEXT GAMES JOURNEY (7 sections) ===== -->
+  <section class="pb-5" id="next-games">
+    <div class="container" style="max-width:860px;">
+      <h2 class="gold-text mb-2">Your Arcade Journey: What to Play After 2048</h2>
+      <p style="color:var(--text-dim);">Finished a few rounds of 2048? The NM Gaming arcade has more to try. Below are
+        the
+        next seven games in the lineup, each with a quick guide on how to play so you can jump straight in. After Flappy
+        Orb, the lineup loops back to Snake.</p>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game10.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🏓</span>
+              <img src="images/game10.jpg" alt="Pong game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 1 OF 7</small>
+            <h4 class="gold-text">🏓 Pong</h4>
+            <p class="how-to" style="text-align:left;">The classic paddle duel against the CPU. Keep the ball in play
+              and make the CPU miss.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press Start. The ball launches in a random direction.</li>
+              <li>Move your mouse or finger up and down over the board to control your paddle on the left.</li>
+              <li>If the ball gets past the CPU paddle, you score. If it gets past yours, the CPU scores.</li>
+              <li>The ball gets 5% faster horizontally every time it hits a paddle.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> The CPU paddle never speeds up but the
+              ball does, so long rallies work in your favour.</p>
+            <a href="game10.html" class="btn-gold text-decoration-none d-inline-block">Play Pong →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 order-md-2">
+            <!-- Add your image: put the file at images/game11.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🧱</span>
+              <img src="images/game11.jpg" alt="Breakout game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 2 OF 7</small>
+            <h4 class="gold-text">🧱 Breakout</h4>
+            <p class="how-to" style="text-align:left;">Bounce a golden orb off your paddle to smash all 40 bricks. You
+              have 3 lives.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press Start Game and move the paddle with the mouse, your finger, the Arrow Keys or A and D.</li>
+              <li>Every brick the orb hits breaks and scores 10 points.</li>
+              <li>If the orb falls past your paddle, you lose a life.</li>
+              <li>Clear every brick to win.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Hit the orb with the edge of the paddle
+              to change its angle and reach the corners.</p>
+            <a href="game11.html" class="btn-gold text-decoration-none d-inline-block">Play Breakout →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game12.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🔤</span>
+              <img src="images/game12.jpg" alt="Hangman game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 3 OF 7</small>
+            <h4 class="gold-text">🔤 Hangman</h4>
+            <p class="how-to" style="text-align:left;">Guess the hidden gaming word one letter at a time. You can afford
+              6 wrong guesses.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press Start Game to get a word. Each blank is one letter.</li>
+              <li>Click a letter on screen or type it on your keyboard.</li>
+              <li>A correct letter fills in every matching blank. A wrong one costs a life.</li>
+              <li>Reveal the whole word before your 6 lives run out. Your total Wins is saved.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Start with common letters like E and A,
+              then use the pattern of blanks to work out the rest.</p>
+            <a href="game12.html" class="btn-gold text-decoration-none d-inline-block">Play Hangman →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 order-md-2">
+            <!-- Add your image: put the file at images/game13.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">⚡</span>
+              <img src="images/game13.jpg" alt="Reaction Test game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 4 OF 7</small>
+            <h4 class="gold-text">⚡ Reaction Test</h4>
+            <p class="how-to" style="text-align:left;">Test your reflexes. Tap the box the moment it turns gold.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Click the box or press Space to begin. It says Wait for gold.</li>
+              <li>After a random wait of 1 to 4 seconds, the box turns gold and says CLICK NOW.</li>
+              <li>Tap as fast as you can. Your time in milliseconds is shown.</li>
+              <li>After five rounds you get your average. Tapping too early cancels the attempt.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Rest a finger on the Space bar and
+              react to the colour. Don't try to guess the timing.</p>
+            <a href="game13.html" class="btn-gold text-decoration-none d-inline-block">Play Reaction Test →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game14.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">💣</span>
+              <img src="images/game14.jpg" alt="Minesweeper game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 5 OF 7</small>
+            <h4 class="gold-text">💣 Minesweeper</h4>
+            <p class="how-to" style="text-align:left;">A 9 × 9 board hides 10 mines. Reveal every safe square without
+              hitting one.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press Start Game, then click any square. Your first click is always safe.</li>
+              <li>Numbers show how many mines touch that square.</li>
+              <li>Right-click, or turn on Flag mode on a phone, to mark a mine.</li>
+              <li>Reveal all 71 safe squares to win. Your fastest time is saved as Best.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Start in the open area your first click
+              creates, then use the numbers to find squares that must be mines.</p>
+            <a href="game14.html" class="btn-gold text-decoration-none d-inline-block">Play Minesweeper →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 order-md-2">
+            <!-- Add your image: put the file at images/game15.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🟡</span>
+              <img src="images/game15.jpg" alt="Flappy Orb game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 6 OF 7</small>
+            <h4 class="gold-text">🟡 Flappy Orb</h4>
+            <p class="how-to" style="text-align:left;">Flap a golden orb through the gaps in the pillars. One touch ends
+              the run.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press Start Game, or just tap the board.</li>
+              <li>Press Space or the Up Arrow, click, or tap to flap. Gravity pulls the orb down.</li>
+              <li>Every pillar you pass scores 1 point.</li>
+              <li>Touching a pillar, the floor or the ceiling ends the run.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Use small, steady taps instead of big
+              bursts, and aim for the middle of each gap.</p>
+            <a href="game15.html" class="btn-gold text-decoration-none d-inline-block">Play Flappy Orb →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game1.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🐍</span>
+              <img src="images/game1.jpg" alt="Snake game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 7 OF 7</small>
+            <h4 class="gold-text">🐍 Snake</h4>
+            <p class="how-to" style="text-align:left;">A gold snake on a 20 × 20 board. Eat the glowing orbs to grow
+              without crashing.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press Start Game. The snake moves on its own.</li>
+              <li>Steer with the Arrow Keys or W A S D, or swipe on a phone.</li>
+              <li>Every orb you eat scores 10 points and makes the snake longer. The speed goes up every 50 points.</li>
+              <li>Hitting a wall or your own tail ends the game.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Plan turns a few cells ahead. Tight
+              spirals trap you.</p>
+            <a href="game1.html" class="btn-gold text-decoration-none d-inline-block">Play Snake →</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="how-to text-center">That's the next stretch of the arcade. Sliding Puzzle, Tic Tac Toe, Memory Match,
+        Rock Paper Scissors, Whack-a-Mole, Guess the Number and Simon Says are waiting in the menu above.</p>
+    </div>
+  </section>
+
+  <footer class="nm-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-6 col-md-3">
+          <h5>NM Gaming</h5>
+          <p style="color:var(--text-dim); font-size:.88rem;">A black &amp; gold arcade of fifteen browser-native
+            classics.</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Arcade Row A</h5>
+          <a href="game1.html">Snake</a>
+          <a href="game2.html">Sliding Puzzle</a>
+          <a href="game3.html">Tic Tac Toe</a>
+          <a href="game4.html">Memory Match</a>
+          <a href="game5.html">Rock Paper Scissors</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Arcade Row B</h5>
+          <a href="game6.html">Whack-a-Mole</a>
+          <a href="game7.html">Guess the Number</a>
+          <a href="game8.html">Simon Says</a>
+          <a href="game9.html">2048</a>
+          <a href="game10.html">Pong</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Arcade Row C</h5>
+          <a href="game11.html">Breakout</a>
+          <a href="game12.html">Hangman</a>
+          <a href="game13.html">Reaction Test</a>
+          <a href="game14.html">Minesweeper</a>
+          <a href="game15.html">Flappy Orb</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Home</h5>
+          <a href="home.html">Back to Top</a>
+          <a href="home.html#games">Full Lineup</a>
+        </div>
+      </div>
+      <div class="copyline">© 2026 NM GAMING · All games run locally in your browser</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="site.js"></script>
+  <script>
+
+    (() => {
+      const boardEl = document.getElementById('g2048');
+      const scoreEl = document.getElementById('score');
+      const bestEl = document.getElementById('best');
+      const newBtn = document.getElementById('newBtn2048');
+      const SIZE = 4;
+      let board, score, best;
+      best = Number(localStorage.getItem('nm-2048-best') || 0);
+      bestEl.textContent = best;
+
+      const COLORS = {
+        2: '#3a2f0d', 4: '#4a3c12', 8: '#6b5518', 16: '#8a6d1f', 32: '#a5842a',
+        64: '#c19a33', 128: '#d4af37', 256: '#dcc063', 512: '#e6cd82', 1024: '#f0da9e', 2048: '#f6dd8a'
+      };
+
+      function emptyBoard() { return Array.from({ length: SIZE }, () => Array(SIZE).fill(0)); }
+
+      function addTile() {
+        const empties = [];
+        for (let r = 0; r < SIZE; r++) for (let c = 0; c < SIZE; c++) if (board[r][c] === 0) empties.push([r, c]);
+        if (!empties.length) return;
+        const [r, c] = empties[Math.floor(Math.random() * empties.length)];
+        board[r][c] = Math.random() < 0.9 ? 2 : 4;
       }
-    }
-    scoreEl.textContent = score;
-  }
 
-  function slideRowLeft(row){
-    let arr = row.filter(v => v !== 0);
-    for (let i=0;i<arr.length-1;i++){
-      if (arr[i] === arr[i+1]){
-        arr[i] *= 2;
-        score += arr[i];
-        arr[i+1] = 0;
+      function render() {
+        boardEl.innerHTML = '';
+        for (let r = 0; r < SIZE; r++) {
+          for (let c = 0; c < SIZE; c++) {
+            const v = board[r][c];
+            const cell = document.createElement('div');
+            cell.style.aspectRatio = '1/1';
+            cell.style.display = 'flex';
+            cell.style.alignItems = 'center';
+            cell.style.justifyContent = 'center';
+            cell.style.fontFamily = "'Cinzel', serif";
+            cell.style.fontWeight = '800';
+            cell.style.fontSize = v >= 1024 ? '1rem' : '1.3rem';
+            cell.style.color = v <= 4 ? '#eadfb9' : '#0a0904';
+            cell.style.background = v ? COLORS[v] || '#f6dd8a' : 'rgba(212,175,55,.05)';
+            cell.style.border = '1px solid rgba(212,175,55,.15)';
+            cell.style.transition = 'background .15s ease';
+            cell.textContent = v || '';
+            boardEl.appendChild(cell);
+          }
+        }
+        scoreEl.textContent = score;
       }
-    }
-    arr = arr.filter(v => v !== 0);
-    while (arr.length < SIZE) arr.push(0);
-    return arr;
-  }
 
-  function rotateBoard(b){
-    const nb = emptyBoard();
-    for (let r=0;r<SIZE;r++) for (let c=0;c<SIZE;c++) nb[c][SIZE-1-r] = b[r][c];
-    return nb;
-  }
-
-  function move(dir){
-    if (!dir) return;
-    let moved = false;
-    let b = board.map(row => row.slice());
-    let rotations = { left:0, up:1, right:2, down:3 }[dir];
-    for (let i=0;i<rotations;i++) b = rotateBoard(b);
-    const newB = b.map(row => slideRowLeft(row));
-    for (let r=0;r<SIZE;r++) for (let c=0;c<SIZE;c++) if (newB[r][c] !== b[r][c]) moved = true;
-    let result = newB;
-    for (let i=0;i<(4-rotations)%4;i++) result = rotateBoard(result);
-    board = result;
-    if (moved){
-      addTile();
-      if (score > best){
-        best = score;
-        localStorage.setItem('nm-2048-best', best);
-        bestEl.textContent = best;
+      function slideRowLeft(row) {
+        let arr = row.filter(v => v !== 0);
+        for (let i = 0; i < arr.length - 1; i++) {
+          if (arr[i] === arr[i + 1]) {
+            arr[i] *= 2;
+            score += arr[i];
+            arr[i + 1] = 0;
+          }
+        }
+        arr = arr.filter(v => v !== 0);
+        while (arr.length < SIZE) arr.push(0);
+        return arr;
       }
-      render();
-    }
-  }
 
-  function init(){
-    board = emptyBoard();
-    score = 0;
-    addTile();
-    addTile();
-    render();
-  }
+      function rotateBoard(b) {
+        const nb = emptyBoard();
+        for (let r = 0; r < SIZE; r++) for (let c = 0; c < SIZE; c++) nb[c][SIZE - 1 - r] = b[r][c];
+        return nb;
+      }
 
-  document.addEventListener('keydown', (e) => {
-    const map = { ArrowLeft:'left', ArrowRight:'right', ArrowUp:'up', ArrowDown:'down' };
-    if (map[e.key]){
-      e.preventDefault();
-      move(map[e.key]);
-    }
-  });
+      function move(dir) {
+        if (!dir) return;
+        let moved = false;
+        let b = board.map(row => row.slice());
+        let rotations = { left: 0, up: 1, right: 2, down: 3 }[dir];
+        for (let i = 0; i < rotations; i++) b = rotateBoard(b);
+        const newB = b.map(row => slideRowLeft(row));
+        for (let r = 0; r < SIZE; r++) for (let c = 0; c < SIZE; c++) if (newB[r][c] !== b[r][c]) moved = true;
+        let result = newB;
+        for (let i = 0; i < (4 - rotations) % 4; i++) result = rotateBoard(result);
+        board = result;
+        if (moved) {
+          addTile();
+          if (score > best) {
+            best = score;
+            localStorage.setItem('nm-2048-best', best);
+            bestEl.textContent = best;
+          }
+          render();
+        }
+      }
 
-  let sx, sy;
-  boardEl.addEventListener('touchstart', e => { sx = e.changedTouches[0].clientX; sy = e.changedTouches[0].clientY; });
-  boardEl.addEventListener('touchend', e => {
-    const dx = e.changedTouches[0].clientX - sx;
-    const dy = e.changedTouches[0].clientY - sy;
-    if (Math.abs(dx) > Math.abs(dy)){
-      move(dx > 30 ? 'right' : dx < -30 ? 'left' : null);
-    } else {
-      move(dy > 30 ? 'down' : dy < -30 ? 'up' : null);
-    }
-  });
+      function init() {
+        board = emptyBoard();
+        score = 0;
+        addTile();
+        addTile();
+        render();
+      }
 
-  newBtn.addEventListener('click', init);
-  init();
-})();
+      document.addEventListener('keydown', (e) => {
+        const map = { ArrowLeft: 'left', ArrowRight: 'right', ArrowUp: 'up', ArrowDown: 'down' };
+        if (map[e.key]) {
+          e.preventDefault();
+          move(map[e.key]);
+        }
+      });
 
-</script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1684242835147633"
-     crossorigin="anonymous"></script>
+      let sx, sy;
+      boardEl.addEventListener('touchstart', e => { sx = e.changedTouches[0].clientX; sy = e.changedTouches[0].clientY; });
+      boardEl.addEventListener('touchend', e => {
+        const dx = e.changedTouches[0].clientX - sx;
+        const dy = e.changedTouches[0].clientY - sy;
+        if (Math.abs(dx) > Math.abs(dy)) {
+          move(dx > 30 ? 'right' : dx < -30 ? 'left' : null);
+        } else {
+          move(dy > 30 ? 'down' : dy < -30 ? 'up' : null);
+        }
+      });
+
+      newBtn.addEventListener('click', init);
+      init();
+    })();
+
+  </script>
 </body>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1684242835147633"
+  crossorigin="anonymous"></script>
+
 </html>
