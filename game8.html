@@ -1,184 +1,540 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Simon Says — NM Gaming</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="style.css" rel="stylesheet">
-<meta name="google-adsense-account" content="ca-pub-1684242835147633">
-  <script src="https://quge5.com/88/tag.min.js" data-zone="255795" async data-cfasync="false"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simon Says — NM Gaming</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+
+  <meta name="google-adsense-account" content="ca-pub-1684242835147633">
+
 </head>
+
 <body>
 
-<nav class="navbar navbar-expand-lg nm-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="home.html">NM <span>GAMING</span></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nmNav" aria-controls="nmNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="nmNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="game1.html">Snake</a></li>
-        <li class="nav-item"><a class="nav-link" href="game2.html">Sliding Puzzle</a></li>
-        <li class="nav-item"><a class="nav-link" href="game3.html">Tic Tac Toe</a></li>
-        <li class="nav-item"><a class="nav-link" href="game4.html">Memory Match</a></li>
-        <li class="nav-item"><a class="nav-link" href="game5.html">Rock Paper Scissors</a></li>
-        <li class="nav-item"><a class="nav-link" href="game6.html">Whack-a-Mole</a></li>
-        <li class="nav-item"><a class="nav-link" href="game7.html">Guess the Number</a></li>
-        <li class="nav-item"><a class="nav-link" href="game8.html">Simon Says</a></li>
-        <li class="nav-item"><a class="nav-link" href="game9.html">2048</a></li>
-        <li class="nav-item"><a class="nav-link" href="game10.html">Pong</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<header class="game-hero">
-  <div class="container">
-    <div class="breadcrumb-gold"><a href="home.html">Home</a> / Simon Says</div>
-    <h1 class="gold-text">🔵 Simon Says</h1>
-    <p style="color:var(--text-dim);">Watch the gold sequence light up across the pads, then repeat it back from memory.</p>
-  </div>
-</header>
-
-<section class="py-5">
-  <div class="container">
-    <div class="game-panel mx-auto" style="max-width:560px;">
-      <div class="game-hud">
-        <div class="hud-chip"><small>Round</small><span id="round">0</span></div>
-        <div class="hud-chip"><small>Best</small><span id="best">0</span></div>
-        <div class="hud-chip"><small>Status</small><span id="status">Ready</span></div>
+  <nav class="navbar navbar-expand-lg nm-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="home.html">NM <span>GAMING</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nmNav"
+        aria-controls="nmNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nmNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="game1.html">Snake</a></li>
+          <li class="nav-item"><a class="nav-link" href="game2.html">Sliding Puzzle</a></li>
+          <li class="nav-item"><a class="nav-link" href="game3.html">Tic Tac Toe</a></li>
+          <li class="nav-item"><a class="nav-link" href="game4.html">Memory Match</a></li>
+          <li class="nav-item"><a class="nav-link" href="game5.html">Rock Paper Scissors</a></li>
+          <li class="nav-item"><a class="nav-link" href="game6.html">Whack-a-Mole</a></li>
+          <li class="nav-item"><a class="nav-link" href="game7.html">Guess the Number</a></li>
+          <li class="nav-item"><a class="nav-link" href="game8.html">Simon Says</a></li>
+          <li class="nav-item"><a class="nav-link" href="game9.html">2048</a></li>
+          <li class="nav-item"><a class="nav-link" href="game10.html">Pong</a></li>
+          <li class="nav-item"><a class="nav-link" href="game11.html">Breakout</a></li>
+          <li class="nav-item"><a class="nav-link" href="game12.html">Hangman</a></li>
+          <li class="nav-item"><a class="nav-link" href="game13.html">Reaction Test</a></li>
+          <li class="nav-item"><a class="nav-link" href="game14.html">Minesweeper</a></li>
+          <li class="nav-item"><a class="nav-link" href="game15.html">Flappy Orb</a></li>
+        </ul>
       </div>
-      <div class="game-stage">
-        <div id="simonGrid" style="display:grid; grid-template-columns:repeat(2,1fr); gap:10px; width:min(280px,72vw);">
-          <div class="grid-cell simon-pad" data-idx="0" style="background:#3a2f0d;"></div>
-          <div class="grid-cell simon-pad" data-idx="1" style="background:#3a2f0d;"></div>
-          <div class="grid-cell simon-pad" data-idx="2" style="background:#3a2f0d;"></div>
-          <div class="grid-cell simon-pad" data-idx="3" style="background:#3a2f0d;"></div>
+    </div>
+  </nav>
+
+  <header class="game-hero">
+    <div class="container">
+      <div class="breadcrumb-gold"><a href="home.html">Home</a> / Simon Says</div>
+      <h1 class="gold-text">🔵 Simon Says</h1>
+      <p style="color:var(--text-dim);">Watch the gold sequence light up across the pads, then repeat it back from
+        memory.</p>
+    </div>
+  </header>
+
+  <section class="py-5">
+    <div class="container">
+      <div class="game-panel mx-auto" style="max-width:560px;">
+        <div class="game-hud">
+          <div class="hud-chip"><small>Round</small><span id="round">0</span></div>
+          <div class="hud-chip"><small>Best</small><span id="best">0</span></div>
+          <div class="hud-chip"><small>Status</small><span id="status">Ready</span></div>
+        </div>
+        <div class="game-stage">
+          <div id="simonGrid"
+            style="display:grid; grid-template-columns:repeat(2,1fr); gap:10px; width:min(280px,72vw);">
+            <div class="grid-cell simon-pad" data-idx="0" style="background:#3a2f0d;"></div>
+            <div class="grid-cell simon-pad" data-idx="1" style="background:#3a2f0d;"></div>
+            <div class="grid-cell simon-pad" data-idx="2" style="background:#3a2f0d;"></div>
+            <div class="grid-cell simon-pad" data-idx="3" style="background:#3a2f0d;"></div>
+          </div>
+        </div>
+        <div class="game-controls">
+          <button id="simonStartBtn" class="btn-gold">Start</button>
+        </div>
+        <p class="how-to">Press Start and watch the pads flash in order. Repeat the same sequence by tapping the pads -
+          each round adds one more step.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW TO PLAY GUIDE (7 sections) ===== -->
+  <section class="pb-5" id="how-to-play">
+    <div class="container" style="max-width:860px;">
+      <h2 class="gold-text mb-2">How to Play Simon Says</h2>
+      <p style="color:var(--text-dim);">Simon Says is a memory game. Four pads flash in a pattern, and you repeat it
+        back. Each round adds one more step. This guide covers everything you need to know.</p>
+
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">1. The goal</h4>
+        <p class="how-to" style="text-align:left;">Repeat the pattern correctly for as many rounds as you can. Your Best
+          score is the highest round you have reached.</p>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">2. Getting started</h4>
+        <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+          <li>Press <strong>Start</strong>. The Round chip shows 1 and the Status chip changes to
+            <strong>Watch</strong>.
+          </li>
+          <li>The pads light up in light gold, one at a time. In round 1 you see one flash.</li>
+          <li>When the Status chip says <strong>Your Turn</strong>, tap the pads in the same order.</li>
+          <li>If you get it right, a new round starts. The same pattern plays again with one new step added at the end.
+          </li>
+          <li>Keep going for as long as you can remember the pattern.</li>
+        </ol>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">3. Controls</h4>
+        <div class="row g-3 how-to" style="text-align:left;">
+          <div class="col-md-4"><strong>Mouse or touch</strong><br>Tap the pads. The four pads sit in a 2 × 2 square.
+          </div>
+          <div class="col-md-4"><strong>Start / Restart / Try Again</strong><br>Starts a new game with a brand new
+            pattern from round 1.</div>
+          <div class="col-md-4"><strong>Wait for Your Turn</strong><br>Taps are ignored while the pattern is playing.
+            Wait for the Status chip to change.</div>
         </div>
       </div>
-      <div class="game-controls">
-        <button id="simonStartBtn" class="btn-gold">Start</button>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">4. How the game ends</h4>
+        <p class="how-to" style="text-align:left;">One wrong tap ends the game. The Status chip changes to <strong>Game
+            Over</strong> and the button changes to <strong>Try Again</strong>. There is no timer, so you can take as
+          long as you like to remember each step.</p>
       </div>
-      <p class="how-to">Press Start and watch the pads flash in order. Repeat the same sequence by tapping the pads - each round adds one more step.</p>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">5. Rounds, best score and status</h4>
+        <div style="overflow-x:auto;">
+          <table class="how-to" style="width:100%;text-align:center;border-collapse:collapse;">
+            <thead>
+              <tr style="color:var(--gold-bright);">
+                <th>Chip</th>
+                <th>What it shows</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Round</td>
+                <td>The round you are on. It is also the number of steps in the pattern</td>
+              </tr>
+              <tr>
+                <td>Best</td>
+                <td>The highest round you have reached, saved in this browser</td>
+              </tr>
+              <tr>
+                <td>Status</td>
+                <td>Ready, Watch, Your Turn or Game Over</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="how-to mt-3" style="text-align:left;">Best is updated when the game ends. Pressing Restart in the
+          middle of a game does not save it.</p>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">6. Playing like a pro</h4>
+        <ul class="how-to" style="text-align:left;padding-left:1.2rem;">
+          <li><strong>Remember positions, not colours.</strong> All four pads look the same, so think top-left,
+            top-right, bottom-left, bottom-right.</li>
+          <li><strong>Say it out loud.</strong> Repeat the order in your head as 'TL, BR, TL, TR' while you watch.</li>
+          <li><strong>Chunk the pattern.</strong> Group the steps in threes, like a phone number.</li>
+          <li><strong>Focus on the new step.</strong> The older steps never change, so you only have to learn one new
+            one each round.</li>
+          <li><strong>Tap steadily.</strong> Don't rush. Accuracy matters more than speed.</li>
+          <li><strong>Don't tap early.</strong> Taps during the Watch phase do nothing.</li>
+        </ul>
+      </div>
+      <div class="game-panel mb-4">
+        <h4 class="gold-text">7. Common questions</h4>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Why do all the pads look the same?</summary>This
+          version uses gold pads only. The pattern is about where the flashes happen.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Why isn't my tap working?</summary>Taps only count
+          when the Status chip says Your Turn.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Does the pattern stay the same each round?</summary>
+          Yes. The earlier steps stay the same, and one new random step is added at the end.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Where is my best score saved?</summary>In your
+          browser's local storage. It is lost if you clear site data or switch browser or device.
+        </details>
+        <details class="how-to" style="text-align:left;margin-bottom:.6rem;">
+          <summary style="color:var(--gold-bright);cursor:pointer;">Is there a time limit?</summary>No. You can take as
+          long as you need to tap the next pad.
+        </details>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer class="nm-footer">
-  <div class="container">
-    <div class="row g-4">
-      <div class="col-6 col-md-3">
-        <h5>NM Gaming</h5>
-        <p style="color:var(--text-dim); font-size:.88rem;">A black &amp; gold arcade of ten browser-native classics.</p>
+
+  <!-- ===== NEXT GAMES JOURNEY (7 sections) ===== -->
+  <section class="pb-5" id="next-games">
+    <div class="container" style="max-width:860px;">
+      <h2 class="gold-text mb-2">Your Arcade Journey: What to Play After Simon Says</h2>
+      <p style="color:var(--text-dim);">Finished a few rounds of Simon Says? The NM Gaming arcade has more to try. Below
+        are the
+        next seven games in the lineup, each with a quick guide on how to play so you can jump straight in.</p>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game9.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🔢</span>
+              <img src="images/game9.jpg" alt="2048 game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 1 OF 7</small>
+            <h4 class="gold-text">🔢 2048</h4>
+            <p class="how-to" style="text-align:left;">Slide numbered tiles around a 4 × 4 board. Matching tiles merge
+              into one bigger tile.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Use the Arrow Keys, or swipe on a phone, to slide every tile in one direction.</li>
+              <li>Two tiles with the same number merge into one, and your score goes up by the new number.</li>
+              <li>A new 2 or 4 appears after every move that changes the board.</li>
+              <li>Keep merging to build the 2048 tile.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Keep your biggest tile in one corner
+              and avoid pressing the opposite direction.</p>
+            <a href="game9.html" class="btn-gold text-decoration-none d-inline-block">Play 2048 →</a>
+          </div>
+        </div>
       </div>
-      <div class="col-6 col-md-3">
-        <h5>Arcade Row A</h5>
-        <a href="game1.html">Snake</a>
-        <a href="game2.html">Sliding Puzzle</a>
-        <a href="game3.html">Tic Tac Toe</a>
-        <a href="game4.html">Memory Match</a>
-        <a href="game5.html">Rock Paper Scissors</a>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 order-md-2">
+            <!-- Add your image: put the file at images/game10.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🏓</span>
+              <img src="images/game10.jpg" alt="Pong game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 2 OF 7</small>
+            <h4 class="gold-text">🏓 Pong</h4>
+            <p class="how-to" style="text-align:left;">The classic paddle duel against the CPU. Keep the ball in play
+              and make the CPU miss.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press Start. The ball launches in a random direction.</li>
+              <li>Move your mouse or finger up and down over the board to control your paddle on the left.</li>
+              <li>If the ball gets past the CPU paddle, you score. If it gets past yours, the CPU scores.</li>
+              <li>The ball gets 5% faster horizontally every time it hits a paddle.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> The CPU paddle never speeds up but the
+              ball does, so long rallies work in your favour.</p>
+            <a href="game10.html" class="btn-gold text-decoration-none d-inline-block">Play Pong →</a>
+          </div>
+        </div>
       </div>
-      <div class="col-6 col-md-3">
-        <h5>Arcade Row B</h5>
-        <a href="game6.html">Whack-a-Mole</a>
-        <a href="game7.html">Guess the Number</a>
-        <a href="game8.html">Simon Says</a>
-        <a href="game9.html">2048</a>
-        <a href="game10.html">Pong</a>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game11.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🧱</span>
+              <img src="images/game11.jpg" alt="Breakout game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 3 OF 7</small>
+            <h4 class="gold-text">🧱 Breakout</h4>
+            <p class="how-to" style="text-align:left;">Bounce a golden orb off your paddle to smash all 40 bricks. You
+              have 3 lives.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press Start Game and move the paddle with the mouse, your finger, the Arrow Keys or A and D.</li>
+              <li>Every brick the orb hits breaks and scores 10 points.</li>
+              <li>If the orb falls past your paddle, you lose a life.</li>
+              <li>Clear every brick to win.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Hit the orb with the edge of the paddle
+              to change its angle and reach the corners.</p>
+            <a href="game11.html" class="btn-gold text-decoration-none d-inline-block">Play Breakout →</a>
+          </div>
+        </div>
       </div>
-      <div class="col-6 col-md-3">
-        <h5>Home</h5>
-        <a href="home.html">Back to Top</a>
-        <a href="home.html#games">Full Lineup</a>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 order-md-2">
+            <!-- Add your image: put the file at images/game12.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🔤</span>
+              <img src="images/game12.jpg" alt="Hangman game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 4 OF 7</small>
+            <h4 class="gold-text">🔤 Hangman</h4>
+            <p class="how-to" style="text-align:left;">Guess the hidden gaming word one letter at a time. You can afford
+              6 wrong guesses.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press Start Game to get a word. Each blank is one letter.</li>
+              <li>Click a letter on screen or type it on your keyboard.</li>
+              <li>A correct letter fills in every matching blank. A wrong one costs a life.</li>
+              <li>Reveal the whole word before your 6 lives run out. Your total Wins is saved.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Start with common letters like E and A,
+              then use the pattern of blanks to work out the rest.</p>
+            <a href="game12.html" class="btn-gold text-decoration-none d-inline-block">Play Hangman →</a>
+          </div>
+        </div>
       </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game13.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">⚡</span>
+              <img src="images/game13.jpg" alt="Reaction Test game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 5 OF 7</small>
+            <h4 class="gold-text">⚡ Reaction Test</h4>
+            <p class="how-to" style="text-align:left;">Test your reflexes. Tap the box the moment it turns gold.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Click the box or press Space to begin. It says Wait for gold.</li>
+              <li>After a random wait of 1 to 4 seconds, the box turns gold and says CLICK NOW.</li>
+              <li>Tap as fast as you can. Your time in milliseconds is shown.</li>
+              <li>After five rounds you get your average. Tapping too early cancels the attempt.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Rest a finger on the Space bar and
+              react to the colour. Don't try to guess the timing.</p>
+            <a href="game13.html" class="btn-gold text-decoration-none d-inline-block">Play Reaction Test →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 order-md-2">
+            <!-- Add your image: put the file at images/game14.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">💣</span>
+              <img src="images/game14.jpg" alt="Minesweeper game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 6 OF 7</small>
+            <h4 class="gold-text">💣 Minesweeper</h4>
+            <p class="how-to" style="text-align:left;">A 9 × 9 board hides 10 mines. Reveal every safe square without
+              hitting one.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press Start Game, then click any square. Your first click is always safe.</li>
+              <li>Numbers show how many mines touch that square.</li>
+              <li>Right-click, or turn on Flag mode on a phone, to mark a mine.</li>
+              <li>Reveal all 71 safe squares to win. Your fastest time is saved as Best.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Start in the open area your first click
+              creates, then use the numbers to find squares that must be mines.</p>
+            <a href="game14.html" class="btn-gold text-decoration-none d-inline-block">Play Minesweeper →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-panel mb-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-5 ">
+            <!-- Add your image: put the file at images/game15.jpg (or change the src) -->
+            <div
+              style="position:relative;aspect-ratio:4/3;border:1px solid var(--gold, #d4af37);border-radius:12px;overflow:hidden;background:#0b090a;display:flex;align-items:center;justify-content:center;font-size:3.5rem;">
+              <span aria-hidden="true">🟡</span>
+              <img src="images/game15.jpg" alt="Flappy Orb game preview" loading="lazy"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+                onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <small style="color:var(--gold-bright);letter-spacing:.08em;">NEXT UP 7 OF 7</small>
+            <h4 class="gold-text">🟡 Flappy Orb</h4>
+            <p class="how-to" style="text-align:left;">Flap a golden orb through the gaps in the pillars. One touch ends
+              the run.</p>
+            <ol class="how-to" style="text-align:left;padding-left:1.2rem;">
+              <li>Press Start Game, or just tap the board.</li>
+              <li>Press Space or the Up Arrow, click, or tap to flap. Gravity pulls the orb down.</li>
+              <li>Every pillar you pass scores 1 point.</li>
+              <li>Touching a pillar, the floor or the ceiling ends the run.</li>
+            </ol>
+            <p class="how-to" style="text-align:left;"><strong>Pro tip:</strong> Use small, steady taps instead of big
+              bursts, and aim for the middle of each gap.</p>
+            <a href="game15.html" class="btn-gold text-decoration-none d-inline-block">Play Flappy Orb →</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="how-to text-center">That's the next stretch of the arcade. Snake, Sliding Puzzle, Tic Tac Toe, Memory
+        Match, Rock Paper Scissors, Whack-a-Mole and Guess the Number are waiting in the menu above.</p>
     </div>
-    <div class="copyline">© 2026 NM GAMING · All games run locally in your browser</div>
-  </div>
-</footer>
+  </section>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="site.js"></script>
-<script>
+  <footer class="nm-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-6 col-md-3">
+          <h5>NM Gaming</h5>
+          <p style="color:var(--text-dim); font-size:.88rem;">A black &amp; gold arcade of fifteen browser-native
+            classics.</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Arcade Row A</h5>
+          <a href="game1.html">Snake</a>
+          <a href="game2.html">Sliding Puzzle</a>
+          <a href="game3.html">Tic Tac Toe</a>
+          <a href="game4.html">Memory Match</a>
+          <a href="game5.html">Rock Paper Scissors</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Arcade Row B</h5>
+          <a href="game6.html">Whack-a-Mole</a>
+          <a href="game7.html">Guess the Number</a>
+          <a href="game8.html">Simon Says</a>
+          <a href="game9.html">2048</a>
+          <a href="game10.html">Pong</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Arcade Row C</h5>
+          <a href="game11.html">Breakout</a>
+          <a href="game12.html">Hangman</a>
+          <a href="game13.html">Reaction Test</a>
+          <a href="game14.html">Minesweeper</a>
+          <a href="game15.html">Flappy Orb</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Home</h5>
+          <a href="home.html">Back to Top</a>
+          <a href="home.html#games">Full Lineup</a>
+        </div>
+      </div>
+      <div class="copyline">© 2026 NM GAMING · All games run locally in your browser</div>
+    </div>
+  </footer>
 
-(() => {
-  const pads = document.querySelectorAll('.simon-pad');
-  const roundEl = document.getElementById('round');
-  const bestEl = document.getElementById('best');
-  const statusEl = document.getElementById('status');
-  const startBtn = document.getElementById('simonStartBtn');
-  let best = Number(localStorage.getItem('nm-simon-best') || 0);
-  bestEl.textContent = best;
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="site.js"></script>
+  <script>
 
-  let sequence, playerStep, round, accepting;
+    (() => {
+      const pads = document.querySelectorAll('.simon-pad');
+      const roundEl = document.getElementById('round');
+      const bestEl = document.getElementById('best');
+      const statusEl = document.getElementById('status');
+      const startBtn = document.getElementById('simonStartBtn');
+      let best = Number(localStorage.getItem('nm-simon-best') || 0);
+      bestEl.textContent = best;
 
-  function lightPad(idx, duration=420){
-    return new Promise(resolve => {
-      const pad = pads[idx];
-      pad.style.background = '#f6dd8a';
-      pad.style.boxShadow = '0 0 26px rgba(212,175,55,.7)';
-      setTimeout(() => {
-        pad.style.background = '#3a2f0d';
-        pad.style.boxShadow = 'none';
-        setTimeout(resolve, 120);
-      }, duration);
-    });
-  }
+      let sequence, playerStep, round, accepting;
 
-  async function playSequence(){
-    accepting = false;
-    statusEl.textContent = 'Watch';
-    for (const idx of sequence){
-      await lightPad(idx);
-    }
-    accepting = true;
-    playerStep = 0;
-    statusEl.textContent = 'Your Turn';
-  }
+      function lightPad(idx, duration = 420) {
+        return new Promise(resolve => {
+          const pad = pads[idx];
+          pad.style.background = '#f6dd8a';
+          pad.style.boxShadow = '0 0 26px rgba(212,175,55,.7)';
+          setTimeout(() => {
+            pad.style.background = '#3a2f0d';
+            pad.style.boxShadow = 'none';
+            setTimeout(resolve, 120);
+          }, duration);
+        });
+      }
 
-  function nextRound(){
-    round++;
-    roundEl.textContent = round;
-    sequence.push(Math.floor(Math.random()*4));
-    playSequence();
-  }
-
-  function handlePad(idx){
-    if (!accepting) return;
-    lightPad(idx, 200);
-    if (idx === sequence[playerStep]){
-      playerStep++;
-      if (playerStep === sequence.length){
+      async function playSequence() {
         accepting = false;
-        setTimeout(nextRound, 700);
+        statusEl.textContent = 'Watch';
+        for (const idx of sequence) {
+          await lightPad(idx);
+        }
+        accepting = true;
+        playerStep = 0;
+        statusEl.textContent = 'Your Turn';
       }
-    } else {
-      accepting = false;
-      statusEl.textContent = 'Game Over';
-      if (round > best){
-        best = round;
-        localStorage.setItem('nm-simon-best', best);
-        bestEl.textContent = best;
+
+      function nextRound() {
+        round++;
+        roundEl.textContent = round;
+        sequence.push(Math.floor(Math.random() * 4));
+        playSequence();
       }
-      startBtn.textContent = 'Try Again';
-    }
-  }
 
-  pads.forEach(pad => pad.addEventListener('click', () => handlePad(Number(pad.dataset.idx))));
+      function handlePad(idx) {
+        if (!accepting) return;
+        lightPad(idx, 200);
+        if (idx === sequence[playerStep]) {
+          playerStep++;
+          if (playerStep === sequence.length) {
+            accepting = false;
+            setTimeout(nextRound, 700);
+          }
+        } else {
+          accepting = false;
+          statusEl.textContent = 'Game Over';
+          if (round > best) {
+            best = round;
+            localStorage.setItem('nm-simon-best', best);
+            bestEl.textContent = best;
+          }
+          startBtn.textContent = 'Try Again';
+        }
+      }
 
-  startBtn.addEventListener('click', () => {
-    sequence = [];
-    round = 0;
-    roundEl.textContent = round;
-    startBtn.textContent = 'Restart';
-    nextRound();
-  });
-})();
+      pads.forEach(pad => pad.addEventListener('click', () => handlePad(Number(pad.dataset.idx))));
 
-</script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1684242835147633"
-     crossorigin="anonymous"></script>
+      startBtn.addEventListener('click', () => {
+        sequence = [];
+        round = 0;
+        roundEl.textContent = round;
+        startBtn.textContent = 'Restart';
+        nextRound();
+      });
+    })();
+
+  </script>
 </body>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1684242835147633"
+  crossorigin="anonymous"></script>
+
 </html>
